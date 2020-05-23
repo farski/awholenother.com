@@ -1,0 +1,32 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"inputs": [
+		{
+			"type": "promptString",
+			"id": "postTitle",
+			"description": "Post title"
+		}
+	],
+	"tasks": [
+		{
+			"label": "Bundle",
+			"type": "shell",
+			"command": "bundle",
+			"problemMatcher": []
+		},
+		{
+			"label": "Jekyll:Serve",
+			"type": "shell",
+			"command": "jekyll serve --watch",
+			"problemMatcher": []
+		},
+		{
+			"label": "Jekyll:New Post",
+			"type": "shell",
+			"command": "bundle exec jekyll post \"${input:postTitle}\"",
+			"problemMatcher": []
+		}
+	]
+}
