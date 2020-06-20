@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Boolean parameters in CloudFormation
-date: 2020-06-19 22:48 -0400
+date: 2020-06-20 00:48 -0400
 tags:
   - AWS
   - CloudFormation
@@ -26,7 +26,6 @@ There is no `Boolean` type for template parameters. The closest thing is a `Stri
 This is true of boolean properties as well. A string value of `"true"` or `"false"` will be treated as a boolean value when passed to a `Boolean` resource property. Thus, the template above would also work with a `String` literal value for `ObjectLockEnabled`:
 
 ```yaml
-AWSTemplateFormatVersion: "2010-09-09"
 
 Resources:
   MyMediaBucket:
@@ -55,7 +54,7 @@ Resources:
       ObjectLockEnabled: !Ref BucketObjectLockEnabled
 ```
 
-It's worth noting that the `AllowedValues` in the previous example are actual YAML `bool` values. They are being coerced to string in the context of the parameter, and then the string value is being coerced to a `Boolean` in the resource property. This method is not sneakily creating a boolean parameter. Using string literals in the parameter list acts the same way, and perhaps makes it more obvious what is actually going on.
+It's worth noting that the `AllowedValues` in the previous example are actual YAML `bool` values. They are being coerced to strings in the context of the parameter, and then the string value is being coerced back to a `Boolean` at the resource property. This method is **not** sneakily creating a boolean parameter. Using string literals in the parameter list acts the same way, and perhaps makes it more obvious what is actually going on.
 
 ```yaml
 # This way works, too
@@ -81,7 +80,7 @@ Parameters:
       - no
 ```
 
-The type coercion on the resource properties **cannot** handle all the various forms of YAML booleans. Passing a string of `"yes"` or `"off"` to a `Boolean` property will fail.
+The type coercion on the resource properties **cannot** handle all the various forms of YAML booleans. Passing a string like `"yes"` or `"off"` to a `Boolean` property will fail.
 
 ```yaml
 # This would not work
@@ -112,14 +111,14 @@ Parameters:
     Type: String
     AllowedValues:
       # Using string literal values for the String parameter. These can be any
-      # values you want.
-      - 'Enabled'
-      - 'Disabled'
+      # arbitrary values you want.
+      - Yes_please # Probably use something like 'True' or Enabled instead
+      - No_thank_you
 
 Conditions:
   # Create a condition that matches on the parameter string value being treated
   # as true/on.
-  HasObjectLockEnabled: !Equals [!Ref BucketObjectLockEnabled, 'Enabled']
+  HasObjectLockEnabled: !Equals [!Ref BucketObjectLockEnabled, Yes_please]
 
 Resources:
   MyMediaBucket:
