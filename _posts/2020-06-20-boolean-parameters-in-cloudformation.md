@@ -26,6 +26,7 @@ There is no `Boolean` type for template parameters. The closest thing is a `Stri
 This is true of boolean properties as well. A string value of `"true"` or `"false"` will be treated as a boolean value when passed to a `Boolean` resource property. Thus, the template above would also work with a `String` literal value for `ObjectLockEnabled`:
 
 ```yaml
+AWSTemplateFormatVersion: "2010-09-09"
 
 Resources:
   MyMediaBucket:
