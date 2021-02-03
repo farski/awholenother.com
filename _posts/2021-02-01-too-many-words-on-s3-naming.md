@@ -93,7 +93,7 @@ curl -I https://acme-assets.s3.us-east-2.amazonaws.com//
 # => HTTP/1.1 200 OK
 ```
 
-Here's an object named ` ` (a space). Add a slash, encode the unallowed character, done.
+Here's an object whose name is a space. Add a slash, encode the unallowed character, done.
 
 ```python
 boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key=' ')
