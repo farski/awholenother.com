@@ -153,7 +153,7 @@ While we're talking about `+`, you may have some experience using a `+` as a met
 Or can't we… Since the `+` seems to be the one edge case that exists when making S3 GET requests, and there are some other places on the web where a `+` does encode a space, it's worthy of an experiment.
 
 ```python
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key='bagel day')
+boto3.client('s3').put_object(Key='bagel day', Body='lorem ipsum', Bucket='acme-assets')
 ```
 
 ```bash
