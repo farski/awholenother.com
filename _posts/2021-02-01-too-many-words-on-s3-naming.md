@@ -31,7 +31,7 @@ And if we lived inside ~~the matrix~~ S3, this would be the end of the story. We
 
 Surprisingly more complicated.
 
-The S3 documentation even [includes a guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-key-guidelines) to complications you can encounter will interfacing with S3 object names. These issues aren’t the fault of S3, but with the tools and protocols that interact with S3. Nothing of what comes next refutes the **any UTF-8 character** law of S3.
+The S3 documentation even [includes a guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-key-guidelines) to complications you can encounter will interfacing with S3 object names. These issues largely aren’t the fault of S3, but with the tools and protocols that interact with S3. Nothing of what comes next refutes the **any UTF-8 character** law of S3.
 
 Consider a couple of the cautionary notices from that guide:
 
