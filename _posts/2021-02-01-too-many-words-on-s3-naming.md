@@ -161,7 +161,7 @@ curl -I https://acme-assets.s3.us-east-2.amazonaws.com/bagel+day
 # => HTTP/1.1 200 OK
 ```
 
-Well that's interesting. And it explains why the `+` is the only otherwise-acceptable URL path character that needs to be escaped. S3 is treating it as an encoded space in a path, even though that's non-standard behavior. I would recommend **never** doing that, since you don't know when your URLs will pass through a tool that would never expect that and would mangle your URL. It _should_ be ok to encode a `+` in a path to `%2B` at any time, but with an S3 HTTP URL that's using a `+` as a space, doing that encoding would break the request.
+Well that's interesting. And it explains why the `+` is the only otherwise-acceptable URL path character that needs to be escaped. S3 is treating it as an encoded space in a path, even though that's non-standard behavior. I would recommend **never** doing that, since you don't know when your URLs will pass through a tool that wouldn't expect that and might mangle your URL. Things _should_ be allowed to encode a `+` in a path to `%2B` at any time without issue, but with an S3 HTTP URL that's using a `+` as a space, doing that encoding would break the request.
 
 To put it another way: most HTTP servers would (should) treat `/bagel+day` and `/bagel%2Bday` as requests for the same resource (words with a plus in between), and `/bagel%20day` as a different resource (words with a space in between). S3 HTTP endpoints, on the other hand, treat `/bagel+day` and `/bagel%20day` as the same (space in between) and `/bagel%2Bday` as different (plus in between).
   
