@@ -321,7 +321,7 @@ It's hard to say, and that's kind of the point. Once you get behind enough layer
 
 Sticking with a JavaScript environment, consider the `this+that` example. If you use `encodeURI('acme-assets/this+that')` the result is `'acme-assets/this+that'`, which will not work properly. You could instead use `encodeURIComponent('acme-assets/this+that')` to get `'acme-assets%2Fthis%2Bthat'`, which proply encodes the `+`, but also encodes the `/`. That may not be a problem here, but in some cases, especially when presenting the value to a user, you may want to preserve the slashes for readability.
 
-Or maybe you special-case the `+`, `encodeURI('acme-assets/this+that').replace(/\+/g, '%2B')`, to preserve the slashes in the path, even though `encodeURI` won't encode `#`, which is not allowed in URL paths. Neither JavaScript method for URL encoding does exactly what we want. You can imagine other languages, frameworks, and libraries having their own set of idiosyncrasies.
+Or maybe you special-case the `+`, `encodeURI('acme-assets/this+that').replace(/\+/g, '%2B')`, to preserve the slashes in the path, even though `encodeURI` won't encode `#`, which is not allowed in URL paths but we've seen make it through the SDK without issue. Neither JavaScript method for URL encoding does exactly what we want. You can imagine other languages, frameworks, and libraries having their own set of idiosyncrasies.
 
 So what do we do with all this information?
 
