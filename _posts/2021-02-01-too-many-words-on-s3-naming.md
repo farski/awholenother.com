@@ -315,7 +315,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 Okay, that's enough of that. What's all that tell us? It reinforce the notion that S3 will gladly decode _any_ percent-encoded characters in a key. It also seems like for this esoteric `/my-bucket/my-object-key` input format, the permissive decoding applies to the entire value, not just the object key.
 
-There's also a bunch of examples where the value we're providing actually _doesn't_ need to be URL encoded. Is the JavaScript SDK doing some amount of encoding? It's not encoding everything, or the emoji would work. This is ultimately making an HTTP request similar to the ones to looked at earlier, so there's no way an actual ` ` space is making it out over the wire. Maybe it's node?
+There's also a bunch of examples where the value we're providing actually _doesn't_ need to be URL encoded. Is the JavaScript SDK doing some amount of encoding? It's not encoding everything, or the emoji would work. This is ultimately making an HTTP request similar to the ones to looked at earlier, so there's no way an actual space is making it out over the wire. Maybe it's node?
 
 It's hard to say, and that's kind of the point. Once you get behind enough layers of code, the predictability of how explicit you need to be in handling object key names goes out the window. Even once you pick a level of encoding that you want to implement, you're likely relying more external code to handle the conversion.
 
