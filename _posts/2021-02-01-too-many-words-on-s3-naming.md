@@ -7,6 +7,8 @@ tags:
   - S3
 ---
 
+<small>Reading time: 15 minutes</small>
+
 Amazon S3 is fairly old in cloud years, so it’s not without it historical quirks and dark corners. But when it comes to object naming, things are pretty straightforward: [“You can use any UTF-8 character in an object key name“](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-key-guidelines). This is true, as far as I know, without exception. There are no restricted characters, no magic sequences, and no character is treated differently than any other character.
 
 It’s worth remembering here that S3 doesn’t have a concept of folder hierarchy, and any notion that it does is simply UI or API sugar. Objects are identified entirely by the bucket they belong to and their key name (and sometimes a version ID, but that’s immaterial to this topic). An object that belongs to the `acme-assets` bucket could have a key of `logo.png` or `static/images/logo/200px.png`. In the eyes of S3 there’s nothing intrinsicly different about the object with slashes and the one without. You could just as well have called the second object `static_images_logo_200px.png`. You’d lose out on some UI conveniences, but it’s not the case that one version lives in a folder and the other doesn’t.
