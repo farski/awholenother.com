@@ -173,7 +173,7 @@ Let's unpack that last bit some more. We have a value of the form `my-bucket/my-
 
 Let's throw some things at the wall and see what sticks. For all of these examples we'll be create a copy called `🆕`, and both the old and new copies will live in `acme-assets`. You can assume that the source objects exist. (Also worth noting that some examples in the docs use a `CopySource` in the form `/my-bucket/my-object-key`. The leading slash seems entirely optional.)
 
-##### Basic alphanumeric
+#### Basic alphanumeric
 
 ```javascript
 // Source object key: simple-name-01
@@ -183,7 +183,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👍
 
-##### Alphanumeric with slashes
+#### Alphanumeric with slashes
 
 ```javascript
 // Source object key: simple/name/01
