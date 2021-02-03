@@ -129,19 +129,19 @@ To demonstrate that second point, consider an S3 object called `Test/abc.mp3`, w
 
 It is generally not recommended to encode characters that are safe to use anywhere in a URL, which includes fewer characters than the path segment character set (only `A-Z`, `a-z`, `0-9`, `-`, `_`, `.`, `~`), but S3 allows you to do it when making HTTP requests. Also note that, as always, there's nothing special about `/` in these object keys; they can be encoded just like everything else. The leading slash on the URL path cannot be encoded, but remember that exists for the purpose of URL structure, and is not part of the object key represented _within_ the path.
 
-Let's go back and inspect that Object URL from the console. `$`, `&`, `+`, `,`, `;`, `=`, `:`, and `@` were encoded, even though the URL spec says they should have been okay. As we just learned, the Object URL _could_ have encoded every character in the object key, but it chose to only encode these characters. But it didn't encode everything not in the core set of URL safe characters (`/[\w\-.~/]/`), for example it left `(` and `)` alone. Curious.
+Let's go back and inspect that Object URL from the console. `$`, `&`, `+`, `,`, `;`, `=`, `:`, and `@` were encoded, even though the URL spec says they should have been okay. As we just learned, the Object URL _could_ have encoded every character in the object key, but it chose to only encode these characters. It didn't even encode everything outside the core set of URL safe characters (`/[\w\-.~/]/`), for example it left `(` and `)` in there. Curious.
 
 If we push on this a bit…
 
 ```python
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key='$')
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key='&')
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key='+')
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key=',')
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key=';')
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key='=')
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key=':')
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key='@')
+boto3.client('s3').put_object(Key='$', Body='lorem ipsum', Bucket='acme-assets')
+boto3.client('s3').put_object(Key='&', Body='lorem ipsum', Bucket='acme-assets')
+boto3.client('s3').put_object(Key='+', Body='lorem ipsum', Bucket='acme-assets')
+boto3.client('s3').put_object(Key=',', Body='lorem ipsum', Bucket='acme-assets')
+boto3.client('s3').put_object(Key=';', Body='lorem ipsum', Bucket='acme-assets')
+boto3.client('s3').put_object(Key='=', Body='lorem ipsum', Bucket='acme-assets')
+boto3.client('s3').put_object(Key=':', Body='lorem ipsum', Bucket='acme-assets')
+boto3.client('s3').put_object(Key='@', Body='lorem ipsum', Bucket='acme-assets')
 ```
 
 …and request each of those objects, the only one that fails is `+`. The [docs](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html) don't say anything about special handing of `+` or any of these other characters, but clearly something is different. Let's see if the URL that failed ealier works if we percent-encode only the `+`: `https://acme-assets.s3.us-east-2.amazonaws.com/AZaz09-._~!$&'()*%2B,;=:@`.
