@@ -117,7 +117,7 @@ curl -I "https://acme-assets.s3.us-east-2.amazonaws.com/AZaz09-._~!$&'()*+,;=:@"
 
 **Uh oh**. We can see the `AZaz09-._~!$&'()*+,;=:@` object in S3, and followed all the rules to construct the HTTP URL, but something's not happy. The **Object URL** in Console for this object is `https://acme-assets.s3.us-east-2.amazonaws.com/AZaz09-._~!%24%26'()*%2B%2C%3B%3D%3A%40`, which is perhaps a little unexpected. AWS is percent-encoding some characters that should be safe to use in a URL path.
 
-This reveals two thing. First, not all allowed URL path characters are acceptable for making HTTP requests to S3. Second is that you can always encode any object key character in a path and S3 will handle them properly.
+This reveals two things. First, not all allowed URL path characters are acceptable for making HTTP requests to S3. Second is that you can always encode any object key character in a path and S3 will handle them properly.
 
 To demonstrate that second point, consider an S3 object called `Test/abc.mp3`, which contains no objectionable characters. Each of the following requests will return that object.
 
