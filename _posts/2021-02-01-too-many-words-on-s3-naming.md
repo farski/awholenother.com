@@ -193,7 +193,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👍
 
-##### Alphanumeric with encoded object key slashes
+#### Alphanumeric with encoded object key slashes
 
 ```javascript
 // Source object key: simple/name/01
@@ -203,7 +203,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👍
 
-##### Alphanumeric with encoded delimiter
+#### Alphanumeric with encoded delimiter
 
 ```javascript
 // Source object key: simple-name-01
@@ -213,7 +213,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👍
 
-##### Unencoded emoji object key
+#### Unencoded emoji object key
 
 ```javascript
 // Source object key: ☃️
@@ -223,7 +223,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👎 This is expected to fail, and does with an `Invalid character in header content` error.
 
-##### Percent-encoded emoji object key
+#### Percent-encoded emoji object key
 
 ```javascript
 // Source object key: ☃️
@@ -233,7 +233,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👍
 
-##### Unencoded space in object key
+#### Unencoded space in object key
 
 ```javascript
 // Source object key: bagel day
@@ -243,7 +243,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👍 This works, surprisingly
 
-##### Percent-encoded space in object key
+#### Percent-encoded space in object key
 
 ```javascript
 // Source object key: bagel day
@@ -253,7 +253,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👍
 
-##### Plus-encoded space in object key
+#### Plus-encoded space in object key
 
 ```javascript
 // Source object key: bagel day
@@ -263,7 +263,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👍 Not too surprising that this works, based on what we saw earlier with HTTP URLs, but non-standard as far URL encoding goes
 
-##### Unencoded non-alphanumeric path-safe characters
+#### Unencoded non-alphanumeric path-safe characters
 
 ```javascript
 // Source object key: fancy:name
@@ -273,7 +273,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👍 
 
-##### Unencoded non-alphanumeric path-unsafe characters
+#### Unencoded non-alphanumeric path-unsafe characters
 
 ```javascript
 // Source object key: scary#name
@@ -283,7 +283,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👍 This works, surprisingly
 
-##### More unencoded non-alphanumeric path-unsafe characters
+#### More unencoded non-alphanumeric path-unsafe characters
 
 ```javascript
 // Source object key: scary%name
@@ -293,7 +293,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👎 Fails with `Invalid copy source encoding` error
 
-##### Plus literal
+#### Plus literal
 
 ```javascript
 // Source object key: this+that
@@ -303,7 +303,7 @@ Let's throw some things at the wall and see what sticks. For all of these exampl
 
 👎 Fails with `key does not exist` error (because S3 is looking for `this that`)
 
-##### Percent-encoded plus
+#### Percent-encoded plus
 
 ```javascript
 // Source object key: this+that
