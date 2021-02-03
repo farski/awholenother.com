@@ -15,7 +15,7 @@ You can even name an object with _just_ slashes, if you want. To S3, this object
 
 ```python
 import boto3
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='my-bucket', Key='/////')
+boto3.client('s3').put_object(Key='/////', Body='lorem ipsum', Bucket='my-bucket')
 ```
 
 ```bash
@@ -40,9 +40,9 @@ Consider a couple of the cautionary notices from that guide:
 As you'd hopefully expect by now, if you finesse the APIs and SDKs enough, you can of course do all the things it's telling you not to. Sometimes you need to get creative with getting files in or out of S3, it all depends on the particulars of the environment. With the Boto3 Python library, no finessing is needed to create objects for these two cases.
 
 ```python
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='my-bucket', Key='It was the blurst of times...')
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='my-bucket', Key='..')
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='my-bucket', Key='{')
+boto3.client('s3').put_object(Key='It was the blurst of times...', Body='lorem ipsum', Bucket='my-bucket')
+boto3.client('s3').put_object(Key='..', Body='lorem ipsum', Bucket='my-bucket')
+boto3.client('s3').put_object(Key='{', Body='lorem ipsum', Bucket='my-bucket')
 ```
 
 One of the most common uses of S3 will be serving files over HTTP. This could be done with a publicly accessible bucket (maybe don't), or via CloudFront. Either way, something will be making an HTTP GET request for an object in S3.
@@ -85,7 +85,7 @@ Let's try a few examples just to confirm.
 Here's an object named `/`. A slash is one of the allowed characters in a URL path (no need to encode), and we add a leading slash to create the URL path. All good. (Console will get a little confused by this, treating it as both a folder and an object in the folder.)
 
 ```python
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key='/')
+boto3.client('s3').put_object(Key='/', Body='lorem ipsum', Bucket='acme-assets')
 ```
 
 ```bash
@@ -96,7 +96,7 @@ curl -I https://acme-assets.s3.us-east-2.amazonaws.com//
 Here's an object whose name is a space. Add a slash, encode the unallowed character, done.
 
 ```python
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key=' ')
+boto3.client('s3').put_object(Key=' ', Body='lorem ipsum', Bucket='acme-assets')
 ```
 
 ```bash
@@ -107,7 +107,7 @@ curl -I https://acme-assets.s3.us-east-2.amazonaws.com/%20
 How about an object named with every character allowed in URL paths?
 
 ```python
-boto3.client('s3').put_object(Body='lorem ipsum', Bucket='acme-assets', Key="AZaz09-._~!$&'()*+,;=:@")
+boto3.client('s3').put_object(Key="AZaz09-._~!$&'()*+,;=:@", Body='lorem ipsum', Bucket='acme-assets')
 ```
 
 ```bash
