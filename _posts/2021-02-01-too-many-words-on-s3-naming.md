@@ -325,7 +325,7 @@ Or maybe you special-case the `+`, `encodeURI('acme-assets/this+that').replace(/
 
 So what do we do with all this information?
 
-One takeaway is that in any case where character limitations or handling could be a problem, encoding provides an escpae hatch. We know there are places where S3 doesn't decode inputs, like in the `Key` parameter of `copyObject` in JavaScript, but those cases never have to worry about encoding. For the other cases, if you're worried you can encode at will.
+One takeaway is that in any case where character limitations or handling could be a problem, encoding provides an escape hatch. We know there are places where S3 doesn't decode inputs, like in the `Key` parameter of `copyObject` in JavaScript, but those cases never have to worry about encoding. For the other cases, if you're worried you can encode at will.
 
 In those other cases, while you can encode everything, likely you won't want to. Even if it's code that's deep in a library and just one computer talking to another, it's really unintuitive to percent-encode an entire string, including alphanumeric characters. To stay on this side of crazy, consider preserving this set of characters: `A-Z`, `a-z`, `0-9`, `_`, `-`, `.`, and `/`. If you eliminate all the characters which are in any way considered unsafe by URL specs, HTML specs, S3 docs, etc, you're left with that.
 
