@@ -61,7 +61,7 @@ Important things to note: The object key has no leading slash, but the key does 
 
 So far this all should track with our expectations. These values exist within the confines of S3, so there's no issues with emoji or any other non-ASCII characters. But we're interested in making an HTTP request for the object, so we have to start to consider any limitations that protocol and tooling may introduce to the equation.
 
-The (modern) way that S3 supports GET requests is with an address like `https://my-bucket.s3.us-east-2.amazonaws.com/my-object-key`. The path part of a URL supports a [limited set of characters](https://stackoverflow.com/a/4669755) which, sadly, doesn't include our snowman. 
+The (modern) way that S3 supports GET requests is with an address like `https://my-bucket.s3.us-east-2.amazonaws.com/my-object-key`. The **path part** of a URL supports a [limited set of characters](https://stackoverflow.com/a/4669755) which, sadly, doesn't include our snowman. 
 
 Taking a URL like `https://example.com/foo/bar.baz`, the path part is `/foo/bar.baz` (note the leading slash), with `foo` and `bar.baz` being considered **path segments** (the bits between slashes). The limited set of characters referenced above refers to the path segments, meaning the complete set of characters that can be used in a path without being encoded includes the slashes between the segments as well. Any characters that need to be represented in a URL path which don't belong to the slash-including set must use [percent-encoding](https://developer.mozilla.org/en-US/docs/Glossary/percent-encoding) (e.g., `@` becomes `%40`, a space becomes `%20`).
 
