@@ -129,7 +129,7 @@ To demonstrate that second point, consider an S3 object called `Test/abc.mp3`, w
 
 It is generally not recommended to encode characters that are safe to use anywhere in a URL, which includes fewer characters than the path segment character set (only `A-Z`, `a-z`, `0-9`, `-`, `_`, `.`, `~`), but S3 allows you to do it when making HTTP requests. Also note that, as always, there's nothing special about `/` in these object keys; they can be encoded just like everything else. The leading slash on the URL path cannot be encoded, but remember that exists for the purpose of URL structure, and is not part of the object key represented _within_ the path.
 
-Let's go back and inspect that Object URL from the console. `$`, `&`, `+`, `,`, `;`, `=`, `:`, and `@` were encoded, even though based on the URL spec they should have been okay. As we just learned, the Object URL _could_ have encoded everything, but it chose to only encode these characters. It didn't encode everything not in the core set of URL safe characters, for example it left `(` and `)` alone. Curious.
+Let's go back and inspect that Object URL from the console. `$`, `&`, `+`, `,`, `;`, `=`, `:`, and `@` were encoded, even though the URL spec says they should have been okay. As we just learned, the Object URL _could_ have encoded every character in the object key, but it chose to only encode these characters. But it didn't encode everything not in the core set of URL safe characters (`/[\w\-.~/]/`), for example it left `(` and `)` alone. Curious.
 
 If we push on this a bit…
 
