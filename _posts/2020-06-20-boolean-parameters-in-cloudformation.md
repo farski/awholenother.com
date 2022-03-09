@@ -32,7 +32,7 @@ Resources:
   MyMediaBucket:
     Type: AWS::S3::Bucket
     Properties:
-      ObjectLockEnabled: 'true'
+      ObjectLockEnabled: "true"
 ```
 
 This makes it very easy to use a `String` template parameter to control `Boolean` resource properties:
@@ -63,8 +63,8 @@ Parameters:
   BucketObjectLockEnabled:
     Type: String
     AllowedValues:
-      - 'true'
-      - 'false'
+      - "true"
+      - "false"
 ```
 
 Interestingly, `AllowedValues` appears to resolve all possible YAML `bool` values to `"true"` and `"false"`. YAML allows for a number of different reserved words to act as bools: `y`, `yes`, `on`, `off`, `no`, etc. You can use any of those values within `AllowedValues`, and if you create a stack in the Console, the dropdown selector will always show `"true"` and `"false"`.
@@ -89,8 +89,8 @@ Parameters:
   BucketObjectLockEnabled:
     Type: String
     AllowedValues:
-      - 'yes'
-      - 'no'
+      - "yes"
+      - "no"
 ```
 
 ```yaml
@@ -99,7 +99,7 @@ Resources:
   MyMediaBucket:
     Type: AWS::S3::Bucket
     Properties:
-      ObjectLockEnabled: 'off'
+      ObjectLockEnabled: "off"
 ```
 
 If the idea of the YAML parser and CloudFormation messing with your value types makes you uncomfortable, there is always the option of dealing with values only in their native types. It's much more verbose, and does not appear to be necessary, but it is also a viable option.
