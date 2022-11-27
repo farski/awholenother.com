@@ -14,6 +14,8 @@ In [AWS Cost and Usage Reports](https://aws.amazon.com/aws-cost-management/aws-c
 
 - [Data dictionary](https://docs.aws.amazon.com/cur/latest/userguide/data-dictionary.html)
 
+_Note: this article assumes some familiarity with both the general structure of Cost and Usage Reports, and some fundamentals of AWS billing, such as blended vs. unblended costs._
+
 ## Types of line items
 
 ### lineItem/ProductCode – ComputeSavingsPlans
