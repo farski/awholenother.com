@@ -47,7 +47,6 @@ Resources:
       CodeUri: ./index.js
       Description: >-
         A useless function for a useless app.
-      Environment:
       Handler: index.handler
       MemorySize: 128
       Runtime: nodejs18.x
