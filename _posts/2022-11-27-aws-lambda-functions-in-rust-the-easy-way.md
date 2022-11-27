@@ -8,6 +8,8 @@ tags:
   - Rust
 ---
 
+<small>Reading time: 20 minutes</small>
+
 Deploying Rust code to an AWS Lambda function is a topic that has been written about before, but nothing approached it quite the way I was looking for. I have a lot of experience with AWS, Lambdas, and deploying things to AWS and Lambdas. I have pretty limited experience with Rust. But I've read a bunch of tutorials, and sort of understand the basics and can make it do some things. That's the level of Rust exposure this post assumes you have.
 
 Most of what I'm programming these days are web services: building APIs, or writing software that ties various APIs together. And nearly all of what I work on runs in the cloud. The best sandbox for me for learning Rust is a similar public cloud environment, where there are lots of different things to interact with (files, databases, queues, etc) readily available. For better or worse, I learn the fastest when I can learn it in the context of AWS.
