@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dewalt 20V Batteries
-date: 2022-12-14 15:49 -0400
+date: 2022-12-14 12:49 -0400
 tags:
   - Dewalt
   - Battery
