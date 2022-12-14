@@ -58,7 +58,7 @@ Most of this information probably only applies in the US or North America. Dewal
 			<td><a href="https://www.dewalt.com/product/dcb203/20v-max-compact-lithium-ion-battery-pack">DCB203</a></td>
 			<td>2.0 Ah</td>
 			<td>0.8 lbs.</td>
-			<td>Compcat</td>
+			<td>Compact</td>
 			<td></td>
 		</tr>
 		<tr>
@@ -66,7 +66,7 @@ Most of this information probably only applies in the US or North America. Dewal
 			<td><a href="https://www.dewalt.com/product/dcb203bt/20v-max-tool-connecttm-2ah-battery">DCB203BT</a></td>
 			<td>2.0 Ah</td>
 			<td>0.8 lbs.</td>
-			<td>Compcat, Bluetooth</td>
+			<td>Compact, Bluetooth</td>
 			<td></td>
 		</tr>
 		<tr>
