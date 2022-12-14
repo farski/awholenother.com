@@ -183,7 +183,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>FLEXVOLT</td>
-			<td><a href="https://www.dewalt.com/product/dcb609g/20v60v-max-flexvoltr-oil-resistant-90ah"-battery>DCB609G</a></td>
+			<td><a href="https://www.dewalt.com/product/dcb609g/20v60v-max-flexvoltr-oil-resistant-90ah-battery">DCB609G</a></td>
 			<td>9.0 Ah</td>
 			<td>3.45 lbs.</td>
 			<td>Oil-resilient</td>
