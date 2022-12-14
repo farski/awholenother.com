@@ -103,7 +103,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX XR</td>
-			<td><a href="https://www.dewalt.com/product/dcb204bt-2/20v-max-xr-lithium-ion-battery"-bluetooth-2-pk>DCB204BT</a></td>
+			<td><a href="https://www.dewalt.com/product/dcb204bt-2/20v-max-xr-lithium-ion-battery-bluetooth-2-pk">DCB204BT</a></td>
 			<td>4.0 Ah</td>
 			<td></td>
 			<td>Bluetooth</td>
