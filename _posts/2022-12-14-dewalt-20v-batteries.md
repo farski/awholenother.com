@@ -39,7 +39,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX</td>
-			<td><a href=https://www.dewalt.com/product/dcb201/20v-max-15ah-compact-battery>DCB201</a></td>
+			<td>[DCB201](https://www.dewalt.com/product/dcb201/20v-max-15ah-compact-battery)</td>
 			<td>1.5 Ah</td>
 			<td>0.77 lbs.</td>
 			<td>Compact</td>
@@ -47,7 +47,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V POWERSTACK</td>
-			<td><a href=https://www.dewalt.com/product/dcbp034/20v-max-dewalt-powerstacktm-compact-battery>DCBP034</a></td>
+			<td>[DCBP034](https://www.dewalt.com/product/dcbp034/20v-max-dewalt-powerstacktm-compact-battery)</td>
 			<td>1.7 Ah</td>
 			<td>0.7 lbs.</td>
 			<td>Compact</td>
@@ -55,7 +55,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX</td>
-			<td><a href=https://www.dewalt.com/product/dcb203/20v-max-compact-lithium-ion-battery-pack>DCB203</a></td>
+			<td>[DCB203](https://www.dewalt.com/product/dcb203/20v-max-compact-lithium-ion-battery-pack)</td>
 			<td>2.0 Ah</td>
 			<td>0.8 lbs.</td>
 			<td>Compcat</td>
@@ -63,7 +63,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX</td>
-			<td><a href=https://www.dewalt.com/product/dcb203bt/20v-max-tool-connecttm-2ah-battery>DCB203BT</a></td>
+			<td>[DCB203BT](https://www.dewalt.com/product/dcb203bt/20v-max-tool-connecttm-2ah-battery)</td>
 			<td>2.0 Ah</td>
 			<td>0.8 lbs.</td>
 			<td>Compcat, Bluetooth</td>
@@ -71,7 +71,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX</td>
-			<td><a href=https://www.dewalt.com/product/dcb203g/20v-max-oil-resistant-20ah-battery>DCB203G</a></td>
+			<td>[DCB203G](https://www.dewalt.com/product/dcb203g/20v-max-oil-resistant-20ah-battery)</td>
 			<td>2.0 Ah</td>
 			<td>0.95 lbs.</td>
 			<td>Compact, Oil-resilient</td>
@@ -79,7 +79,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX</td>
-			<td><a href=https://www.dewalt.com/product/dcb200/20v-max-3ah-battery>DCB200</a></td>
+			<td>[DCB200](https://www.dewalt.com/product/dcb200/20v-max-3ah-battery)</td>
 			<td>3.0 Ah</td>
 			<td>1.4 lbs.</td>
 			<td></td>
@@ -87,7 +87,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX</td>
-			<td><a href=https://www.dewalt.com/product/dcb230/20v-max-compact-3ah-battery>DCB230</a></td>
+			<td>[DCB230](https://www.dewalt.com/product/dcb230/20v-max-compact-3ah-battery)</td>
 			<td>3.0 Ah</td>
 			<td>1.15 lbs</td>
 			<td>Compact</td>
@@ -95,7 +95,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX XR</td>
-			<td><a href=https://www.dewalt.com/product/dcb204-2/20v-max-xrr-battery-2-pk>DCB204</a></td>
+			<td>[DCB204](https://www.dewalt.com/product/dcb204-2/20v-max-xrr-battery-2-pk)</td>
 			<td>4.0 Ah</td>
 			<td>1.42 lbs</td>
 			<td></td>
@@ -103,7 +103,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX XR</td>
-			<td><a href=https://www.dewalt.com/product/dcb204bt-2/20v-max-xr-lithium-ion-battery-bluetooth-2-pk>DCB204BT</a></td>
+			<td>[pka](https://www.dewalt.com/product/dcb204bt-2/20v-max-xr-lithium-ion-battery-bluetooth-2)></td>
 			<td>4.0 Ah</td>
 			<td></td>
 			<td>Bluetooth</td>
@@ -111,7 +111,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX XR</td>
-			<td><a href=https://www.dewalt.com/product/dcb205/20v-max-xrr-5ah-battery>DCB205</a></td>
+			<td>[DCB205](https://www.dewalt.com/product/dcb205/20v-max-xrr-5ah-battery)</td>
 			<td>5.0 Ah</td>
 			<td>1.4 lbs.</td>
 			<td></td>
@@ -119,7 +119,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX XR</td>
-			<td><a href=https://www.dewalt.com/product/dcb205bt/20v-max-tool-connecttm-5ah-battery>DCB205BT</a></td>
+			<td>[DCB205BT](https://www.dewalt.com/product/dcb205bt/20v-max-tool-connecttm-5ah-battery)</td>
 			<td>5.0 Ah</td>
 			<td>1.5 lbs.</td>
 			<td>Bluetooth</td>
@@ -127,7 +127,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX XR</td>
-			<td><a href=https://www.dewalt.com/product/dcb205btlr/20v-max-5ah-bt-battery-lanyard-ready>DCB205BTLR</a></td>
+			<td>[DCB205BTLR](https://www.dewalt.com/product/dcb205btlr/20v-max-5ah-bt-battery-lanyard-ready)</td>
 			<td>5.0 Ah</td>
 			<td>1.5 lbs.</td>
 			<td>Bluetooth, lanyard-ready</td>
@@ -135,7 +135,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX XR</td>
-			<td><a href=https://www.dewalt.com/product/dcb205g/20v-max-oil-resistant-50ah-battery>DCB205G</a></td>
+			<td>[DCB205G](https://www.dewalt.com/product/dcb205g/20v-max-oil-resistant-50ah-battery)</td>
 			<td>5.0 Ah</td>
 			<td>1.56 lbs.</td>
 			<td>Oil-resilient</td>
@@ -143,7 +143,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V POWERSTACK</td>
-			<td><a href=https://www.dewalt.com/product/dcbp520/20v-max-dewalt-powerstacktm-50-ah-battery>DCBP520</a></td>
+			<td>[DCBP520](https://www.dewalt.com/product/dcbp520/20v-max-dewalt-powerstacktm-50-ah-battery)</td>
 			<td>5.0 Ah</td>
 			<td>1.6 lbs.</td>
 			<td></td>
@@ -151,7 +151,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX XR</td>
-			<td><a href=https://www.dewalt.com/product/dcb206/20v-max-xrr-6ah-battery>DCB206</a></td>
+			<td>[DCB206](https://www.dewalt.com/product/dcb206/20v-max-xrr-6ah-battery)</td>
 			<td>6.0 Ah</td>
 			<td>2.0 lbs.</td>
 			<td></td>
@@ -159,7 +159,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>FLEXVOLT</td>
-			<td><a href=https://www.dewalt.com/product/dcb606/flexvoltr-2060v-max-battery-pack-60ah-2-pk>DCB606</a></td>
+			<td>[DCB606](https://www.dewalt.com/product/dcb606/flexvoltr-2060v-max-battery-pack-60ah-2-pk)</td>
 			<td>6.0 Ah</td>
 			<td>2.25 lbs.</td>
 			<td></td>
@@ -167,7 +167,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX XR</td>
-			<td><a href=https://www.dewalt.com/product/dcb208/20v-max-xrr-8ah-battery>DCB208</a></td>
+			<td>[DCB208](https://www.dewalt.com/product/dcb208/20v-max-xrr-8ah-battery)</td>
 			<td>8.0 Ah</td>
 			<td>2.0 lbs.</td>
 			<td></td>
@@ -175,7 +175,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>FLEXVOLT</td>
-			<td><a href=https://www.dewalt.com/product/dcb609/20v60v-max-flexvolt-90ah-battery>DCB609</a></td>
+			<td>[DCB609](https://www.dewalt.com/product/dcb609/20v60v-max-flexvolt-90ah-battery)</td>
 			<td>9.0 Ah</td>
 			<td>2.8 lbs.</td>
 			<td></td>
@@ -183,7 +183,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>FLEXVOLT</td>
-			<td><a href=https://www.dewalt.com/product/dcb609g/20v60v-max-flexvoltr-oil-resistant-90ah-battery>DCB609G</a></td>
+			<td>[batterya](https://www.dewalt.com/product/dcb609g/20v60v-max-flexvoltr-oil-resistant-90ah)></td>
 			<td>9.0 Ah</td>
 			<td>3.45 lbs.</td>
 			<td>Oil-resilient</td>
@@ -191,7 +191,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>20V MAX XR</td>
-			<td><a href=https://www.dewalt.com/product/dcb210/20v-max-xrr-100ah-lithium-ion-battery>DCB210</a></td>
+			<td>[DCB210](https://www.dewalt.com/product/dcb210/20v-max-xrr-100ah-lithium-ion-battery)</td>
 			<td>10.0 Ah</td>
 			<td>2.1 lbs.</td>
 			<td></td>
@@ -199,7 +199,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>FLEXVOLT</td>
-			<td><a href=https://www.dewalt.com/product/dcb612/flexvoltr-20v60v-max-120-ah-battery>DCB612</a></td>
+			<td>[DCB612](https://www.dewalt.com/product/dcb612/flexvoltr-20v60v-max-120-ah-battery)</td>
 			<td>12.0 Ah</td>
 			<td>3.0 lbs.</td>
 			<td></td>
@@ -207,7 +207,7 @@ Most of this information probably only applies in the US or North America. Dewal
 		</tr>
 		<tr>
 			<td>FLEXVOLT</td>
-			<td><a href=https://www.dewalt.com/product/dcb615/dewalt-flexvoltr-20v60v-max-150ah-battery>DCB615</a></td>
+			<td>[DCB615](https://www.dewalt.com/product/dcb615/dewalt-flexvoltr-20v60v-max-150ah-battery)</td>
 			<td>15.0 Ah</td>
 			<td>4.55 lbs.</td>
 			<td></td>
