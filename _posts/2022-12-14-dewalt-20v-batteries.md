@@ -25,7 +25,7 @@ The XR designation seems to simply indicate capacities over 3.0 Ah for the stand
 
 20V MAX packs use either 18650 or 21700 lithium cells. POWERSTACK batteries use a stack of lithium-polymer pouches. Whereas 20V MAX is used to describe both a line of tools and batttery, POWERSTACK is only a line of batteries compatible with the 20V MAX system of tools.
 
-Most of this information probably only applies in the US or North America. Dewalt branding and SKUs are different in other regions.
+Most of this information probably only applies in the US or North America. Dewalt branding and SKUs are different in other regions. Prices are based on common discount prices found at major retailers, and may reflect the price of a single battery from a multi-pack.
 
 <table style="font-size: 75%">
 	<tbody>
