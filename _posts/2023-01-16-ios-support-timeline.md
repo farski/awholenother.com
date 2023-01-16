@@ -67,10 +67,15 @@ tags:
 	[discontinued] td { border-top: 4px solid green; }
 
 	[prod] { border-bottom: 2px solid black; }
-	td:not([prod]) + [prod] { border-left: 2px solid black; }
-	[prod] + td:not([prod]) { border-left: 2px solid black; }
+	[prod] + td:not([prod]) { border-left: 4px solid black; }
 
-	[nosdk] { background: #666; }
+	[nosdk] { background: repeating-linear-gradient(
+    45deg,
+    #606dbc,
+    #606dbc 10px,
+    #465298 10px,
+    #465298 20px
+  ); }
 </style>
 
 Black lines indicate the production period. Colored areas indicate the support period for a major iOS version on a given device.
@@ -115,17 +120,8 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2011 -->
 			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			<!-- 2012 -->
-			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td nosdk></td><td nosdk></td><td nosdk></td><td nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
+			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+			<td nosdk colspan=124></td>
 		</tr>
 		<tr>
 			<td>iPhone 3G</td>
@@ -141,17 +137,8 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2011 -->
 			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			<!-- 2012 -->
-			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td nosdk></td><td nosdk></td><td nosdk></td><td nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
-			<td colspan=12 nosdk></td>
+			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+			<td nosdk colspan=124></td>
 		</tr>
 		<tr>
 			<td>iPhone 3GS</td>
@@ -169,6 +156,8 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<td v6 colspan=12></td>
 			<!-- 2014 -->
 			<td v6></td><td v6></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+			<td colspan=64></td>
+			<td nosdk colspan=32></td>
 		</tr>
 		<tr>
 			<td>iPhone 4</td>
@@ -184,6 +173,9 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<td v6></td><td v6></td><td v6></td><td></td><td></td><td></td><td></td><td></td><td v7 colspan=4>7</td>
 			<!-- 2014 -->
 			<td v7></td><td v7></td><td v7></td><td v7></td><td v7></td><td v7></td><td></td><td></td><td></td><td></td><td></td><td></td>
+			<!-- 2015 -->
+			<td colspan=64></td>
+			<td nosdk colspan=32></td>
 		</tr>
 		<tr>
 			<td>iPhone 4S</td>
