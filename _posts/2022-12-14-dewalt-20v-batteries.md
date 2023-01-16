@@ -32,7 +32,7 @@ POWERSTACK batteries use a stack of lithium-polymer pouches. Whereas 20V MAX is 
 Most of this information probably only applies in the US or North America. Dewalt branding and SKUs are different in other regions. Prices are based on common discount prices found at major retailers, and may reflect the price of a single battery from a multi-pack.
 
 <table style="font-size: 75%; width: 100vw; margin-left: 50%; transform: translateX(-50%);">
-	<tbody>
+	<thead>
 		<tr>
 			<th></th>
 			<th>SKU</th>
@@ -42,6 +42,8 @@ Most of this information probably only applies in the US or North America. Dewal
 			<th>Features</th>
 			<th>Notes</th>
 		</tr>
+	</thead>
+	<tbody>
 		<tr>
 			<td>20V MAX</td>
 			<td>
