@@ -43,6 +43,13 @@ tags:
 	table td { padding: 0; border: 0; }
 	table td:first-child { padding: 3px 8px; }
 
+	table td[data-version]::after {
+		content: attr(data-version);
+		font-weight: bold;
+		padding: 5px;
+	}
+	table td[data-version][v6]::after, table td[data-version][v14]::after { color: white; }
+
 	[v1] { background: var(--ios-1); }
 	[v2] { background: var(--ios-2); }
 	[v3] { background: var(--ios-3); }
@@ -113,11 +120,11 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<td>iPhone</td>
 			<td title=ARMv6>"A1"</td>
 			<!-- 2007 -->
-			<td></td><td></td><td></td><td></td><td></td><td v1 prod colspan=7>1</td>
+			<td></td><td></td><td></td><td></td><td></td><td v1 prod colspan=7 data-version=1></td>
 			<!-- 2008 -->
-			<td v1 prod></td><td v1 prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod v2></td><td v2 colspan=5>2</td>
+			<td v1 prod></td><td v1 prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod v2></td><td v2 colspan=5 data-version=2></td>
 			<!-- 2009 -->
-			<td v2></td><td></td><td></td><td></td><td></td><td v3 colspan=7>3</td>
+			<td v2></td><td></td><td></td><td></td><td></td><td v3 colspan=7 data-version=3></td>
 			<!-- 2010 -->
 			<td v3></td><td v3></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			<!-- 2011 -->
@@ -136,7 +143,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2009 -->
 			<td v2 prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod v3></td><td prod v3></td><td prod v3></td><td prod v3></td><td prod v3></td><td prod v3></td><td prod v3></td>
 			<!-- 2010 -->
-			<td prod v3></td><td prod v3></td><td prod></td><td prod></td><td prod></td><td prod v4></td><td v4 colspan=5>4</td><td></td>
+			<td prod v3></td><td prod v3></td><td prod></td><td prod></td><td prod></td><td prod v4></td><td v4 colspan=5 data-version=4></td><td></td>
 			<!-- 2011 -->
 			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			<!-- 2012 -->
@@ -152,9 +159,9 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2010 -->
 			<td prod v3></td><td prod v3></td><td prod></td><td prod></td><td prod></td><td prod v4></td><td prod v4></td><td prod v4></td><td prod v4></td><td prod v4></td><td prod v4></td><td prod></td>
 			<!-- 2011 -->
-			<td prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod v5 colspan=3>5</td>
+			<td prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod v5 colspan=3 data-version=5></td>
 			<!-- 2012 -->
-			<td prod v5></td><td prod v5></td><td prod v5></td><td prod v5></td><td prod v5></td><td prod></td><td prod></td><td prod></td><td prod v6></td><td v6 colspan=3>6</td>
+			<td prod v5></td><td prod v5></td><td prod v5></td><td prod v5></td><td prod v5></td><td prod></td><td prod></td><td prod></td><td prod v6></td><td v6 colspan=3 data-version=6></td>
 			<!-- 2013 -->
 			<td v6 colspan=12></td>
 			<!-- 2014 -->
@@ -173,7 +180,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2012 -->
 			<td v5></td><td v5></td><td v5></td><td v5></td><td v5></td><td></td><td></td><td></td><td v6></td><td v6></td><td v6></td><td v6></td>
 			<!-- 2013 -->
-			<td v6></td><td v6></td><td v6></td><td></td><td></td><td></td><td></td><td></td><td v7 colspan=4>7</td>
+			<td v6></td><td v6></td><td v6></td><td></td><td></td><td></td><td></td><td></td><td v7 colspan=4 data-version=7></td>
 			<!-- 2014 -->
 			<td v7></td><td v7></td><td v7></td><td v7></td><td v7></td><td v7></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			<!-- 2015 -->
@@ -191,9 +198,9 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2013 -->
 			<td prod v6></td><td prod v6></td><td prod v6></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod></td><td prod v7></td><td prod v7></td><td prod v7></td><td prod v7></td>
 			<!-- 2014 -->
-			<td prod v7></td><td prod v7></td><td prod v7></td><td prod v7></td><td prod v7></td><td prod v7></td><td prod></td><td prod></td><td prod v8 colspan=4>8</td>
+			<td prod v7></td><td prod v7></td><td prod v7></td><td prod v7></td><td prod v7></td><td prod v7></td><td prod></td><td prod></td><td prod v8 colspan=4 data-version=8></td>
 			<!-- 2015 -->
-			<td prod v8></td><td prod v8></td><td prod v8></td><td prod v8></td><td prod v8></td><td prod v8></td><td prod v8></td><td prod v8></td><td prod v9 colspan=4>9</td>
+			<td prod v8></td><td prod v8></td><td prod v8></td><td prod v8></td><td prod v8></td><td prod v8></td><td prod v8></td><td prod v8></td><td prod v9 colspan=4 data-version=9></td>
 			<!-- 2016 -->
 			<td prod v9></td><td prod v9></td><td prod v9></td><td prod v9></td><td prod v9></td><td prod v9></td><td prod v9></td><td prod v9></td><td prod v9></td><td prod v9></td><td prod v9></td><td prod v9></td>
 			<!-- 2017 -->
@@ -216,7 +223,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2015 -->
 			<td v8></td><td v8></td><td v8></td><td v8></td><td v8></td><td v8></td><td v8></td><td v8></td><td v9></td><td v9></td><td v9></td><td v9></td>
 			<!-- 2016 -->
-			<td v9></td><td v9></td><td v9></td><td v9></td><td v9></td><td v9></td><td v9></td><td v9></td><td v10 colspan=4>10</td>
+			<td v9></td><td v9></td><td v9></td><td v9></td><td v9></td><td v9></td><td v9></td><td v9></td><td v10 colspan=4 data-version=10></td>
 			<!-- 2017 -->
 			<td v10 colspan=12></td>
 			<!-- 2018 -->
@@ -252,9 +259,9 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2016 -->
 			<td prod v9></td><td prod v9></td><td prod v9></td><td v9></td><td v9></td><td v9></td><td v9></td><td v9></td><td v10></td><td v10></td><td v10></td><td v10></td>
 			<!-- 2017 -->
-			<td v10></td><td v10></td><td v10></td><td v10></td><td v10></td><td v10></td><td v10></td><td></td><td v11 colspan=4>11</td>
+			<td v10></td><td v10></td><td v10></td><td v10></td><td v10></td><td v10></td><td v10></td><td></td><td v11 colspan=4 data-version=11></td>
 			<!-- 2018 -->
-			<td v11></td><td v11></td><td v11></td><td v11></td><td v11></td><td v11></td><td v11></td><td></td><td v12 colspan=4>12</td>
+			<td v11></td><td v11></td><td v11></td><td v11></td><td v11></td><td v11></td><td v11></td><td></td><td v12 colspan=4 data-version=12></td>
 			<!-- 2019 -->
 			<td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td>
 			<!-- 2020 -->
@@ -304,11 +311,11 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2018 -->
 			<td prod v11></td><td prod v11></td><td prod v11></td><td prod v11></td><td prod v11></td><td prod v11></td><td prod v11></td><td prod></td><td prod v12></td><td v12></td><td v12></td><td v12></td>
 			<!-- 2019 -->
-			<td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v13 colspan=4>13</td>
+			<td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v12></td><td v13 colspan=4 data-version=13></td>
 			<!-- 2020 -->
-			<td v13></td><td v13></td><td v13></td><td v13></td><td v13></td><td v13></td><td v13></td><td v13></td><td v13 v14></td><td v14 colspan=3>14</td>
+			<td v13></td><td v13></td><td v13></td><td v13></td><td v13></td><td v13></td><td v13></td><td v13></td><td v13 v14></td><td v14 colspan=3 data-version=14></td>
 			<!-- 2021 -->
-			<td v14></td><td v14></td><td v14></td><td v14></td><td v14></td><td v14></td><td v14></td><td v14></td><td v14 v15></td><td v14 v15></td><td v15 colspan=2>15</td>
+			<td v14></td><td v14></td><td v14></td><td v14></td><td v14></td><td v14></td><td v14></td><td v14></td><td v14 v15></td><td v14 v15></td><td v15 colspan=2 data-version=15></td>
 			<!-- 2022 -->
 			<td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td>
 			<!-- 2023 -->
