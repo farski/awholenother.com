@@ -20,7 +20,7 @@ _Note: this article assumes some familiarity with both the general structure of 
 
 ### lineItem/ProductCode – ComputeSavingsPlans
 
-There will be line items with a **lineItem/ProductCode** of `ComputeSavingsPlans` for each savings plan in your inventory for each period covered by the report (i.e., each day for daily reports, each hour for hourly reports). So if you have one savings plan, there will be one `ComputeSavingsPlans` line item per period. If you have 10 savings plans, there will be 10 `ComputeSavingsPlans` line items. These lines exist even for periods in the future, and values are updated over time as new reports are generated.
+There will be line items with a **lineItem/ProductCode** of `ComputeSavingsPlans` for each savings plan in your inventory for each period covered by the report (i.e., each day for daily reports, each hour for hourly reports). So if you have one savings plan, there will be one `ComputeSavingsPlans` line item per period. If you have 10 savings plans, there will be 10 `ComputeSavingsPlans` line items. These lines exist even for periods in the future, and the values are updated over time as newer reports are generated.
 
 The details of these line items will vary depending on the plans’ payment options. AllUpfront plans will have blended and unblended costs of $0 (since they were already paid for, and have no further actual impact on the bill). Plans with other payment options will contribute real costs to the bill each period, and the blended and unblended costs for their line items will reflect that.
 
