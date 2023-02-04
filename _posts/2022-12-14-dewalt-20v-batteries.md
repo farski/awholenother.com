@@ -21,7 +21,7 @@ POWERSTACK battery SKUs begin with `DCBP…`. Even with only two items in the PO
 
 20V MAX batteries _tend_ to use `DCB2XX`, where `XX` is the capacity, but there are several exceptions.
 
-The XR designation seems to simply indicate capacities over 3.0 Ah for the standard 20V MAX product line. 20V MAX and 20V MAX XR are not otherwise different. The XR designation is not used with the POWERSTACK or FLEXVOLT lines, even when capacity exceed 3.0 Ah.
+The XR designation seems to simply indicate capacities over 3.0 Ah for the standard 20V MAX product line. 20V MAX and 20V MAX XR are not otherwise different. The XR designation is not used with the POWERSTACK or FLEXVOLT lines, even when capacity exceeds 3.0 Ah.
 
 20V MAX packs use either 18650 or 21700 lithium cells. Some packs that currently use 21700 cells may have previously used 20700 cells with the same SKU. I believe all 20700 cells have been phased out. 21700 variants will generally have metal heat sink tabs on top, and the 20700 variants will not.
 
