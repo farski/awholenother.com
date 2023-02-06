@@ -34,14 +34,13 @@ The costs after the plan discount is applied may indicate a cost that has alread
 
 ### lineItem/LineItemType – SavingsPlanNegation
 
-Some or all of the costs indicated in each `SavingsPlanCoveredUsage` line item are offset with a `SavingsPlanNegation` line item, which has a negative cost. A single `SavingsPlanNegation` line items may offset costs from multiple `SavingsPlanCoveredUsage` line items.
+Some or all of the costs indicated in each `SavingsPlanCoveredUsage` line item are offset with a `SavingsPlanNegation` line item, which has a negative cost. A single `SavingsPlanNegation` line item may offset costs from multiple `SavingsPlanCoveredUsage` line items.
 
-For example, `SavingsPlanCoveredUsage` line item for a NoUpfront plan may show an on-demand cost of $100, and a discounted cost of $75. The $25 difference would appear as a `SavingsPlanNegation` line item with a `-25` cost, resulting in $75 real billed cost. For an AllUpfront savings plan, the `SavingsPlanNegation` cost would be `-100`, since the usage wouldn't add any real costs to the current bill, since it was pre-paid.
-
+For example, a `SavingsPlanCoveredUsage` line item for a NoUpfront plan may show an on-demand cost of $100, and a discounted cost of $75. The $25 difference would appear as a `SavingsPlanNegation` line item with a `-25` cost, resulting in $75 real billed cost. For an AllUpfront savings plan, the `SavingsPlanNegation` cost would be `-100`, since the usage wouldn't add any real costs to the current bill, since it was pre-paid.
 
 ## Savings Plan utilization
 
-The only line items needed to calculate savings plan utilization from a CUR are those where **lineItem/ProductCode** product code is `ComputeSavingsPlans` and the **lineItem/LineItemType** is `SavingsPlanRecurringFee`. And the only columns needed from these line items are **savingsPlan/UsedCommitment** and **savingsPlan/TotalCommitmentToDate**.
+The only line items needed to calculate savings plan utilization from a CUR are those where **lineItem/ProductCode** is `ComputeSavingsPlans` and the **lineItem/LineItemType** is `SavingsPlanRecurringFee`. And the only columns needed from these line items are **savingsPlan/UsedCommitment** and **savingsPlan/TotalCommitmentToDate**.
 
 > _**Note:** the **TotalCommitmentToDate** column is the sum of the **AmortizedUpfrontCommitmentForBillingPeriod** and **RecurringCommitmentForBillingPeriod** columns. Whether commitment is recurring or amortized for each line item depends on its payment option, but the distinction is irrelevant in this case._
 
@@ -82,15 +81,19 @@ And set the field wells to:
 
 ## Savings plan coverage
 
-Calculating coverage rate for savings plans looks very different than utilization rate. Instead of looking at the `ComputeSavingsPlans` line items, we have to look at the individual service usage line items, like those for EC2 instance hours, or Lambda memory-duration.
+Whereas utilization rates told us the degree to which existing savings plans were able to reduce costs, coverage rates tell us where we're spending money that could be covered by a savings plan **but isn't**.
+
+Calculating the coverage rate for savings plans looks very different than utilization rate. Instead of looking at the `ComputeSavingsPlans` line items, we have to look at the individual service usage line items, like those for EC2 instance hours, or Lambda memory-duration.
 
 For each service, the CUR will include separate line items for usage that was covered by a savings plan and usage that wasn't (i.e., on-demand usage). By comparing the costs of these two types of line items, we can determine what portion of total spend was covered by a saving plan.
 
 Line items for usage that was acutally billed at on-demand rates will have a **lineItem/LineItemType** of `Usage`. For these lines, the **lineItem/BlendedCost** will be the billed amount for the resource usage.
 
-Line items for usage that was covered by a savings plan will have a **lineItem/LineItemType** of `SavingsPlanCoveredUsage`. These lines will include a **lineItem/BlendedCost**, but it will represent the on-demand cost of that usage **if it hadn't** been covered by a savings plan. The **savingsPlan/SavingsPlanEffectiveCost** column provides the cost of that usage after the savings plan is applied.
+Line items for usage that was covered by a savings plan will have a **lineItem/LineItemType** of `SavingsPlanCoveredUsage`. These lines will include a **lineItem/BlendedCost**, but it‘ll represent the on-demand cost of that usage **if it hadn't** been covered by a savings plan. The **savingsPlan/SavingsPlanEffectiveCost** column provides the cost of that usage after the savings plan is applied (i.e., what you actually paid).
 
-For a given period, to determine the savings plan coverage you would take the total cost of all savings plan-eligible resource, and figure out what percent of that value only the savings plan covered line items makes up. By convention, this calculation is done with the **lineItem/BlendedCost** of both on-demand and discount line items. In this way, if you have $150 of on-demand usage, and some savings plan-covered usage that had an effective cost of $200 but an uncovered cost of $250, the calculation would be `250 / (150 + 250) = 0.625`, for a coverage rate of 62.5%. Which is to say, the coverage rate is based on the on-demand pricing of all resources, even those actually covered by savings plans.
+For a given period, to determine the savings plan coverage you would take the total cost of all savings plan-eligible resources, and figure out what percent of that total was made up of line items that were covered by savings plans. By convention, this calculation is done with the **lineItem/BlendedCost** of both on-demand and discount line items. In this way, if you have $150 of on-demand usage, and some savings plan-covered usage that had an effective cost of $200 (after the discount) but an uncovered cost of $250, the calculation would be `250 / (150 + 250) = 0.625`, for a coverage rate of 62.5%. Which is to say, the coverage rate is based on the on-demand pricing of all resources, even those actually covered by savings plans. The $200 actual cost value does not affect the coverage rate calculation.
+
+(There are perhaps other ways of caluculating coverage rates, such looking at usage rather than costs. But using on-demand cost as the point of comparison aligns with AWS.)
 
 ### QuickSight
 
