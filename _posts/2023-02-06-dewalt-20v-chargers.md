@@ -34,6 +34,14 @@ The listed current is a maximum. When charging certain batteries, particularly o
 	</thead>
 	<tbody>
 		<tr>
+			<td>DCB106</td>
+			<td>1.25 A</td>
+			<td>•</td>
+			<td>•</td>
+			<td>•</td>
+			<td></td>
+		</tr>
+		<tr>
 			<td>DCB107</td>
 			<td>1.25 A</td>
 			<td>•</td>
@@ -56,6 +64,14 @@ The listed current is a maximum. When charging certain batteries, particularly o
 			<td>•</td>
 			<td>•</td>
 			<td>Released in 2022</td>
+		</tr>
+		<tr>
+			<td>DCB113</td>
+			<td>3.0 A</td>
+			<td>•</td>
+			<td>•</td>
+			<td>•</td>
+			<td></td>
 		</tr>
 		<tr>
 			<td><a href="https://www.dewalt.com/product/dcb101/12v-max-20v-max-lithium-ion-battery-charger">DCB101</a></td>
