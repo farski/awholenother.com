@@ -2,13 +2,12 @@
 layout: post
 title: AWS Lambda functions in Rust the easy way
 date: 2022-11-27 14:57 -0400
+reading_time: 20 minutes
 tags:
   - AWS
   - Lambda
   - Rust
 ---
-
-<small>Reading time: 20 minutes</small>
 
 Deploying Rust code to an AWS Lambda function is a topic that has been written about before, but nothing approached it quite the way I was looking for. I have a lot of experience with AWS, Lambdas, and deploying things to AWS and Lambdas. I have pretty limited experience with Rust. But I've read a bunch of tutorials, and sort of understand the basics and can make it do some things. That's the level of Rust exposure this post assumes you have.
 
@@ -18,7 +17,7 @@ To that end, I wanted to have something that allowed me to write and deploy Rust
 
 The goal is to get as close to that workflow for Rust as possible, and it turns out we can get pretty close, even though the two ecosystems are quite different.
 
-> There are many differnt ways to deploy code to Lambda functions or other serverless platforms, and I suspect many could provide a similar developer experience. AWS CloudFormation and AWS SAM are the systems I'm most familiar with, which is why I'm focusing on them.
+<aside>There are many different ways to deploy code to Lambda functions or other serverless platforms, and I suspect many could provide a similar developer experience. AWS CloudFormation and AWS SAM are the systems I'm most familiar with, which is why I'm focusing on them.</aside>
 
 ## Node.js
 
@@ -28,14 +27,14 @@ We'd start by creating a code file which, by convention, would be called `index.
 
 ```javascript
 export const handler = async (event, context) => {
-	return { event, context }
+	return { event, context };
 };
 ```
 
 Next, we'd create a SAM template (generally named `template.yml`), which includes the defintion of the Lambda function we want to deploy into AWS.
 
 ```yaml
-AWSTemplateFormatVersion: "2010-09-09"
+AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: This template deploys a pretty useless serverless application
 
@@ -261,7 +260,7 @@ We're now less than 10 lines of code away from being able to `sam build && sam d
 We can take the CloudFormation template from the original Node.js example, and make a few small changes to tailor it to our Rust example. Those changes are commented inline below.
 
 ```yaml
-AWSTemplateFormatVersion: "2010-09-09"
+AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: This template deploys a working Rust-based Lambda function
 
@@ -278,7 +277,7 @@ Resources:
       Environment:
         Variables:
           # Enables backtrace output when the app panics (for debugging)
-          RUST_BACKTRACE: "1"
+          RUST_BACKTRACE: '1'
           # Sets the log level that will make it through the filter we
           # set using with_env_filter()
           RUST_LOG: info

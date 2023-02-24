@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang=en>
+	<head>
+		<meta name=viewport content="width=device-width, initial-scale=1">
+
+		<!-- <link rel=icon href=/favicon.ico sizes=any>
+		<link rel=icon href="/favicon.svg" type="image/svg+xml"> -->
+
+		<meta charset=UTF-8>
+		<meta property=og:locale content=en_US>
+
+		<title>{{ page.title }} – awholenother</title>
+		<meta property=og:title content="{{ page.title }} – awholenother">
+
+		<link rel=stylesheet href=/css/css.css>
+
+		<meta name=description content="Page description">
+		<meta property=og:description content="Page description">
+
+		<meta property=og:type content=article>
+		<meta property=og:url content="https://www.mywebsite.com/page">
+		<link rel=canonical href="https://www.mywebsite.com/page">
+	</head>
+
+	<body class=column>
+		<header>
+
+		</header>
+
+		<main>
+			<article>
+				<h1>{{ page.title }}</h1>
+
+				{% if page.update %}
+				<p class=dateline title="Originally published on {{ page.date | date: "%A, %-d %B %Y" }}">
+					Last <a href="https://github.com/farski/awholenother.com/blame/master/{{ page.path }}">updated</a> <time datetime='{{ page.update | date: "%FT%T%:z" }}'>{{ page.update | date: "%B %Y" }}</time>.
+				</p>
+				{% else %}
+				<p class=dateline>Published on <time datetime='{{ page.date | date: "%FT%T%:z" }}'>{{ page.date | date: "%A, %-d %B %Y" }}</time>.</p>
+				{% endif %}
+
+				{% if page.reading_time %}<small>Reading time: {{ page.reading_time }}</small>{% endif %}
+
+				{{ content }}
+
+				<footer>
+					<a href="https://github.com/farski/awholenother.com/blame/master/{{ page.path }}">Article history</a>
+				</footer>
+			</article>
+		</main>
+
+		<footer>
+			page footer
+		</footer>
+	</body>
+</html>

@@ -2,13 +2,12 @@
 layout: post
 title: Calculating Savings Plan utilization and coverage from AWS Cost and Usage Reports
 date: 2021-11-26 16:10 -0500
+reading_time: 20 minutes
 tags:
   - AWS
   - Billing
   - Cost and Usage Reports
 ---
-
-<small>Reading time: 20 minutes</small>
 
 In [AWS Cost and Usage Reports](https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/), the accounting of [savings plans](https://aws.amazon.com/savingsplans/) and the usage that is or is not covered by those plans can be a little tricky. There are a number of different [line items](https://docs.aws.amazon.com/cur/latest/userguide/cur-sp.html#cur-sp-lineitems) that collectively provide a complete picture of actual usage, how the cost of that usage is affected by savings plans, and how the bill is affected by those costs.
 
@@ -50,7 +49,7 @@ The **TotalCommitmentToDate** value is a fixed value based on the hourly commitm
 
 The **UsedCommitment** value represents how much spend was _actually_ covered by the particular savings plan represented in that line item. It reflects the value of usage during the line item's period, regardless of when the cost shows up on a bill (i.e., it's not skewed by upfront costs). The closer this value gets to the **TotalCommitmentToDate** value, the higher the utilization of the savings plan.
 
-Consider a scenario where you have a savings plan with a $0.75 hourly commitment, in a daily CUR, this would appear as line items with a fixed **TotalCommitmentToDate** value of `18` per line (0.75 * 24 = 18). Assume this is your only savings plan.
+Consider a scenario where you have a savings plan with a $0.75 hourly commitment, in a daily CUR, this would appear as line items with a fixed **TotalCommitmentToDate** value of `18` per line (0.75 \* 24 = 18). Assume this is your only savings plan.
 
 If there was a day where your account used no savings plan-eligible resources (i.e., no EC2 intances, no Lambda invocations, and no Fargate tasks), the **TotalCommitmentToDate** for that day's line item would be `18` (because it's a fixed value), and the **UsedCommitment** would be `0`, since there were no resource costs that could be covered by the commitment. This would be a utilization rate of 0%, which can be calcualted with `UsedCommitment / TotalCommitmentToDate`, or `0 / 18 = 0`.
 

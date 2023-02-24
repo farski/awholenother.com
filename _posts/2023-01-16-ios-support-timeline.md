@@ -2,6 +2,7 @@
 layout: post
 title: iOS Support Timeline
 date: 2023-01-15 07:21 -0400
+update: 2023-01-27 08:09 -0400
 tags:
   - Apple
   - iOS
@@ -84,8 +85,6 @@ tags:
     #465298 20px
   ); }
 </style>
-
-**Last updated January 2023.**
 
 Black lines indicate the production period. Colored areas indicate the support period for a major iOS version on a given device. Striped bands show when a device's newest OS was no longer compatible with apps submitted to the App Store (WIP).
 

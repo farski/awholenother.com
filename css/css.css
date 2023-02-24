@@ -1,0 +1,69 @@
+@media (prefers-color-scheme: light) {
+	:root {
+		--pg-background-color: #f0f1f2;
+		--pg-color: #393e41;
+		--link-color: #3d75b0;
+		--aside-rail-color: #333;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--pg-background-color: #1a1b1c;
+		--pg-color: #e1ebed;
+		--link-color: #4c98fc;
+		--aside-rail-color: #aaa;
+	}
+}
+
+:root {
+	background-color: var(--pg-background-color);
+	color: var(--pg-color);
+	font-family: system-ui;
+	font-size: 1.25em;
+}
+
+.column article {
+	margin: 0 auto;
+	max-width: 700px;
+}
+
+a {
+	color: var(--link-color);
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: 500;
+	letter-spacing: -0.02em;
+	line-height: 105%;
+}
+
+p {
+	line-height: 150%;
+	margin-block-end: 1.5em;
+}
+
+article h1 {
+	margin-block-end: 0;
+}
+
+article .dateline {
+	font-size: 0.8rem;
+	margin-block-end: 4em;
+	margin-block-start: 0.25em;
+}
+
+article .dateline a {
+	border-bottom: 1px var(--pg-color) dotted;
+	color: var(--pg-color);
+	text-decoration: none;
+}
+
+article aside {
+	border-left: var(--aside-rail-color) 10px solid;
+	font-size: 0.85rem;
+	font-style: italic;
+	line-height: 133%;
+	padding-inline-start: 1em;
+}

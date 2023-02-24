@@ -2,12 +2,11 @@
 layout: post
 title: Too many words on S3 object naming & access
 date: 2021-02-01 18:32 -0400
+reading_time: 15 minutes
 tags:
   - AWS
   - S3
 ---
-
-<small>Reading time: 15 minutes</small>
 
 Amazon S3 is fairly old in cloud years, so it’s not without it historical quirks and dark corners. But when it comes to object naming, things are pretty straightforward: [“You can use any UTF-8 character in an object key name“](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-key-guidelines). This is true, as far as I know, without exception. There are no restricted characters, no magic sequences, and no character is treated differently than any other character.
 
@@ -35,9 +34,9 @@ The S3 documentation even [includes a guide](https://docs.aws.amazon.com/AmazonS
 
 Consider a couple of the cautionary notices from that guide:
 
->If an object key name ends with a single period (.), or two periods (..), you can’t download the object using the Amazon S3 console.
+> If an object key name ends with a single period (.), or two periods (..), you can’t download the object using the Amazon S3 console.
 
-> Avoid the following characters in a key name because of significant special handling for consistency across all applications.  [Including:] Left curly brace (“{”)
+> Avoid the following characters in a key name because of significant special handling for consistency across all applications. [Including:] Left curly brace (“{”)
 
 As you’d hopefully expect by now, if you finesse the APIs and SDKs enough, you can of course do all the things it’s telling you not to. Sometimes you need to get creative with getting files in or out of S3, it all depends on the particulars of the environment. With the Boto3 Python library, no finessing is needed to create objects for these two cases.
 
@@ -179,8 +178,16 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: simple-name-01
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/simple-name-01' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{
+		Key: '🆕',
+		Bucket: 'acme-assets',
+		CopySource: 'acme-assets/simple-name-01',
+	},
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👍
@@ -189,8 +196,16 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: simple/name/01
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/simple/name/01' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{
+		Key: '🆕',
+		Bucket: 'acme-assets',
+		CopySource: 'acme-assets/simple/name/01',
+	},
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👍
@@ -199,8 +214,16 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: simple/name/01
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/simple%2Fname%2F01' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{
+		Key: '🆕',
+		Bucket: 'acme-assets',
+		CopySource: 'acme-assets/simple%2Fname%2F01',
+	},
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👍
@@ -209,8 +232,16 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: simple-name-01
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets%2Fsimple-name-01' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{
+		Key: '🆕',
+		Bucket: 'acme-assets',
+		CopySource: 'acme-assets%2Fsimple-name-01',
+	},
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👍
@@ -219,8 +250,12 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: ☃️
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/☃️' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{ Key: '🆕', Bucket: 'acme-assets', CopySource: 'acme-assets/☃️' },
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👎 This is expected to fail, and does with an `Invalid character in header content` error.
@@ -229,8 +264,16 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: ☃️
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/%E2%98%83%EF%B8%8F' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{
+		Key: '🆕',
+		Bucket: 'acme-assets',
+		CopySource: 'acme-assets/%E2%98%83%EF%B8%8F',
+	},
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👍
@@ -239,8 +282,12 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: bagel day
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/bagel day' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{ Key: '🆕', Bucket: 'acme-assets', CopySource: 'acme-assets/bagel day' },
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👍 This works, surprisingly
@@ -249,8 +296,12 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: bagel day
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/bagel%20day' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{ Key: '🆕', Bucket: 'acme-assets', CopySource: 'acme-assets/bagel%20day' },
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👍
@@ -259,8 +310,12 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: bagel day
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/bagel+day' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{ Key: '🆕', Bucket: 'acme-assets', CopySource: 'acme-assets/bagel+day' },
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👍 Not too surprising that this works, based on what we saw earlier with HTTP URLs, but non-standard as far URL encoding goes
@@ -269,8 +324,12 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: fancy:name
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/fancy:name' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{ Key: '🆕', Bucket: 'acme-assets', CopySource: 'acme-assets/fancy:name' },
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👍
@@ -279,8 +338,12 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: scary#name
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/scary#name' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{ Key: '🆕', Bucket: 'acme-assets', CopySource: 'acme-assets/scary#name' },
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👍 This works, surprisingly
@@ -289,8 +352,12 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: scary%name
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/scary%name' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{ Key: '🆕', Bucket: 'acme-assets', CopySource: 'acme-assets/scary%name' },
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👎 Fails with `Invalid copy source encoding` error
@@ -299,8 +366,12 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: this+that
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/this+that' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{ Key: '🆕', Bucket: 'acme-assets', CopySource: 'acme-assets/this+that' },
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👎 Fails with `key does not exist` error (because S3 is looking for `this that`)
@@ -309,8 +380,12 @@ Let’s throw some things at the wall and see what sticks. For all of these exam
 
 ```javascript
 // Source object key: this+that
-(new (require('aws-sdk')).S3({ apiVersion: '2006-03-01' })).copyObject({ Key: '🆕', Bucket: 'acme-assets',
-  CopySource: 'acme-assets/this%2Bthat' }, (data, error) => { console.log(JSON.stringify(data||error)); });
+new (require('aws-sdk').S3)({ apiVersion: '2006-03-01' }).copyObject(
+	{ Key: '🆕', Bucket: 'acme-assets', CopySource: 'acme-assets/this%2Bthat' },
+	(data, error) => {
+		console.log(JSON.stringify(data || error));
+	},
+);
 ```
 
 👍
