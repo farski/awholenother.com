@@ -2,6 +2,7 @@
 layout: post
 title: AWS Lambda functions in Rust the easy way
 date: 2022-11-27 14:57 -0400
+update: 2023-03-01 07:34 -0500
 tags:
   - AWS
   - Lambda
@@ -9,6 +10,10 @@ tags:
 ---
 
 <small>Reading time: 20 minutes</small>
+
+**Update:** As of March 2023, the AWS SAM CLI now offers [native support](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/building-rust.html) for building Rust-based Lambda functions. The underlying mechanisms are largely the same as what is described in this post, but `BuildMethod: makefile` has been replaced with `BuildMethod: rust-cargolambda`. I haven't had a chance to try this yet. Once I do, I will update the post to reflect this new functionality. The Rust code described in the post is still accurate.
+
+<hr>
 
 Deploying Rust code to an AWS Lambda function is a topic that has been written about before, but nothing approached it quite the way I was looking for. I have a lot of experience with AWS, Lambdas, and deploying things to AWS and Lambdas. I have pretty limited experience with Rust. But I've read a bunch of tutorials, and sort of understand the basics and can make it do some things. That's the level of Rust exposure this post assumes you have.
 
@@ -28,14 +33,14 @@ We'd start by creating a code file which, by convention, would be called `index.
 
 ```javascript
 export const handler = async (event, context) => {
-	return { event, context }
+	return { event, context };
 };
 ```
 
 Next, we'd create a SAM template (generally named `template.yml`), which includes the defintion of the Lambda function we want to deploy into AWS.
 
 ```yaml
-AWSTemplateFormatVersion: "2010-09-09"
+AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: This template deploys a pretty useless serverless application
 
@@ -261,7 +266,7 @@ We're now less than 10 lines of code away from being able to `sam build && sam d
 We can take the CloudFormation template from the original Node.js example, and make a few small changes to tailor it to our Rust example. Those changes are commented inline below.
 
 ```yaml
-AWSTemplateFormatVersion: "2010-09-09"
+AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: This template deploys a working Rust-based Lambda function
 
@@ -278,7 +283,7 @@ Resources:
       Environment:
         Variables:
           # Enables backtrace output when the app panics (for debugging)
-          RUST_BACKTRACE: "1"
+          RUST_BACKTRACE: '1'
           # Sets the log level that will make it through the filter we
           # set using with_env_filter()
           RUST_LOG: info
