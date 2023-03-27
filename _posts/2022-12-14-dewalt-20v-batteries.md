@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dewalt 20V MAX Batteries
+title: Dewalt 20V MAX batteries
 date: 2022-12-14 12:49 -0400
 tags:
   - Dewalt

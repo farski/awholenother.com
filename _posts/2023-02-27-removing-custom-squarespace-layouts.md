@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Removing Custom Squarespace Layouts
+title: Removing custom Squarespace Layouts
 date: 2023-02-27 12:17 -0500
 tags:
   - Squarespace

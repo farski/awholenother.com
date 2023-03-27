@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dewalt 20V MAX Battery Chargers
+title: Dewalt 20V MAX battery chargers
 date: 2023-02-06 09:56 -0400
 tags:
   - Dewalt
