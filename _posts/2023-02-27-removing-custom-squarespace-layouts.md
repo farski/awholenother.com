@@ -6,7 +6,7 @@ tags:
   - Squarespace
 ---
 
-When developing websites using the [Squarespace Developer](https://developers.squarespace.com), one of the fundamental building blocks of each page is the site [layout](https://developers.squarespace.com/layouts-regions). The render chain of all pages starts with a layout, and they wrap the individual page contents. Generally the layout is reponsible for things like the `<html>` and `<body>` tags, global navs, etc.
+When developing websites using the [Squarespace Developer Platform](https://developers.squarespace.com), one of the fundamental building blocks of each page is the site [layout](https://developers.squarespace.com/layouts-regions). The render chain of all pages starts with a layout, and they wrap the individual page contents. Generally the layout is reponsible for things like the `<html>` and `<body>` tags, global navs, etc.
 
 Every page on the site has a selected layout (`Page Settings > Advanced > Page Layout`), and a site can contain any number of layouts.
 
