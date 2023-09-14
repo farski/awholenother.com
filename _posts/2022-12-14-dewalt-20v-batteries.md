@@ -81,6 +81,18 @@ Most of this information probably only applies in the US or North America. Dewal
 			<td>Released December 2021</td>
 		</tr>
 		<tr>
+			<td>20V POWERSTACK</td>
+			<td>
+				<a href="https://www.dewalt.com/product/dcbp034g/dewalt-powerstack-20v-max-oil-resistant-compact-battery">DCBP034G</a>
+				<sup>P</sup>
+			</td>
+			<td>1.7 Ah</td>
+			<td>0.81 lbs.</td>
+			<td>$80</td>
+			<td>Compact, Oil-resilient</td>
+			<td>Released September 2022</td>
+		</tr>
+		<tr>
 			<td>20V MAX</td>
 			<td>
 				<a href="https://www.dewalt.com/product/dcb203/20v-max-compact-lithium-ion-battery-pack">DCB203</a>
