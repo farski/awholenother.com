@@ -483,7 +483,20 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16 v17></td>
 		</tr>
 		<tr>
-			<td>iPhone 12/Mini</td>
+			<td>iPhone 12</td>
+			<td title="ARMv8.5">A14</td>
+			<td colspan=156></td>
+			<!-- 2020 -->
+			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td prod v14></td><td prod v14></td><td prod v14></td>
+			<!-- 2021 -->
+			<td prod v14></td><td prod v14></td><td prod v14></td><td prod v14></td><td prod v14></td><td prod v14></td><td prod v14></td><td prod v14></td><td prod v14 v15></td><td prod v14 v15></td><td prod v15></td><td prod v15></td>
+			<!-- 2022 -->
+			<td prod v15></td><td prod v15></td><td prod v15></td><td prod v15></td><td prod v15></td><td prod v15></td><td prod v15></td><td prod v15></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td>
+			<!-- 2023 -->
+			<td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16 v17></td>
+		</tr>
+		<tr>
+			<td>iPhone 12 Mini</td>
 			<td title="ARMv8.5">A14</td>
 			<td colspan=156></td>
 			<!-- 2020 -->
