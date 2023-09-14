@@ -27,9 +27,9 @@ There is a T25 Torx screw in the fuse box well that works well for grounding mos
 
 See also:
 
-- https://fuseandrelay.com/bmw/i3.html
-- https://www.mybmwi3.com/forum/viewtopic.php?t=4324
-- https://www.mybmwi3.com/forum/viewtopic.php?t=17551
-- https://f30.bimmerpost.com/forums/attachment.php?attachmentid=2024296
-- https://www.reddit.com/r/BMWi3/comments/xchb7s/fuses/
-- https://www.reddit.com/r/BMWi3/comments/cbobu5/good_options_for_cleanly_installing_a_dash_cam/
+- [https://fuseandrelay.com/bmw/i3.html](https://fuseandrelay.com/bmw/i3.html)
+- [https://www.mybmwi3.com/forum/viewtopic.php?t=4324](https://www.mybmwi3.com/forum/viewtopic.php?t=4324)
+- [https://www.mybmwi3.com/forum/viewtopic.php?t=17551](https://www.mybmwi3.com/forum/viewtopic.php?t=17551)
+- [https://f30.bimmerpost.com/forums/attachment.php?attachmentid=2024296](https://f30.bimmerpost.com/forums/attachment.php?attachmentid=2024296)
+- [https://www.reddit.com/r/BMWi3/comments/xchb7s/fuses/](https://www.reddit.com/r/BMWi3/comments/xchb7s/fuses/)
+- [https://www.reddit.com/r/BMWi3/comments/cbobu5/good_options_for_cleanly_installing_a_dash_cam/](https://www.reddit.com/r/BMWi3/comments/cbobu5/good_options_for_cleanly_installing_a_dash_cam/)
