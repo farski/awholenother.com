@@ -15,7 +15,7 @@ Parameters:
     Type: CommaDelimitedList
 ```
 
-you may find that somewhere in the template you need to augment those values with a prefix or a suffix. A common situation would be converting a bucket name (e.g., `MyBuckt`) into a complete ARN (e.g., `arn:aws:s3:::MyBucket`), as would be required in an IAM policy.
+you may find that somewhere in the template you need to augment those values with a prefix or a suffix. A common situation would be converting a bucket name (e.g., `MyBucket`) into a complete ARN (e.g., `arn:aws:s3:::MyBucket`), as would be required in an IAM policy.
 
 Getting a little bit clever with string functions makes this possible. To add a prefix before each value (`arn:aws:s3:::`)
 
