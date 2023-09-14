@@ -93,7 +93,7 @@ tags:
 
 Black lines indicate the production period. Colored areas indicate the support period for a major iOS version on a given device. Striped bands show when a device's newest OS was no longer compatible with apps submitted to the App Store (WIP).
 
-Models above the red line run only unsupported versions of iOS. Models below the green line run the latest major iOS version.
+Models above the red line run only unsupported versions of iOS. Models below the green line run the latest major iOS version. Those between the lines run a supported version, but not the latest version.
 
 <table>
 	<thead>
