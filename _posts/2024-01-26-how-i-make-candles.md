@@ -43,7 +43,7 @@ My notes also say that the wax should be poured into the jars when it cools to 5
 
 You‘ll need something to hold the wicks centered in the jar as the wax cools. I make small strips of cardboard (about 1 inch by 4 inches) and cut a narrow V-shaped notch in them. If you lay the strip across the mouth of the jar, push the cardboard down a bit, and then jam the wick in the notch, as the cardboard tries to unbend itself it will pull the wick taut and you can position the cardboard to center the wick. I know they sell real things to do this, but I don‘t have any and this method seems to work fine. The cardboard can be reused many times.
 
-I was the pitcher in the sink with dish soap and rinse it very well.
+I wash the pitcher in the sink with dish soap and rinse it very well.
 
 ### 2024 Prices
 
