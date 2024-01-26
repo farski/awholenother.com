@@ -17,7 +17,7 @@ I make all my candles using **16 oz. Wide Mouth Ball® Mason Jars**. They come i
 
 I use [Golden Brands 464 Soy Wax](https://www.candlescience.com/wax/golden-brands-464-soy-wax/).
 
-I use [ECO 10 6" Pretabbed Wicks](https://www.candlescience.com/wick/eco-10/), which I find almost always gives a complete burn (no wax remaining on the jar), but they also don‘t burn too quickly. (Different wicks generate different amounts of heat, which affects how quickly the candles burn. Th goal is to use a wick that generate enough heat to melt the wax across the entire diameter of the candle‘s container, but not so much heat that the candle burns unnecessarily fast.) These jars and wicks seem like a good match.
+I use [ECO 10 6" Pretabbed Wicks](https://www.candlescience.com/wick/eco-10/), which I find almost always gives a complete burn (no wax remaining on the jar), but they also don‘t burn too quickly. (Different wicks generate different amounts of heat, which affects how quickly the candles burn. The goal is to use a wick that generate enough heat to melt the wax across the entire diameter of the candle‘s container, but not so much heat that the candle burns unnecessarily fast.) These jars and wicks seem like a good match.
 
 I don‘t do anything to color the candle wax.
 
