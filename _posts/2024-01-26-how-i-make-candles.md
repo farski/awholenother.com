@@ -17,7 +17,7 @@ I make all my candles using **16 oz. Wide Mouth Ball® Mason Jars**. They come i
 
 I use [Golden Brands 464 Soy Wax](https://www.candlescience.com/wax/golden-brands-464-soy-wax/).
 
-I use [ECO 10 6" Pretabbed Wicks](https://www.candlescience.com/wick/eco-10/), which I find almost always gives a complete burn (no wax remaining on the jar), but they also don‘t burn too quickly. (Different wicks generate different amounts of heat, which affects how quickly the candles burn. Th goal is to use a wick that generate enough heat to melt the wax across the entire diameter of the candle‘s container, but not so much heat that the candle burns unnecessarily fast.) These jars and wicks seem like a good match.
+I use [ECO 10 6" Pretabbed Wicks](https://www.candlescience.com/wick/eco-10/), which I find almost always gives a complete burn (no wax remaining on the jar), but they also don‘t burn too quickly. (Different wicks generate different amounts of heat, which affects how quickly the candles burn. The goal is to use a wick that generate enough heat to melt the wax across the entire diameter of the candle‘s container, but not so much heat that the candle burns unnecessarily fast.) These jars and wicks seem like a good match.
 
 I don‘t do anything to color the candle wax.
 
@@ -43,7 +43,7 @@ My notes also say that the wax should be poured into the jars when it cools to 5
 
 You‘ll need something to hold the wicks centered in the jar as the wax cools. I make small strips of cardboard (about 1 inch by 4 inches) and cut a narrow V-shaped notch in them. If you lay the strip across the mouth of the jar, push the cardboard down a bit, and then jam the wick in the notch, as the cardboard tries to unbend itself it will pull the wick taut and you can position the cardboard to center the wick. I know they sell real things to do this, but I don‘t have any and this method seems to work fine. The cardboard can be reused many times.
 
-I was the pitcher in the sink with dish soap and rinse it very well.
+I wash the pitcher in the sink with dish soap and rinse it very well.
 
 ### 2024 Prices
 
