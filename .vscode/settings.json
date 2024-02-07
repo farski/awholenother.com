@@ -4,5 +4,10 @@
 	"editor.formatOnSave": true,
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[ruby]": {
+		"editor.defaultFormatter": "testdouble.vscode-standard-ruby",
+		"editor.formatOnSave": true,
+		"editor.formatOnSaveMode": "file"
 	}
 }

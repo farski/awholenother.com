@@ -1,20 +1,17 @@
 # frozen_string_literal: true
 
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-ruby '3.2.2'
+ruby "3.3.0"
 
-gem 'github-pages', group: :jekyll_plugins
-gem 'minima'
+gem "minima"
 
-gem 'webrick'
+gem "webrick"
+gem "standard"
 
 group :jekyll_plugins do
-	gem 'jekyll-compose'
-	gem 'jekyll-feed'
-	gem 'jekyll-watch'
-end
-
-group :development do
-	gem "standard"
+  gem "jekyll-compose"
+  gem "jekyll-feed"
+  gem "jekyll-watch"
+  gem "github-pages"
 end
