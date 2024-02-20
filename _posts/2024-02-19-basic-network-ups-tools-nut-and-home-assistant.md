@@ -9,6 +9,8 @@ tags:
   - NUT
 ---
 
+<small>Reading time: 5 minutes</small>
+
 I recently setup [Home Assistant](https://www.home-assistant.io), and have been looking for useful things to use it for (I don‘t have much of a plan for it, at the moment). Reading [this](https://www.dzombak.com/blog/2023/12/Considerations-for-a-long-running-Raspberry-Pi.html) led me to [this](https://github.com/cdzombak/nut_influx_connector), which led me to the [Network UPS Tools](https://networkupstools.org/) project.
 
 Home Assistant has [native NUT support](https://www.home-assistant.io/integrations/nut/), so I thought it may be useful to get HA monitoring a UPS or two.
@@ -60,7 +62,7 @@ The username `observer` seems to be a defacto standard for monitoring purposes, 
 
 After configuring those four files, and restarting, everything worked as expected. I was able to add the NUT device in Home Assistant using the `observer` username and password. I think that basically starts running a NUT client on the Home Assistant computer, and handles any configuration needed for you. Home Assistant then has access to the device and sensors like status, charge, load, etc. Which is exactly what I wanted.
 
-My computer-with-a-UPS-attached was a Raspberry Pi, so I installed NUT through `apt`. I only installed the `nut` package; there are other related packages, but they were not necessary for this setup. I did not need to make any systemd or other management chanages; the package seems to have handled everything necessry.
+My computer-with-a-UPS-attached was a Raspberry Pi, so I installed NUT through `apt`. I only installed the `nut` package; there are other related packages, but they were not necessary for this setup. I did not need to make any systemd or other management chanages; the package seems to have handled everything necessary.
 
 So I believe what this yields is: a computer running a NUT-provided UPS driver and a NUT server that makes the data from that UPS available via an API. That API can be accessed using the credentials that are defined. Home Assistant and the NUT integration run a NUT client that pulls data from the server‘s API.
 
