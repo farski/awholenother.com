@@ -124,6 +124,16 @@ background-size: 30px 30px;
 
 **Last updated February 2024.**
 
+Numbering inconsitencies:
+
+- Dura-Ace begain with `7xxx` series numbers, but switched to `9xxx` after 7900, and maintained the sequence even once including the "R" prefix.
+- Ultegra began with `6xxx` series numbers, but switched to `8xxx` at the same time it adopted an "R" prefix. (Ignoring the original 600 series naming.)
+- 105 began with `5xxx` series numbers, but switched to `7xxx` at the same time it adopted an "R" prefix.
+- Sora and Claris have always used `3xxx`/`2xxx` series numbers, but reset from 3500/2400 down to R3000/R2000 when they adopted the "R" prefix.
+- For the latest generations, `xx00` indicates mechanical shifting, and `xx50` indicates Di2. Numbers are increased by 20 to indicate disc brake components (e.g., `xx20` for mechanical shifting and disc brakes, and `xx70` for Di2 and disc brakes). But some early Di2 components used `xx70` to distinguish between mechanical and electronic shifting, even when only compatible with rim brakes.
+
+<hr>
+
 Solid background = mechanical shifting, striped = Di2.
 <br><span style="border-bottom: 3px solid black;">Black border</span> = rim brakes, <span style="border-bottom: 3px solid OrangeRed">orange</span> = disc brakes.
 
@@ -166,7 +176,7 @@ Solid background = mechanical shifting, striped = Di2.
 			<td sp10 mechanical di2 rim colspan=3></td>
 			<td sp11 mechanical di2 rim colspan=4><span>9000</span></td>
 			<td sp11 mechanical di2 rim disc colspan=6><span>9100</span></td>
-			<td sp12 di2 rim disc colspan=3><span>R9250</span></td>
+			<td sp12 di2 rim disc colspan=3><span>R9200</span></td>
 		</tr>
 		<tr style="height: 10px;"></tr><tr style="height: 10px;"></tr>
 		<tr>
