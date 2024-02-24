@@ -81,12 +81,12 @@ tags:
 	[prod] + td:not([prod]) { border-left: 4px solid black; }
 
 	[nosdk] { background: repeating-linear-gradient(
-    45deg,
-    #606dbc,
-    #606dbc 10px,
-    #465298 10px,
-    #465298 20px
-  ); }
+		45deg,
+		#606dbc,
+		#606dbc 10px,
+		#465298 10px,
+		#465298 20px
+	); }
 </style>
 
 **Last updated January 2024.**
