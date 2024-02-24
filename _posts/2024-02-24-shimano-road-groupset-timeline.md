@@ -130,7 +130,8 @@ Numbering inconsitencies:
 - Ultegra began with `6xxx` series numbers, but switched to `8xxx` at the same time it adopted an "R" prefix. (Ignoring the original 600 series naming.)
 - 105 began with `5xxx` series numbers, but switched to `7xxx` at the same time it adopted an "R" prefix.
 - Sora and Claris have always used `3xxx`/`2xxx` series numbers, but reset from 3500/2400 down to R3000/R2000 when they adopted the "R" prefix.
-- For the latest generations, `xx00` indicates mechanical shifting, and `xx50` indicates Di2. Numbers are increased by 20 to indicate disc brake components (e.g., `xx20` for mechanical shifting and disc brakes, and `xx70` for Di2 and disc brakes). But some early Di2 components used `xx70` to distinguish between mechanical and electronic shifting, even when only compatible with rim brakes.
+- For the latest generations, `xx00` indicates mechanical shifting, and `xx50` indicates Di2 for individual components. Numbers are increased by 20 to indicate disc brake components (e.g., `xx20` for mechanical shifting and disc brakes, and `xx70` for Di2 and disc brakes). But some early Di2 components used `xx70` to distinguish between mechanical and electronic shifting, even when only compatible with rim brakes.
+- For marketing purposes, Shinamo sometimes segments around the shifting system, and will distinguish between `xx00` and `xx50`. But within the same generation (e.g., R9200), both the `xx00` and `xx50` (e.g., R9200 and R9250) components will generally be compatible (chains, cassettes, etc).
 
 <hr>
 
