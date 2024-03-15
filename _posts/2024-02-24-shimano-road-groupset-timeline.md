@@ -126,7 +126,7 @@ background-size: 30px 30px;
 
 Numbering inconsitencies:
 
-- Dura-Ace begain with `7xxx` series numbers, but switched to `9xxx` after 7900, and maintained the sequence even once including the "R" prefix.
+- Dura-Ace began with `7xxx` series numbers, but switched to `9xxx` after 7900, and maintained the sequence even once including the "R" prefix.
 - Ultegra began with `6xxx` series numbers, but switched to `8xxx` at the same time it adopted an "R" prefix. (Ignoring the original 600 series naming.)
 - 105 began with `5xxx` series numbers, but switched to `7xxx` at the same time it adopted an "R" prefix.
 - Sora and Claris have always used `3xxx`/`2xxx` series numbers, but reset from 3500/2400 down to R3000/R2000 when they adopted the "R" prefix.
