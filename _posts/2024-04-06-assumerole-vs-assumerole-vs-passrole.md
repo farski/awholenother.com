@@ -297,5 +297,31 @@ So to summarize:
 
 A few related thoughts that can further your knownledge in this area.
 
-1. [Prior](https://aws.amazon.com/blogs/security/announcing-an-update-to-iam-role-trust-policy-behavior/) to 30 June, 2022, an IAM role was able to `sts:AssumeRole` on itself, even without listing itself explicitly in its trust policy. Nowadays, if you want to use a role’s temporary credentails to call `sts:AssumeRole` to create additional temporary credentials for that same role, using `AssumeRole`, then you are required to explicitly list the role in its own trust policy. This is a fairly rare use case, but if you run into these sort of recursive policies, it’s likely for this.
+1. [Prior](https://aws.amazon.com/blogs/security/announcing-an-update-to-iam-role-trust-policy-behavior/) to 30 June, 2022, an IAM role was able to `sts:AssumeRole` on itself, even without listing itself explicitly in its trust policy. Nowadays, if you want to use a role’s temporary credentails to call `sts:AssumeRole` to create additional temporary credentials for that same role using `AssumeRole`, then you are required to explicitly list the role in its own trust policy. This is a fairly rare use case, but if you run into these sort of recursive policies, it’s likely for this.
 2. In a bunch of places throughout this post, I talked about "access key IDs and secret access keys pairs". In practice, especially with temporary credentials, there’s often also a session token that is used as part of the credentials. Key+Secret is the lowest common denominator in terms of various types of credentials across AWS, but it’s not always that simple. APIs like `AssumeRole` will return all necessary componenets of a set of credentials, so as you are using different credential-generating methods, what they give you back is a good indicator of how they are expected to be used when making calls to other service APIs.
+3. When building policies with `iam:PassRole`, it’s often a good idea to explicitly ensure that the role can only be passed to specific AWS service. So for the example above, where Alice is passing a role as part of creating Lambda functions, we should ensure at the policy level that she really does only pass that role to the Lambda service.
+    ```yaml
+    Alice:
+      Type: AWS::IAM::User
+      Properties:
+        UserName: Alice
+        Policies:
+          - PolicyName: LambdaManagementPolicy
+            PolicyDocument:
+              Version: "2012-10-17"
+              Statement:
+                - Sid: AllowFunctionCreate
+                  Effect: Allow
+                  Action: lambda:CreateFunction
+                  Resource: "*"
+
+                - Sid: AllowPassRole
+                  Effect: Allow
+                  Action: iam:PassRole
+                  Condition:
+                    StringEquals:
+                      iam:PassedToService: lambda.amazonaws.com
+                  Resource: arn:aws:iam::123456789012:role/UploadPhotoLambdaRole
+    ```
+    By adding a `Condition` to the policy, we can further limit what sort of permissions Alice has when it comes to passing this role around. When AWS performs the `PassRole` security check, it will include details in the request about the context of the request. Many services will include a [`PassedToService`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PassedToService) value, so we can build a condition off that. In this case, a `PassRole` check being performed by the AWS Lambda service would include a matching `PassedToService` value, so this policy would apply and be allowed. Checks performed by any other service would not include a matching value, so in those cases Alice’s user would not have a valid policy that allows passing the role to those services, and they will fail.
+    
