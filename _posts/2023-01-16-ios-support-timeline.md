@@ -89,7 +89,7 @@ tags:
 	); }
 </style>
 
-**Last updated January 2024.**
+**Last updated May 2024.**
 
 Black lines indicate the production period. Colored areas indicate the support period for a major iOS version on a given device. Striped bands show when a device's newest OS was no longer compatible with apps submitted to the App Store (WIP).
 
@@ -117,7 +117,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<th colspan=12>2021</th>
 			<th colspan=12>2022</th>
 			<th colspan=12>2023</th>
-			<th colspan=1></th>
+			<th colspan=5></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -136,7 +136,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			<!-- 2012 -->
 			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-			<td nosdk colspan=137></td>
+			<td nosdk colspan=141></td>
 		</tr>
 		<tr>
 			<td>iPhone 3G</td>
@@ -153,7 +153,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			<!-- 2012 -->
 			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-			<td nosdk colspan=137></td>
+			<td nosdk colspan=141></td>
 		</tr>
 		<tr>
 			<td>iPhone 3GS</td>
@@ -172,7 +172,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2014 -->
 			<td v6></td><td v6></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			<td colspan=64></td>
-			<td nosdk colspan=45></td>
+			<td nosdk colspan=49></td>
 		</tr>
 		<tr>
 			<td>iPhone 4</td>
@@ -190,7 +190,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<td v7></td><td v7></td><td v7></td><td v7></td><td v7></td><td v7></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			<!-- 2015 -->
 			<td colspan=64></td>
-			<td nosdk colspan=45></td>
+			<td nosdk colspan=49></td>
 		</tr>
 		<tr>
 			<td>iPhone 4S</td>
@@ -278,7 +278,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v12></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			<!-- 2024 -->
-			<td></td>
+			<td colspan=5></td>
 		</tr>
 		<tr>
 			<td>iPhone 6/Plus</td>
@@ -305,7 +305,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v12></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			<!-- 2024 -->
-			<td></td>
+			<td colspan=5></td>
 		</tr>
 		<tr unsupported>
 			<td>iPhone 6S/Plus</td>
@@ -330,7 +330,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td>
 			<!-- 2024 -->
-			<td v15></td>
+			<td v15 colspan=3></td><td></td><td></td>
 		</tr>
 		<tr>
 			<td>iPhone SE (1<sup>st</sup> gen.)</td>
@@ -353,7 +353,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td>
 			<!-- 2024 -->
-			<td v15></td>
+			<td v15 colspan=3></td><td></td><td></td>
 		</tr>
 		<tr>
 			<td>iPhone 7/Plus</td>
@@ -376,7 +376,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td><td v15></td>
 			<!-- 2024 -->
-			<td v15></td>
+			<td v15 colspan=3></td><td></td><td></td>
 		</tr>
 		<tr>
 			<td>iPhone 8/Plus</td>
@@ -397,7 +397,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td>
 			<!-- 2024 -->
-			<td v15 v16></td>
+			<td v15 v16 colspan=3></td><td v16 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone X</td>
@@ -418,7 +418,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td>
 			<!-- 2024 -->
-			<td v15 v16></td>
+			<td v15 v16 colspan=3></td><td v16 colspan=2></td>
 		</tr>
 		<tr discontinued>
 			<td>iPhone XS/Max</td>
@@ -437,7 +437,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td>
 			<!-- 2024 -->
-			<td v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone XR</td>
@@ -456,7 +456,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td>
 			<!-- 2024 -->
-			<td v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone 11</td>
@@ -473,7 +473,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td>
 			<!-- 2024 -->
-			<td v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone 11 Pro/Max</td>
@@ -490,7 +490,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td>
 			<!-- 2024 -->
-			<td v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone SE (2<sup>nd</sup> gen.)</td>
@@ -505,7 +505,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td>
 			<!-- 2024 -->
-			<td v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone 12</td>
@@ -520,7 +520,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16 v17></td><td prod v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td>
 			<!-- 2024 -->
-			<td v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone 12 Mini</td>
@@ -535,7 +535,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td>
 			<!-- 2024 -->
-			<td v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone 12 Pro/Max</td>
@@ -550,7 +550,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td>
 			<!-- 2024 -->
-			<td v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone 13</td>
@@ -563,7 +563,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16 v17></td><td prod v15 v16 v17></td><td prod v15 v16 v17></td><td prod v15 v16 v17></td>
 			<!-- 2024 -->
-			<td prod v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone 13 Mini</td>
@@ -576,7 +576,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16 v17></td><td prod v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td>
 			<!-- 2024 -->
-			<td v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone 13 Pro/Max</td>
@@ -589,7 +589,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td><td v15 v16 v17></td>
 			<!-- 2024 -->
-			<td v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone SE (3<sup>rd</sup> gen.)</td>
@@ -600,7 +600,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16></td><td prod v15 v16 v17></td><td prod v15 v16 v17></td><td prod v15 v16 v17></td><td prod v15 v16 v17></td>
 			<!-- 2024 -->
-			<td prod v15 v16 v17></td>
+			<td v15 v16 v17 colspan=3></td><td v16 v17 colspan=2></td>
 		</tr>
 		<tr>
 			<td>iPhone 14/Plus</td>
@@ -611,7 +611,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td prod v16></td><td prod v16></td><td prod v16></td><td prod v16></td><td prod v16></td><td prod v16></td><td prod v16></td><td prod v16></td><td prod v16 v17></td><td prod v16 v17></td><td prod v16 v17></td><td prod v16 v17></td>
 			<!-- 2024 -->
-			<td prod v16 v17></td>
+			<td prod v16 v17 colspan=5></td>
 		</tr>
 		<tr>
 			<td>iPhone 14 Pro/Max</td>
@@ -622,7 +622,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td prod v16></td><td prod v16></td><td prod v16></td><td prod v16></td><td prod v16></td><td prod v16></td><td prod v16></td><td prod v16></td><td prod v16 v17></td><td prod v16 v17></td><td prod v16 v17></td><td prod v16 v17></td>
 			<!-- 2024 -->
-			<td prod v16 v17></td>
+			<td prod v16 v17 colspan=5></td>
 		</tr>
 		<tr>
 			<td>iPhone 15/Plus</td>
@@ -631,7 +631,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td prod v17></td><td prod v17></td><td prod v17></td><td prod v17></td>
 			<!-- 2024 -->
-			<td prod v17></td>
+			<td prod v17 colspan=5></td>
 		</tr>
 		<tr>
 			<td>iPhone 15 Pro/Max</td>
@@ -640,7 +640,7 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2023 -->
 			<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td prod v17></td><td prod v17></td><td prod v17></td><td prod v17></td>
 			<!-- 2024 -->
-			<td prod v17></td>
+			<td prod v17 colspan=5></td>
 		</tr>
 	</tbody>
 </table>
