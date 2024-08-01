@@ -7,7 +7,7 @@ tags:
   - Battery
 ---
 
-**Last updated September 2023.**
+**Last updated August 2024.**
 
 Below is a list of batteries that are compatible with the [Dewalt 20V MAX System](https://www.dewalt.com/systems/cordless-platforms/20v) of cordless powertools.
 
@@ -26,6 +26,8 @@ The XR designation seems to simply indicate capacities over 3.0 Ah for the stand
 20V MAX packs use either 18650 or 21700 lithium cells. Some packs that currently use 21700 cells may have previously used 20700 cells with the same SKU. I believe all 20700 cells have been phased out. 21700 variants will generally have metal heat sink tabs on top, and the 20700 variants will not.
 
 POWERSTACK batteries use a stack of lithium-polymer pouches. Whereas 20V MAX is used to describe both a line of tools and battteries, POWERSTACK is only a line of batteries compatible with the 20V MAX system of tools.
+
+POWERPACK batteries use [tabless](https://www.bosch-professional.com/gb/en/procore18vplus/) cylindrical cells. Simiar to POWERSTACK, POWERPACK is only a line of batteries compatible with the 20V MAX system of tools. POWERPACK batteries do not have any identifiers in their SKUs.
 
 [This Reddit post](https://www.reddit.com/r/Dewalt/comments/pdq0i8/tiers_of_batteries_for_your_20v_tools/) goes into some depth about various performance implications of different batteries, beyond just capacity.
 
@@ -271,6 +273,17 @@ Most of this information probably only applies in the US or North America. Dewal
 			<td>$100</td>
 			<td></td>
 			<td></td>
+		</tr>
+		<tr>
+			<td>20V MAX XR POWERPACK</td>
+			<td>
+				<a href="https://www.dewalt.com/product/dcb2108/20v-max-xr-powerpack-8-ah-battery">DCB2108</a>
+			</td>
+			<td>8.0 Ah</td>
+			<td>2.2 lbs.</td>
+			<td>$200</td>
+			<td></td>
+			<td>Released March 2024</td>
 		</tr>
 		<tr>
 			<td>FLEXVOLT</td>
