@@ -172,7 +172,7 @@ FunctionExecutionRole:
   Properties:
     RoleName: UploadPhotoLambdaRole
 
-    # This is a resource-based policy, called a trust policy with the context of IAM
+    # This is a resource-based policy, called a trust policy within the context of IAM
     AssumeRolePolicyDocument:
       Version: "2012-10-17"
       Statement:
