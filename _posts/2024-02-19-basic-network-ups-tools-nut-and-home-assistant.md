@@ -19,7 +19,7 @@ After watching a couple [helpful](https://www.youtube.com/watch?v=OM4bY6ViZrg) [
 
 Here‘s what I figured out, but please know that this could be very wrong, since I only learned of NUT this morning. This assumes that you have a UPS somewhere connected to a computer (probably via USB). This computer is running NUT **only** to provide UPS status and statistics to other computers. It is not doing any real monitoring itself – that‘s what Home Assistant is for.
 
-Configuration of the UPS driver is required. This is done in [`/etc/nut/ups.conf`](https://networkupstools.org/docs/man/ups.conf.html), and looks something like:
+Configuration of the UPS driver is required. This is done in [`/etc/nut/ups.conf`](https://networkupstools.org/docs/man/ups.conf.html) on the computer attached to the UPS, and looks something like:
 
 ```ini
 pollinterval = 1
@@ -50,7 +50,7 @@ MODE=netserver
 
 `netserver` is the mode that allows other computers to talk to the server, based on the `LISTEN` directive declared in `upsd.conf`.
 
-Once the NUT server is running, the NUT integration in Home Assistant will be able to discover it. If you try to connect, it will ask for credentials. These are defined in `/etc/nut/uspd.users`.
+Once the NUT server is running, the NUT integration in Home Assistant will be able to discover it. If you try to connect, it will ask for credentials. These are defined in `/etc/nut/upsd.users`.
 
 ```ini
 [observer]
@@ -58,7 +58,7 @@ Once the NUT server is running, the NUT integration in Home Assistant will be ab
         upsmon secondary
 ```
 
-The username `observer` seems to be a defacto standard for monitoring purposes, at least in the docs, but it could be anything. The `upsmon` option, as best I can tell, describes the relationship between the UPS and the computer runnning `upsmon`. I believe that, in my case, Home Assistant is running `upsmon`, so `secondary` is the correct choice, since Home Assistant can‘t locally manage the UPS. I could be misunderstanding where `upsmon` runs or what it does, but from everything I‘ve seen, `upsmon` only comes into play if `upsmon.conf` has been configured. Since I haven‘t configured that on the computer attached to the UPS, I don‘t think `upsmon` is relevant to this user, and so I‘ve called is `secondary`. 🤷‍♂️.
+The username `observer` seems to be a defacto standard for monitoring purposes, at least in the docs, but it could be anything. The `upsmon` option, as best I can tell, describes the relationship between the UPS and the computer runnning `upsmon`. I believe that, in my case, Home Assistant is running `upsmon`, so `secondary` is the correct choice, since Home Assistant can‘t locally manage the UPS. I could be misunderstanding where `upsmon` runs or what it does, but from everything I‘ve seen, `upsmon` only comes into play if `upsmon.conf` has been configured. Since I haven‘t configured that on the computer attached to the UPS, I don‘t think `upsmon` is relevant to this user, and so I‘ve called it `secondary`. 🤷‍♂️.
 
 After configuring those four files, and restarting, everything worked as expected. I was able to add the NUT device in Home Assistant using the `observer` username and password. I think that basically starts running a NUT client on the Home Assistant computer, and handles any configuration needed for you. Home Assistant then has access to the device and sensors like status, charge, load, etc. Which is exactly what I wanted.
 
