@@ -2,6 +2,9 @@
 layout: post
 title: IAM Conditions Brain Dump
 date: 2025-02-17 09:26 -0500
+tags:
+  - AWS
+  - IAM
 ---
 
 <small>Reading time: 40 minutes</small>
