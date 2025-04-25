@@ -774,6 +774,14 @@ Models above the red line run only unsupported versions of iOS. Models below the
 			<!-- 2025 -->
 			<td prod v18 colspan=4></td>
 		</tr>
+		<tr>
+			<td>iPhone 16e</td>
+			<td title="ARMv9.2">A18</td>
+			<td colspan=216></td>
+			<!-- 2025 -->
+			<td></td>
+			<td prod v18 colspan=3></td>
+		</tr>
 	</tbody>
 </table>
 
