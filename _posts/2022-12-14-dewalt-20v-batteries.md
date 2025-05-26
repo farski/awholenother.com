@@ -101,7 +101,7 @@ Most of this information probably only applies in the US or North America. Dewal
 				<sup>1R/18</sup>
 			</td>
 			<td>2.0 Ah</td>
-			<td>0.8 lbs.</td>
+			<td>0.91 lbs.</td>
 			<td>$40</td>
 			<td>Compact</td>
 			<td></td>
@@ -125,7 +125,7 @@ Most of this information probably only applies in the US or North America. Dewal
 				<sup>1R/18</sup>
 			</td>
 			<td>2.0 Ah</td>
-			<td>0.95 lbs.</td>
+			<td>0.89 lbs.</td>
 			<td>$90</td>
 			<td>Compact, Oil-resilient</td>
 			<td></td>
