@@ -73,6 +73,8 @@ end
 class RepeatedSubstring < Foo
   FOO = :bar
 
+  foo = "\""
+
   @@bar = /^[a-z]+/
 
   h = { :foo => "bar" }

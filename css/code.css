@@ -71,10 +71,10 @@
 		--sb-color: var(--s-color); /* Literal.String.Backtick */
 		--sc-color: var(--s-color); /* Literal.String.Char */
 		--sd-color: var(--s-color); /* Literal.String.Doc */
-		--se-color: var(--s-color); /* Literal.String.Escape */
+		--se-color: #f16fff; /* Literal.String.Escape */
 		--sh-color: var(--s-color); /* Literal.String.Heredoc */
 		--si-color: var(--s-color); /* Literal.String.Interpol */
-		--dl-color: var(--s-color); /* Literal.String.Delimiter */
+		--dl-color: var(--s-color); /* Literal.String.Delimiter */ /* javascript(" and ' around strings) */
 		--sr-color: #a6cc5f; /* Literal.String.Regex */
 		--ss-color: rgb(57, 143, 255); /* Literal.String.Symbol */ /* ruby(:foo) */
 		--sx-color: var(--s-color); /* Literal.String.Other */
