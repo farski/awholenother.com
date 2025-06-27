@@ -33,7 +33,7 @@
 		--kr-color: var(--k-color); /* Keyword.Reserved */
 		--kt-color: #b392f0; /* Keyword.Type */ /* yaml(!If) */
 
-		--n-color: #f6f1f1; /* Name */ /* ruby(variables) */
+		--n-color: #f6f1f1; /* Name */ /* ruby(local variables) */
 		--na-color: #61edbe; /* Name.Attribute */ /* yaml(keys) */
 		--nb-color: #cf222e; /* Name.Builtin */
 		--bp-color: #999999; /* Name.Builtin.Pseudo */
@@ -48,6 +48,7 @@
 		--no-color: #3bb4e8; /* Name.Constant */ /* ruby(constants) */
 		--nt-color: #b81e63; /* Name.Tag */ /* bash(flags) */
 		--nv-color: #f7f08c; /* Name.Variable */ /* yaml(array elements) */
+		--nx-color: var(--n-color); /* Name.Other */ /* javascript(variables) */
 		--vc-color: #ff721b; /* Name.Variable.Class */ /* ruby(@@foo) */
 		--vg-color: #d073d0; /* Name.Variable.Global */
 		--vi-color: #fc9f15; /* Name.Variable.Instance */ /* ruby(@foo) */
@@ -147,6 +148,7 @@
 		.no { color: var(--no-color); }
 		.nt { color: var(--nt-color); }
 		.nv { color: var(--nv-color); }
+		.nx { color: var(--nx-color); }
 		.vc { color: var(--vc-color); }
 		.vg { color: var(--vg-color); }
 		.vi { color: var(--vi-color); }
