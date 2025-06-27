@@ -35,9 +35,9 @@ The S3 documentation even [includes a guide](https://docs.aws.amazon.com/AmazonS
 
 Consider a couple of the cautionary notices from that guide:
 
->If an object key name ends with a single period (.), or two periods (..), you can’t download the object using the Amazon S3 console.
+> If an object key name ends with a single period (.), or two periods (..), you can’t download the object using the Amazon S3 console.
 
-> Avoid the following characters in a key name because of significant special handling for consistency across all applications.  [Including:] Left curly brace (“{”)
+> Avoid the following characters in a key name because of significant special handling for consistency across all applications. [Including:] Left curly brace (“{”)
 
 As you’d hopefully expect by now, if you finesse the APIs and SDKs enough, you can of course do all the things it’s telling you not to. Sometimes you need to get creative with getting files in or out of S3, it all depends on the particulars of the environment. With the Boto3 Python library, no finessing is needed to create objects for these two cases.
 
