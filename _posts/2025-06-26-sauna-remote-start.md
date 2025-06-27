@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Adding remote starter to a Costco infrared sauna
-date: 2025-06-27 11:46 -0400
+date: 2025-06-26 11:46 -0400
 tags:
   - sauna
   - DIY
@@ -47,11 +47,11 @@ logger:
 
 api:
   encryption:
-    key: 'tktktk'
+    key: "tktktk"
 
 ota:
   - platform: esphome
-    password: 'tktktk'
+    password: "tktktk"
 
 wifi:
   ssid: !secret wifi_ssid
@@ -59,8 +59,8 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: 'Sauna-Relay Fallback Hotspot'
-    password: 'tktktk'
+    ssid: "Sauna-Relay Fallback Hotspot"
+    password: "tktktk"
 
 captive_portal:
 
@@ -80,7 +80,7 @@ uart:
 
 switch:
   - platform: template
-    name: 'Power Control'
+    name: "Power Control"
     icon: mdi:power
     optimistic: true
     restore_mode: ALWAYS_OFF
@@ -89,7 +89,7 @@ switch:
     turn_off_action:
       - uart.write: [0xA0, 0x01, 0x00, 0xA1]
   - platform: template
-    name: 'Heat Control'
+    name: "Heat Control"
     icon: mdi:heat-wave
     optimistic: true
     restore_mode: ALWAYS_OFF
@@ -128,7 +128,7 @@ sequence:
     entity_id: ffffffffff
     domain: switch
 alias: Sauna Simulate Power Button Press
-description: ''
+description: ""
 ```
 
 This script will first make sure the relay is open, in case somehow it's been left closed (this step basically never does anything), and then it quickly closes the relay (simulate depressing the button) and opens the relay (simulate releasing the button). So when this script gets run, it should be the same as someone pressing the POWER button on the control panel. Running this script and then the equivalent script for the HEAT button will take the sauna from idle state to heating. Running the power button script again will take it back to idle state.
