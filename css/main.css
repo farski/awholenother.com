@@ -1,0 +1,139 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+html {
+	--16px: 1rem;
+	--18px: 1.125rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		--bg-color: oklch(0.1306 0.022 354.66);
+		--bg-color-fallback: black;
+		--body-copy-color: oklch(0.9555 0.0088 354.66);
+		--body-copy-color-fallback: white;
+		--primary-color: oklch(0.5706 0.2146 354.66);
+		--inline-code-bg-color: oklch(0.4036 0.0641 354.66);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	html {
+		--bg-color: white;
+		--bg-color-fallback: white;
+		--body-copy-color: black;
+		--body-copy-color-fallback: black;
+		--primary-color: oklch(0.4382 0.1603 354.66);
+		--inline-code-bg-color: oklch(0.8516 0.045 354.66);
+	}
+}
+
+
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	background-color: var(--bg-color-fallback);
+	background-color: var(--bg-color);
+	color: var(--body-copy-color-fallback);
+	color: var(--body-copy-color);
+	font-family: system-ui;
+}
+
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
+}
+
+p {
+	text-wrap: pretty;
+}
+
+article {
+	margin-block-end: 100px;
+
+	p {
+		text-wrap: pretty;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		text-wrap: balance;
+	}
+
+	p {
+		margin-block: 1lh;
+	}
+
+	h1,
+	div[itemprop="articleBody"] > p,
+	div[itemprop="articleBody"] > blockquote,
+	div[itemprop="articleBody"] > h2,
+	div[itemprop="articleBody"] > h3,
+	div[itemprop="articleBody"] > h4,
+	div[itemprop="articleBody"] > ul {
+		max-width: 752px;
+		margin-inline: auto;
+
+		@media only screen and (max-width: 1180px) {
+			padding-inline: 4%;
+		}
+	}
+
+	div[itemprop="articleBody"] > blockquote {
+		padding-inline-start: 50px;
+		font-style: italic;
+	}
+
+	div[itemprop="articleBody"] > div.highlighter-rouge {
+		max-width: 812px;
+		margin-inline: auto;
+
+		> .highlight {
+			border-radius: 10px;
+		}
+
+		pre {
+			padding: 30px 0 30px 30px;
+			overflow-x: auto;
+		}
+	}
+
+	p {
+		font-size: var(--18px);
+	}
+
+	p {
+		code.highlighter-rouge {
+			font-size: 85%;
+			background: var(--inline-code-bg-color);
+			border-radius: 6px;
+			padding: 0.15em 0.25lh;
+		}
+	}
+
+	a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: var(--primary-color);
+		text-decoration-thickness: 2px;
+		/* box-shadow: 0 1.5px 0 var(--primary-color); */
+		transition: text-decoration-color .1s;
+
+		&:hover {
+			text-decoration-color: transparent;
+		}
+	}
+}

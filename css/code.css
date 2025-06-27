@@ -1,0 +1,185 @@
+@media (prefers-color-scheme: dark) {
+	.highlighter-rouge {
+		--block-bg-color: oklch(0.17 0.0225 354.66);
+
+		--err-color: white; /* Error */
+		--err-bg-color: #a61717; /* Error */
+
+		--p-color: oklch(63.411% 0.21583 342.966); /* Brackets, commas, colons */
+
+		--c-color: oklch(0.8 0.039 354.66); /* Comment */
+		--ch-color: var(--c-color); /* Comment.Hashbang */
+		--cm-color: var(--c-color); /* Comment.Multiline */
+		--cp-color: var(--c-color); /* Comment.Preproc */
+		--c1-color: var(--c-color); /* Comment.Single */
+		--cs1-color: var(--c-color); /* Comment.Special */
+
+		--gd-color: #e25050;/* Generic.Deleted */
+		--gd-x-color: var(--gd-color);/* Generic.Deleted.Specific */
+		--gh-color: #999999;/* Generic.Heading */
+		--gi-color: #3f993f;/* Generic.Inserted */
+		--gi-x-color: var(--gi-color);/* Generic.Inserted.Specific */
+		--go-color: #888888;/* Generic.Output */
+		--gp-color: #555555;/* Generic.Prompt */
+		--gr-color: #aa0000;/* Generic.Error */
+		--gt-color: #aa0000;/* Generic.Traceback */
+		--gu-color: #aaaaaa;/* Generic.Subheading */
+
+		--k-color: rgb(255, 45, 101); /* Keyword */ /* ruby(Class, def, return, if) */
+		--kc-color: var(--k-color); /* Keyword.Constant */
+		--kd-color: var(--k-color); /* Keyword.Declaration */
+		--kn-color: var(--k-color); /* Keyword.Namespace */
+		--kp-color: var(--k-color); /* Keyword.Pseudo */
+		--kr-color: var(--k-color); /* Keyword.Reserved */
+		--kt-color: #b392f0; /* Keyword.Type */ /* yaml(!If) */
+
+		--n-color: #f6f1f1; /* Name */ /* ruby(variables) */
+		--na-color: #61edbe; /* Name.Attribute */ /* yaml(keys) */
+		--nb-color: #cf222e; /* Name.Builtin */
+		--bp-color: #999999; /* Name.Builtin.Pseudo */
+		--nc-color: #a718ff; /* Name.Class */ /* ruby(class name) */
+		--nd-color: #a718ff; /* Name.Decorator */
+		--ne-color: #990000; /* Name.Exception */
+		--nf-color: #84ffef; /* Name.Function */ /* ruby(method name, method calls) */
+		--fm-color: #84ffef; /* Name.Function.Magic */
+		--ni-color: #097e39; /* Name.Entity */
+		--nl-color: #61edbe; /* Name.Label */ /* json(keys) */
+		--nn-color: #097e39; /* Name.Namespace */ /* ruby(module name) */
+		--no-color: #3bb4e8; /* Name.Constant */ /* ruby(constants) */
+		--nt-color: #b81e63; /* Name.Tag */ /* bash(flags) */
+		--nv-color: #f7f08c; /* Name.Variable */ /* yaml(array elements) */
+		--vc-color: #ff721b; /* Name.Variable.Class */ /* ruby(@@foo) */
+		--vg-color: #d073d0; /* Name.Variable.Global */
+		--vi-color: #fc9f15; /* Name.Variable.Instance */ /* ruby(@foo) */
+
+		--o-color: #ff35ab; /* Operator */ /* =, .., +, etc */
+		--ow-color: var(--o-color); /* Operator.Word */
+
+		--m-color: #f2d42c; /* Literal.Number */
+		--mb-color: var(--m-color); /* Literal.Number.Bin */
+		--mf-color: var(--m-color); /* Literal.Number.Float */
+		--mh-color: var(--m-color); /* Literal.Number.Hex */
+		--mi-color: var(--m-color); /* Literal.Number.Integer */
+		--il-color: var(--m-color); /* Literal.Number.Integer.Long */
+		--mo-color: var(--m-color); /* Literal.Number.Oct */
+
+		--s-color: #A5D6FF; /* Literal.String */
+		--s1-color: var(--s-color); /* Literal.String.Single */
+		--s2-color: var(--s-color); /* Literal.String.Double */
+		--sa-color: var(--s-color); /* Literal.String.Affix */
+		--sb-color: var(--s-color); /* Literal.String.Backtick */
+		--sc-color: var(--s-color); /* Literal.String.Char */
+		--sd-color: var(--s-color); /* Literal.String.Doc */
+		--se-color: var(--s-color); /* Literal.String.Escape */
+		--sh-color: var(--s-color); /* Literal.String.Heredoc */
+		--si-color: var(--s-color); /* Literal.String.Interpol */
+		--dl-color: var(--s-color); /* Literal.String.Delimiter */
+		--sr-color: #a6cc5f; /* Literal.String.Regex */
+		--ss-color: rgb(57, 143, 255); /* Literal.String.Symbol */ /* ruby(:foo) */
+		--sx-color: var(--s-color); /* Literal.String.Other */
+
+		--w-color: #bbbbbb; /* Text.Whitespace */
+
+		--lineno-color: #9c9996; /* Line Number */
+		--hll-bg-color: #ffffcc; /* Marked-lines */
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	html {
+		--block-bg-color: oklch(0.8976 0.0203 354.66);
+
+		--c-color: #b6abaf;
+	}
+}
+
+.highlighter-rouge {
+	> .highlight {
+		background-color: var(--block-bg-color);
+	}
+
+	.highlight {
+		.err { color: var(--err-color); background-color: var(--err-bg-color); }
+
+		.p { color: var(--p-color); }
+
+		.c { color: var(--c-color); }
+		.ch { color: var(--ch-color); }
+		.cm { color: var(--cm-color); }
+		.cp { color: var(--cp-color); }
+		.c1 { color: var(--c1-color); }
+		.cs { color: var(--cs-color); }
+		.c, .cm, .cp, .c1, .cs { font-style: italic; }
+
+		.gd { color: var(--gd-color); }
+		.gd .x { color: var(--gd-x-color); }
+		.ge { font-style: italic; } /* Generic.Emph */
+		.gh { color: var(--gh-color); }
+		.gi { color: var(--gi-color); }
+		.gi .x { color: var(--gi-x-color-color); }
+		.go { color: var(--go-color); }
+		.gp { color: var(--gp-color); }
+		.gr { color: var(--gr-color); }
+		.gs { font-weight: bold; } /* Generic.Strong */
+		.gt { color: var(--gt-color); }
+		.gu { color: var(--gu-color); }
+
+		.k { color: var(--k-color); }
+		.kc { color: var(--kc-color); }
+		.kd { color: var(--kd-color); }
+		.kn { color: var(--kn-color); }
+		.kp { color: var(--kp-color); }
+		.kr { color: var(--kr-color); }
+		.kt { color: var(--kt-color); }
+
+		.n { color: var(--n-color); }
+		.na { color: var(--na-color); }
+		.nb { color: var(--nb-color); }
+		.bp { color: var(--bp-color); }
+		.nc { color: var(--nc-color); }
+		.nd { color: var(--nd-color); }
+		.ne { color: var(--ne-color); }
+		.nf { color: var(--nf-color); }
+		.fm { color: var(--fm-color); }
+		.ni { color: var(--ni-color); }
+		.nl { color: var(--nl-color); }
+		.nn { color: var(--nn-color); }
+		.no { color: var(--no-color); }
+		.nt { color: var(--nt-color); }
+		.nv { color: var(--nv-color); }
+		.vc { color: var(--vc-color); }
+		.vg { color: var(--vg-color); }
+		.vi { color: var(--vi-color); }
+
+		.o { color: var(--o-color); }
+		.ow { color: var(--ow-color); }
+
+		.m { color: var(--m-color); }
+		.mb { color: var(--mb-color); }
+		.mf { color: var(--mf-color); }
+		.mh { color: var(--mh-color); }
+		.mi { color: var(--mo-color); }
+		.il { color: var(--il-color); }
+		.mo { color: var(--mo-color); }
+
+		.s { color: var(--s-color); }
+		.s1 { color: var(--s1-color); }
+		.s2 { color: var(--s2-color); }
+		.sa { color: var(--sa-color); }
+		.sb { color: var(--sb-color); }
+		.sc { color: var(--s-color); }
+		.sd { color: var(--sd-color); }
+		.se { color: var(--se-color); }
+		.sh { color: var(--sh-color); }
+		.si { color: var(--si-color); }
+		.dl { color: var(--dl-color); }
+		.sr { color: var(--sr-color); }
+		.ss { color: var(--ss-color); }
+		.sx { color: var(--sx-color); }
+
+		.w { color: var(--w-color); }
+
+		.lineno, .gl { color: var(--lineno-color); }
+		.hll { background-color: var(--hll-bg-color); }
+	}
+}
