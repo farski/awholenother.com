@@ -27,5 +27,5 @@ group :jekyll_plugins do
   gem "jekyll-watch"
 
   # [https://github.com/github/pages-gem]
-  # gem "github-pages"
+  gem "github-pages"
 end
