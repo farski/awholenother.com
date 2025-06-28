@@ -2,10 +2,29 @@
 layout: base
 ---
 
-  <article>
+<article>
+  <header>
     <h1 itemprop="name headline">{{ page.title | escape }}</h1>
 
-    <div itemprop="articleBody">
-      {{ content }}
-    </div>
-  </article>
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {% assign pdate = page.date | date_to_xmlschema %}
+    <time datetime="{{ pdate }}" itemprop="datePublished">
+      Published {{ pdate | date: date_format }}
+    </time>
+
+    {%- if page.update -%}
+    {% assign update = page.update | date_to_xmlschema %}
+      <time datetime="{{ update }}" itemprop="dateModified">
+        Last Updated {{ update | date: date_format }}
+      </time>
+    {%- endif -%}
+
+    {%- if page.reading_time -%}
+      <small id="reading-time">Reading time: {{ page.reading_time }}</small>
+    {%- endif -%}
+  </header>
+
+  <div itemprop="articleBody">
+    {{ content }}
+  </div>
+</article>

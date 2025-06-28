@@ -125,6 +125,7 @@ article {
 	> header time,
 	div[itemprop="articleBody"] > p,
 	div[itemprop="articleBody"] > blockquote,
+	div[itemprop="articleBody"] > table,
 	div[itemprop="articleBody"] > h2,
 	div[itemprop="articleBody"] > h3,
 	div[itemprop="articleBody"] > h4,
