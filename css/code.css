@@ -1,3 +1,9 @@
+/*
+For a list of all possible classes:
+https://github.com/rouge-ruby/rouge/blob/master/lib/rouge/token.rb#L69
+https://github.com/rouge-ruby/rouge/wiki/List-of-tokens
+*/
+
 @media (prefers-color-scheme: dark) {
 	.highlighter-rouge {
 		--block-bg-color: oklch(0.17 0.0225 354.66);
@@ -27,7 +33,7 @@
 
 		--k-color: rgb(255, 45, 101); /* Keyword */ /* ruby(Class, def, return, if) */
 		--kc-color: var(--k-color); /* Keyword.Constant */
-		--kd-color: var(--k-color); /* Keyword.Declaration */
+		--kd-color: var(--k-color); /* Keyword.Declaration */ /* javascript(var, const) */
 		--kn-color: var(--k-color); /* Keyword.Namespace */
 		--kp-color: var(--k-color); /* Keyword.Pseudo */
 		--kr-color: var(--k-color); /* Keyword.Reserved */
