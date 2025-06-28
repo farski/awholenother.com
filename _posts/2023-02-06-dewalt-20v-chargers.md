@@ -2,6 +2,7 @@
 layout: post
 title: Dewalt 20V MAX battery chargers
 date: 2023-02-06 09:56 -0400
+update: 2023-02-06 09:56 -0400
 tags:
   - Dewalt
   - Battery
@@ -14,8 +15,6 @@ https://www.reddit.com/r/Dewalt/comments/10h6zac/at_what_rate_does_a_dewalt_char
 https://www.reddit.com/r/Dewalt/comments/10djddk/dewalt_updating_chargers_to_dual_stage_including/
 https://www.reddit.com/r/Dewalt/comments/10s2qzv/is_there_a_more_compact_20v_charger/
  -->
-
-**Last updated February 2023.**
 
 Below is a list of battery chargers that are compatible with the [Dewalt 20V MAX System](https://www.dewalt.com/systems/cordless-platforms/20v) of cordless powertools. All 20V MAX chargers can charge FLEXVOLT batteries. Compatibility with 12V MAX batteries is also included.
 

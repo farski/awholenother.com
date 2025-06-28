@@ -115,18 +115,21 @@ article {
 		margin-block: 1lh;
 	}
 
-	#reading-time {
+	>header #reading-time,
+	> header time {
 		display: block;
 	}
 
 	> header h1,
 	> header #reading-time,
+	> header time,
 	div[itemprop="articleBody"] > p,
 	div[itemprop="articleBody"] > blockquote,
 	div[itemprop="articleBody"] > h2,
 	div[itemprop="articleBody"] > h3,
 	div[itemprop="articleBody"] > h4,
-	div[itemprop="articleBody"] > ul {
+	div[itemprop="articleBody"] > ul,
+	div[itemprop="articleBody"] > hr {
 		&:not(.full-bleed) {
 			max-width: 752px;
 			margin-inline: auto;

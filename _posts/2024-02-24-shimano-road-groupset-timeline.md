@@ -2,6 +2,7 @@
 layout: post
 title: Shimano road groupset timeline
 date: 2024-02-24 01:11 -0500
+update: 2024-02-24 01:11 -0500
 tags:
   - Bicycles
   - Cycling
@@ -119,8 +120,6 @@ background-size: 30px 30px;
 		background: var(--sp12);
 	}
 </style>
-
-**Last updated February 2024.**
 
 Numbering inconsitencies:
 
