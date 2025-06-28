@@ -14,7 +14,7 @@ tags:
 		border-collapse: separate;
 		border-spacing: 0;
 		table-layout: fixed;
-		width: 100vw;
+		width: 90vw;
 		margin-top: 20px;
 
 		--sp6: firebrick;
@@ -135,15 +135,17 @@ Numbering inconsitencies:
 Solid background = mechanical shifting, striped = Di2.
 <br><span style="border-bottom: 3px solid black;">Black border</span> = rim brakes, <span style="border-bottom: 3px solid OrangeRed">orange</span> = disc brakes.
 
-<div style="display: inline-block; padding: 6px 10px; background: firebrick; border-radius: 4px; color: white;">6</div>
-<div style="display: inline-block; padding: 6px 10px; background: navy; border-radius: 4px; color: white;">7</div>
-<div style="display: inline-block; padding: 6px 10px; background: slategray; border-radius: 4px; color: white;">8</div>
-<div style="display: inline-block; padding: 6px 10px; background: aquamarine; border-radius: 4px;">9</div>
-<div style="display: inline-block; padding: 6px 10px; background: tan; border-radius: 4px;">10</div>
-<div style="display: inline-block; padding: 6px 10px; background: #C7B6DC; border-radius: 4px;">11</div>
-<div style="display: inline-block; padding: 6px 10px; background: silver; border-radius: 4px;">12 speed</div>
+<div>
+	<div style="display: inline-block; padding: 6px 10px; background: firebrick; border-radius: 4px; color: white;">6</div>
+	<div style="display: inline-block; padding: 6px 10px; background: navy; border-radius: 4px; color: white;">7</div>
+	<div style="display: inline-block; padding: 6px 10px; background: slategray; border-radius: 4px; color: white;">8</div>
+	<div style="display: inline-block; padding: 6px 10px; background: aquamarine; border-radius: 4px;">9</div>
+	<div style="display: inline-block; padding: 6px 10px; background: tan; border-radius: 4px;">10</div>
+	<div style="display: inline-block; padding: 6px 10px; background: #C7B6DC; border-radius: 4px;">11</div>
+	<div style="display: inline-block; padding: 6px 10px; background: silver; border-radius: 4px;">12 speed</div>
+</div>
 
-<table>
+<table class="full-bleed">
 	<thead>
 		<tr>
 			<th></th>
