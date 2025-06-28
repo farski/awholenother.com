@@ -49,7 +49,7 @@ https://github.com/rouge-ruby/rouge/wiki/List-of-tokens
 		--nf-color: #84ffef; /* Name.Function */ /* ruby(method name, method calls) */
 		--fm-color: #84ffef; /* Name.Function.Magic */
 		--ni-color: #097e39; /* Name.Entity */
-		--nl-color: #61edbe; /* Name.Label */ /* json(keys) */
+		--nl-color: var(--na-color); /* Name.Label */ /* json(keys) */
 		--nn-color: #097e39; /* Name.Namespace */ /* ruby(module name) */
 		--no-color: #3bb4e8; /* Name.Constant */ /* ruby(constants) */
 		--nt-color: #b81e63; /* Name.Tag */ /* bash(flags) */
@@ -94,9 +94,89 @@ https://github.com/rouge-ruby/rouge/wiki/List-of-tokens
 
 @media (prefers-color-scheme: light) {
 	html {
-		--block-bg-color: oklch(0.8976 0.0203 354.66);
+		--block-bg-color: oklch(0.954 0.0082 354.66);
 
-		--c-color: #b6abaf;
+		--err-color: white; /* Error */
+		--err-bg-color: #a61717; /* Error */
+
+		--p-color: oklch(63.411% 0.21583 342.966); /* Brackets, commas, colons */
+
+		--c-color: oklch(44.635% 0.01032 349.356); /* Comment */
+		--ch-color: var(--c-color); /* Comment.Hashbang */
+		--cm-color: var(--c-color); /* Comment.Multiline */
+		--cp-color: var(--c-color); /* Comment.Preproc */
+		--c1-color: var(--c-color); /* Comment.Single */
+		--cs1-color: var(--c-color); /* Comment.Special */
+
+		--gd-color: #e25050;/* Generic.Deleted */
+		--gd-x-color: var(--gd-color);/* Generic.Deleted.Specific */
+		--gh-color: #999999;/* Generic.Heading */
+		--gi-color: #3f993f;/* Generic.Inserted */
+		--gi-x-color: var(--gi-color);/* Generic.Inserted.Specific */
+		--go-color: #888888;/* Generic.Output */
+		--gp-color: #555555;/* Generic.Prompt */
+		--gr-color: #aa0000;/* Generic.Error */
+		--gt-color: #aa0000;/* Generic.Traceback */
+		--gu-color: #aaaaaa;/* Generic.Subheading */
+
+		--k-color: rgb(255, 45, 101); /* Keyword */ /* ruby(Class, def, return, if) */
+		--kc-color: var(--k-color); /* Keyword.Constant */
+		--kd-color: var(--k-color); /* Keyword.Declaration */ /* javascript(var, const) */
+		--kn-color: var(--k-color); /* Keyword.Namespace */
+		--kp-color: var(--k-color); /* Keyword.Pseudo */
+		--kr-color: var(--k-color); /* Keyword.Reserved */
+		--kt-color: #7a58b8; /* Keyword.Type */ /* yaml(!If) */
+
+		--n-color: #242222; /* Name */ /* ruby(local variables) */
+		--na-color: #147d56; /* Name.Attribute */ /* yaml(keys) */
+		--nb-color: #cf222e; /* Name.Builtin */
+		--bp-color: #999999; /* Name.Builtin.Pseudo */
+		--nc-color: #a718ff; /* Name.Class */ /* ruby(class name) */
+		--nd-color: #a718ff; /* Name.Decorator */
+		--ne-color: #990000; /* Name.Exception */
+		--nf-color: #238e80; /* Name.Function */ /* ruby(method name, method calls) */
+		--fm-color: #84ffef; /* Name.Function.Magic */
+		--ni-color: #097e39; /* Name.Entity */
+		--nl-color: var(--na-color); /* Name.Label */ /* json(keys) */
+		--nn-color: #097e39; /* Name.Namespace */ /* ruby(module name) */
+		--no-color: #3bb4e8; /* Name.Constant */ /* ruby(constants) */
+		--nt-color: #b81e63; /* Name.Tag */ /* bash(flags) */
+		--nv-color: #6b6511; /* Name.Variable */ /* yaml(array elements) */
+		--nx-color: var(--n-color); /* Name.Other */ /* javascript(variables) */
+		--vc-color: #ff721b; /* Name.Variable.Class */ /* ruby(@@foo) */
+		--vg-color: #d073d0; /* Name.Variable.Global */
+		--vi-color: #fc9f15; /* Name.Variable.Instance */ /* ruby(@foo) */
+
+		--o-color: #ff35ab; /* Operator */ /* =, .., +, etc */
+		--ow-color: var(--o-color); /* Operator.Word */
+
+		--m-color: #817e25; /* Literal.Number */
+		--mb-color: var(--m-color); /* Literal.Number.Bin */
+		--mf-color: var(--m-color); /* Literal.Number.Float */
+		--mh-color: var(--m-color); /* Literal.Number.Hex */
+		--mi-color: var(--m-color); /* Literal.Number.Integer */
+		--il-color: var(--m-color); /* Literal.Number.Integer.Long */
+		--mo-color: var(--m-color); /* Literal.Number.Oct */
+
+		--s-color: #4f94cd; /* Literal.String */
+		--s1-color: var(--s-color); /* Literal.String.Single */
+		--s2-color: var(--s-color); /* Literal.String.Double */
+		--sa-color: var(--s-color); /* Literal.String.Affix */
+		--sb-color: var(--s-color); /* Literal.String.Backtick */
+		--sc-color: var(--s-color); /* Literal.String.Char */
+		--sd-color: var(--s-color); /* Literal.String.Doc */
+		--se-color: #f16fff; /* Literal.String.Escape */
+		--sh-color: var(--s-color); /* Literal.String.Heredoc */
+		--si-color: var(--s-color); /* Literal.String.Interpol */
+		--dl-color: var(--s-color); /* Literal.String.Delimiter */ /* javascript(" and ' around strings) */
+		--sr-color: #5c880c; /* Literal.String.Regex */
+		--ss-color: rgb(57, 143, 255); /* Literal.String.Symbol */ /* ruby(:foo) */
+		--sx-color: var(--s-color); /* Literal.String.Other */
+
+		--w-color: #bbbbbb; /* Text.Whitespace */
+
+		--lineno-color: #9c9996; /* Line Number */
+		--hll-bg-color: #ffffcc; /* Marked-lines */
 	}
 }
 
