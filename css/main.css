@@ -130,6 +130,7 @@ article {
 	div[itemprop="articleBody"] > h3,
 	div[itemprop="articleBody"] > h4,
 	div[itemprop="articleBody"] > ul,
+	div[itemprop="articleBody"] > ol,
 	div[itemprop="articleBody"] > hr {
 		&:not(.full-bleed) {
 			max-width: 752px;
