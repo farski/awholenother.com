@@ -12,9 +12,7 @@ tags:
 	table {
 		border-collapse: separate;
 		border-spacing: 0;
-		margin-left: 50%;
 		table-layout: fixed;
-		transform: translateX(-50%);
 		width: 100vw;
 		margin-top: 20px;
 

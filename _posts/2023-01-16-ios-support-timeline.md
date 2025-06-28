@@ -13,9 +13,7 @@ tags:
 	table {
 		border-collapse: collapse;
 		border-spacing: 0;
-		margin-left: 50%;
 		table-layout: fixed;
-		transform: translateX(-50%);
 		width: 100vw;
 
 		--ios-1: #62d446;
