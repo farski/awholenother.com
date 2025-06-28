@@ -15,6 +15,7 @@
 html {
 	--16px: 1rem;
 	--18px: 1.125rem;
+	--24px: 1.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,7 +40,6 @@ html {
 	}
 }
 
-
 body {
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
@@ -63,6 +63,44 @@ p {
 	text-wrap: pretty;
 }
 
+body > header {
+	nav {
+		padding: 30px 0 50px 0;
+		max-width: 752px;
+		margin-inline: auto;
+
+		@media only screen and (max-width: 1180px) {
+			padding-inline: 4%;
+		}
+
+		a {
+			color: inherit;
+			font-weight: bold;
+			text-decoration: none;
+			font-size: var(--24px);
+		}
+	}
+}
+
+main > ol {
+	list-style: none;
+	padding: 0;
+
+	li {
+		max-width: 752px;
+		margin-inline: auto;
+
+		@media only screen and (max-width: 1180px) {
+			padding-inline: 4%;
+		}
+
+		a {
+			color: inherit;
+			font-size: var(--18px);
+		}
+	}
+}
+
 article {
 	margin-block-end: 100px;
 
@@ -77,18 +115,25 @@ article {
 		margin-block: 1lh;
 	}
 
-	h1,
+	#reading-time {
+		display: block;
+	}
+
+	> header h1,
+	> header #reading-time,
 	div[itemprop="articleBody"] > p,
 	div[itemprop="articleBody"] > blockquote,
 	div[itemprop="articleBody"] > h2,
 	div[itemprop="articleBody"] > h3,
 	div[itemprop="articleBody"] > h4,
 	div[itemprop="articleBody"] > ul {
-		max-width: 752px;
-		margin-inline: auto;
+		&:not(.full-bleed) {
+			max-width: 752px;
+			margin-inline: auto;
 
-		@media only screen and (max-width: 1180px) {
-			padding-inline: 4%;
+			@media only screen and (max-width: 1180px) {
+				padding-inline: 4%;
+			}
 		}
 	}
 
