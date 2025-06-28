@@ -102,7 +102,7 @@ Black lines indicate the production period. Colored areas indicate the support p
 
 Models above the red line run only unsupported versions of iOS. Models below the green line run the latest major iOS version. Those between the lines run a supported version, but not the latest version.
 
-<table>
+<table class="full-bleed">
 	<thead>
 		<tr>
 			<th></th>

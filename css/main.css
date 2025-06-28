@@ -95,40 +95,18 @@ h1, h2, h3, h4, h5, h6 {
 	text-wrap: balance;
 }
 
+/* Page header */
 body > header {
 	nav {
-		padding: 30px 0 50px 0;
 		max-width: var(--body-copy-column-width);
-		margin-inline: auto;
-
-		@media only screen and (max-width: 812px) {
-			padding-inline: 4%;
-		}
+		padding-inline: var(--body-copy-h-space);
+		margin: 50px auto 30px;
 
 		a {
 			color: inherit;
 			font-weight: bold;
 			text-decoration: none;
 			font-size: var(--24px);
-		}
-	}
-}
-
-main > ol {
-	list-style: none;
-	padding: 0;
-
-	li {
-		max-width: var(--body-copy-column-width);
-		margin-inline: auto;
-
-		@media only screen and (max-width: 1180px) {
-			padding-inline: 4%;
-		}
-
-		a {
-			color: inherit;
-			font-size: var(--18px);
 		}
 	}
 }
@@ -144,8 +122,10 @@ article {
 	main column of text */
 	> header > *,
 	div[itemprop="articleBody"] > * {
-		/* So all children are assumed to be block */
-		display: block;
+		/* So all (most) children are assumed to be block */
+		&:not(style, table) {
+			display: block;
+		}
 
 		/* And are centered */
 		margin-inline: auto;
@@ -238,5 +218,23 @@ article {
 	div[itemprop="articleBody"] > blockquote {
 		padding-inline-start: 50px;
 		font-style: italic;
+	}
+}
+
+/* For index page */
+main > ol {
+	list-style: none;
+	max-width: var(--body-copy-column-width);
+	padding-inline: var(--body-copy-h-space);
+	margin: 0 auto;
+
+	li {
+		/* max-width: var(--body-copy-column-width); */
+		margin-inline: auto;
+
+		a {
+			color: inherit;
+			font-size: var(--18px);
+		}
 	}
 }
