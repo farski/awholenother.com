@@ -84,7 +84,7 @@ input, button, textarea, select {
 /* Allow line breaks even at abnormal break points, and add hyphes */
 p, h1, h2, h3, h4, h5, h6 {
 	overflow-wrap: break-word;
-	hyphens: auto;
+	/* hyphens: auto; */
 }
 
 /* Use most algorithms for text wrapping */
@@ -226,15 +226,26 @@ main > ol {
 	list-style: none;
 	max-width: var(--body-copy-column-width);
 	padding-inline: var(--body-copy-h-space);
-	margin: 0 auto;
+	margin: 0 auto 100px;
 
 	li {
 		/* max-width: var(--body-copy-column-width); */
 		margin-inline: auto;
+		margin-block-end: 0.5lh;
+		font-size: var(--18px);
 
 		a {
+			font-size: var(--24px);
 			color: inherit;
-			font-size: var(--18px);
+			font-weight: bold;
+			text-decoration: underline;
+			text-decoration-color: transparent;
+			text-decoration-thickness: 2px;
+
+			&:hover {
+				text-decoration-color: var(--primary-color);
+				transition: text-decoration-color .1s;
+			}
 		}
 	}
 }
