@@ -32,7 +32,7 @@ POWERPACK batteries use [tabless](https://www.bosch-professional.com/gb/en/proco
 
 Most of this information probably only applies in the US or North America. Dewalt branding and SKUs are different in other regions. Prices are based on common discount prices found at major retailers, and may reflect the price of a single battery from a multi-pack.
 
-<table style="font-size: 75%; width: 100vw; margin-left: 50%; transform: translateX(-50%);">
+<table class="full-bleed" style="font-size: 75%; max-width: 900px;">
 	<thead>
 		<tr>
 			<th></th>

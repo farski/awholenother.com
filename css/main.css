@@ -1,21 +1,6 @@
-*, *::before, *::after {
-	box-sizing: border-box;
-}
-
-* {
-	margin: 0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	html {
-		interpolate-size: allow-keywords;
-	}
-}
-
 html {
-	--16px: 1rem;
-	--18px: 1.125rem;
-	--24px: 1.5rem;
+	--body-copy-column-width: 752px;
+	--body-copy-h-space: min(25px, 4vw);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,9 +25,36 @@ html {
 	}
 }
 
+*, *::before, *::after {
+	/* Element width includes padding and border */
+	box-sizing: border-box;
+}
+
+* {
+	/* Remove all margins by default */
+	margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+html {
+	/* Pseudo sizes to use for things that should scale browser's font size,
+	based on the size in pixels under most browsers' default font size of
+	16px. If the browser's font size, e.g., changes to 32px, 1rem will also
+	be 32px and this `--16px` variable will also be 32px. */
+	--16px: 1rem;
+	--17px: 1.0625rem;
+	--18px: 1.125rem;
+	--24px: 1.5rem;
+}
+
 body {
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
+	line-height: 1.5; /* Default to more breathing room for text */
+	-webkit-font-smoothing: antialiased; /* Use standard AA, rather than subpixel AA */
 	background-color: var(--bg-color-fallback);
 	background-color: var(--bg-color);
 	color: var(--body-copy-color-fallback);
@@ -50,26 +62,46 @@ body {
 	font-family: system-ui;
 }
 
+/* Multi-line headers are more compact */
+h1, h2, h3 {
+	line-height: 1.2;
+}
+h4, h5, h6 {
+	line-height: 1.35;
+}
+
+/* More practical media defaults */
 img, picture, video, canvas, svg {
 	display: block;
 	max-width: 100%;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-	overflow-wrap: break-word;
+/* Inherit fonts for form controls */
+input, button, textarea, select {
+	font: inherit;
 }
 
+/* Allow line breaks even at abnormal break points, and add hyphes */
+p, h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
+
+/* Use most algorithms for text wrapping */
 p {
 	text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+	text-wrap: balance;
 }
 
 body > header {
 	nav {
 		padding: 30px 0 50px 0;
-		max-width: 752px;
+		max-width: var(--body-copy-column-width);
 		margin-inline: auto;
 
-		@media only screen and (max-width: 1180px) {
+		@media only screen and (max-width: 812px) {
 			padding-inline: 4%;
 		}
 
@@ -87,7 +119,7 @@ main > ol {
 	padding: 0;
 
 	li {
-		max-width: 752px;
+		max-width: var(--body-copy-column-width);
 		margin-inline: auto;
 
 		@media only screen and (max-width: 1180px) {
@@ -105,72 +137,46 @@ article {
 	margin-block-end: 100px;
 
 	p {
-		text-wrap: pretty;
-	}
-	h1, h2, h3, h4, h5, h6 {
-		text-wrap: balance;
-	}
-
-	p {
 		margin-block: 1lh;
 	}
 
-	>header #reading-time,
-	> header time {
+	/* The header and body of an article, by default, treat children as the
+	main column of text */
+	> header > *,
+	div[itemprop="articleBody"] > * {
+		/* So all children are assumed to be block */
 		display: block;
-	}
 
-	> header h1,
-	> header #reading-time,
-	> header time,
-	div[itemprop="articleBody"] > p,
-	div[itemprop="articleBody"] > blockquote,
-	div[itemprop="articleBody"] > table,
-	div[itemprop="articleBody"] > h2,
-	div[itemprop="articleBody"] > h3,
-	div[itemprop="articleBody"] > h4,
-	div[itemprop="articleBody"] > ul,
-	div[itemprop="articleBody"] > ol,
-	div[itemprop="articleBody"] > hr {
-		&:not(.full-bleed) {
-			max-width: 752px;
-			margin-inline: auto;
-
-			@media only screen and (max-width: 1180px) {
-				padding-inline: 4%;
-			}
-		}
-	}
-
-	div[itemprop="articleBody"] > blockquote {
-		padding-inline-start: 50px;
-		font-style: italic;
-	}
-
-	div[itemprop="articleBody"] > div.highlighter-rouge {
-		max-width: 812px;
+		/* And are centered */
 		margin-inline: auto;
 
-		> .highlight {
-			border-radius: 10px;
-		}
+		/* Unless the child is marked as +full-bleed+, it gets a max width to
+		define the main body copy column width, and some padding to keep things
+		away from the edges once the screen gets below the max width.
 
-		@media only screen and (max-width: 812px) {
-			> .highlight {
-				border-radius: 0;
-			}
-		}
-
-		pre {
-			padding: 30px 0 30px 30px;
-			overflow-x: auto;
+		The width of the text will be (column width - 2 * h-space),
+		or 752px - 25px = 702px at wide screen size. Once 4vw is less than 25px
+		the padding will use that value */
+		&:not(.full-bleed) {
+			max-width: var(--body-copy-column-width);
+			padding-inline: var(--body-copy-h-space);
 		}
 	}
 
+	/* Article body copy */
 	p {
 		font-size: var(--18px);
+
+		/* Make body copy a bit smaller on smaller screens */
+		@media only screen and (max-width: 680px) {
+			font-size: var(--17px);
+		}
+		@media only screen and (max-width: 450px) {
+			font-size: var(--16px);
+		}
 	}
 
+	/* Inline code (code found in paragraphs, etc) */
 	p {
 		code.highlighter-rouge {
 			font-size: 85%;
@@ -180,16 +186,57 @@ article {
 		}
 	}
 
+	/* All links in articles */
 	a {
 		color: inherit;
 		text-decoration: underline;
 		text-decoration-color: var(--primary-color);
 		text-decoration-thickness: 2px;
-		/* box-shadow: 0 1.5px 0 var(--primary-color); */
 		transition: text-decoration-color .1s;
 
 		&:hover {
 			text-decoration-color: transparent;
 		}
+	}
+
+	/* Code blocks are slightly wider than other main column elements, but the
+	text should still align with body copy text in the column */
+	div[itemprop="articleBody"] > div.highlighter-rouge {
+		/* Remove the padding from the main column child element. This makes
+		the element the full width of --body-copy-column-width (752px) */
+		padding-inline: 0;
+
+		/* Make sure code blocks get some vertical spacing */
+		margin-block: 1lh;
+
+		> .highlight {
+			/* The top level highlighted element gets corners and background */
+			border-radius: 10px;
+			background-color: var(--block-bg-color);
+			/* The h-space is added back as internal padding, to keep the code
+			text aligne with the body copy */
+			padding-inline: var(--body-copy-h-space);
+
+			pre {
+				/* Take back the space usually used by the padding to keep the
+				code block's text aligned with the body copy */
+				/* margin-inline: var(--body-copy-h-space); */
+				padding-block: 30px;
+				overflow-x: auto; /* Allow code to scroll horizontally */
+			}
+		}
+
+		/* When the screen width is less than or equal to the column width,
+		remove the corners so the block appears full bleed */
+		@media only screen and (max-width: 752px) {
+			> .highlight {
+				border-radius: 0;
+			}
+		}
+	}
+
+	div[itemprop="articleBody"] > blockquote {
+		padding-inline-start: 50px;
+		font-style: italic;
 	}
 }

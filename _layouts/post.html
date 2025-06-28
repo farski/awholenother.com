@@ -4,7 +4,8 @@ layout: base
 
 <article>
   <header>
-    <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+    <!-- All children are +display: block+ -->
+    <h1 itemprop="name headline" style="margin-block-end: 10px;">{{ page.title | escape }}</h1>
 
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {% assign pdate = page.date | date_to_xmlschema %}

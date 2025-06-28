@@ -6,7 +6,7 @@ https://github.com/rouge-ruby/rouge/wiki/List-of-tokens
 
 @media (prefers-color-scheme: dark) {
 	.highlighter-rouge {
-		--block-bg-color: oklch(0.17 0.0225 354.66);
+		--block-bg-color: oklch(0.22 0.0225 354.66);
 
 		--err-color: white; /* Error */
 		--err-bg-color: #a61717; /* Error */
@@ -181,10 +181,6 @@ https://github.com/rouge-ruby/rouge/wiki/List-of-tokens
 }
 
 .highlighter-rouge {
-	> .highlight {
-		background-color: var(--block-bg-color);
-	}
-
 	.highlight {
 		.err { color: var(--err-color); background-color: var(--err-bg-color); }
 
