@@ -1,5 +1,7 @@
 html {
-	--body-copy-column-width: 752px;
+	/* With a browser font size of 16px, this will be 752px. As the browser's
+	font size increases, the column will become wider */
+	--body-copy-column-width: 47rem;
 	--body-copy-h-space: min(25px, 4vw);
 }
 
