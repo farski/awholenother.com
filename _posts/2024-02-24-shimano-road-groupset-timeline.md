@@ -106,18 +106,22 @@ background-size: 30px 30px;
 
 	[sp9] {
 		background: var(--sp9);
+		color: black;
 	}
 
 	[sp10] {
 		background: var(--sp10);
+		color: black;
 	}
 
 	[sp11] {
 		background: var(--sp11);
+		color: black;
 	}
 
 	[sp12] {
 		background: var(--sp12);
+		color: black;
 	}
 </style>
 
@@ -139,10 +143,10 @@ Solid background = mechanical shifting, striped = Di2.
 	<div style="display: inline-block; padding: 6px 10px; background: firebrick; border-radius: 4px; color: white;">6</div>
 	<div style="display: inline-block; padding: 6px 10px; background: navy; border-radius: 4px; color: white;">7</div>
 	<div style="display: inline-block; padding: 6px 10px; background: slategray; border-radius: 4px; color: white;">8</div>
-	<div style="display: inline-block; padding: 6px 10px; background: aquamarine; border-radius: 4px;">9</div>
-	<div style="display: inline-block; padding: 6px 10px; background: tan; border-radius: 4px;">10</div>
-	<div style="display: inline-block; padding: 6px 10px; background: #C7B6DC; border-radius: 4px;">11</div>
-	<div style="display: inline-block; padding: 6px 10px; background: silver; border-radius: 4px;">12 speed</div>
+	<div style="display: inline-block; padding: 6px 10px; background: aquamarine; border-radius: 4px; color: black;">9</div>
+	<div style="display: inline-block; padding: 6px 10px; background: tan; border-radius: 4px; color: black;">10</div>
+	<div style="display: inline-block; padding: 6px 10px; background: #C7B6DC; border-radius: 4px; color: black;">11</div>
+	<div style="display: inline-block; padding: 6px 10px; background: silver; border-radius: 4px; color: black;">12 speed</div>
 </div>
 
 <table class="full-bleed">
