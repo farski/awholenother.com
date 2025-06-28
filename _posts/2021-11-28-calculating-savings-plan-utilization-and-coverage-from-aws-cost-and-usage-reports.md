@@ -2,13 +2,12 @@
 layout: post
 title: Calculating Savings Plan utilization and coverage from AWS Cost and Usage Reports
 date: 2021-11-26 16:10 -0500
+reading_time: 20 minutes
 tags:
   - AWS
   - Billing
   - Cost and Usage Reports
 ---
-
-<small>Reading time: 20 minutes</small>
 
 In [AWS Cost and Usage Reports](https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/), the accounting of [savings plans](https://aws.amazon.com/savingsplans/) and the usage that is or is not covered by those plans can be a little tricky. There are a number of different [line items](https://docs.aws.amazon.com/cur/latest/userguide/cur-sp.html#cur-sp-lineitems) that collectively provide a complete picture of actual usage, how the cost of that usage is affected by savings plans, and how the bill is affected by those costs.
 

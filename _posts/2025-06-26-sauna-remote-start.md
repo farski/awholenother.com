@@ -2,6 +2,7 @@
 layout: post
 title: Adding remote starter to a Costco infrared sauna
 date: 2025-06-26 11:46 -0400
+reading_time: 12 minutes
 tags:
   - sauna
   - DIY
@@ -9,8 +10,6 @@ tags:
   - electronics
   - microcontrollre
 ---
-
-<small>Reading time: 12 minutes</small>
 
 I have [this infrared sauna](https://dynamicsaunasdirect.com/products/santiago-2-person-low-emf-far-infrared-sauna?srsltid=AfmBOoqarQ9SfhPoRprAxfNwZg7lVcThlGRLrvkmtWAcYsGQ73lr46ub). I don't really understand the difference between [Golden Designs Inc](https://goldendesigninc.com/collections/dynamic-saunas/products/santiago-2-person-low-emf-far-infrared-sauna) and [Dynamic Saunas Direct](https://dynamicsaunasdirect.com/products/santiago-2-person-low-emf-far-infrared-sauna?srsltid=AfmBOoqarQ9SfhPoRprAxfNwZg7lVcThlGRLrvkmtWAcYsGQ73lr46ub), but they pretty much seem to be two names for the same company. I bought the sauna through Costco, and they [list the](https://www.costco.com/dynamic-santiago-2-person-full-spectrum-infrared-sauna.product.4000348956.html) brand as "Dynamic Saunas". Regardless of the brand, everyone seems to agree that the model number is `DYN-6209-01`.
 

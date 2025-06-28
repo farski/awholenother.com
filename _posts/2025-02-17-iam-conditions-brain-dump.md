@@ -2,12 +2,11 @@
 layout: post
 title: IAM Conditions brain dump
 date: 2025-02-17 09:26 -0500
+reading_time: 40 minutes
 tags:
   - AWS
   - IAM
 ---
-
-<small>Reading time: 40 minutes</small>
 
 While AWS does have pretty thorough documentation on [IAM policy variables](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html), and the various [context keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceip) that can be used as policy variables, after reading through those guides several times something wasn’t clicking for me. These concepts are central to [ABAC](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_attribute-based-access-control.html) on AWS. I could get things working, but not with full confidence or in a way that I could [explain](https://skeptics.stackexchange.com/questions/8742/did-einstein-say-if-you-cant-explain-it-simply-you-dont-understand-it-well-en).
 

@@ -2,12 +2,11 @@
 layout: post
 title: AssumeRole vs. AssumeRole vs. PassRole
 date: 2024-04-06 19:03 -0500
+reading_time: 20 minutes
 tags:
   - AWS
   - IAM
 ---
-
-<small>Reading time: 20 minutes</small>
 
 When working with AWS [IAM](https://aws.amazon.com/iam/), granting permissions is usually pretty straightforward: you want someone (a user, an app, etc) to be able to do something (write files to S3, send a message to SQS, etc), so you add the matching action to a policy, and things work as expected.
 

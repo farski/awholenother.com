@@ -2,14 +2,13 @@
 layout: post
 title: Basic Network UPS Tools (NUT) and Home Assistant
 date: 2024-02-19 14:38 -0500
+reading_time: 5 minutes
 tags:
   - Home Assistant
   - Smart Home
   - Network UPS Tools
   - NUT
 ---
-
-<small>Reading time: 5 minutes</small>
 
 I recently setup [Home Assistant](https://www.home-assistant.io), and have been looking for useful things to use it for (I don‘t have much of a plan for it, at the moment). Reading [this](https://www.dzombak.com/blog/2023/12/Considerations-for-a-long-running-Raspberry-Pi.html) led me to [this](https://github.com/cdzombak/nut_influx_connector), which led me to the [Network UPS Tools](https://networkupstools.org/) project.
 

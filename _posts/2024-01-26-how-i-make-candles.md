@@ -2,12 +2,11 @@
 layout: post
 title: How I make candles
 date: 2024-01-26 08:53 -0500
+reading_time: 5 minutes
 tags:
   - candles
   - DIY
 ---
-
-<small>Reading time: 5 minutes</small>
 
 This is a description of how I make candles in small batches at home. I haven‘t tried any other methods, and I haven‘t shopped for supplies using any other vendors. I find that this produces good-to-very-good results, is not very expensive, doesn‘t require a lot of thinking or math, and makes it easy to manage a small inventory of supplies. I‘m making candles for myself, so I‘m not really concerned about perfect looking wax or anything like that.
 

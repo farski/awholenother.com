@@ -3,13 +3,13 @@ layout: post
 title: AWS Lambda functions in Rust the easy way
 date: 2022-11-27 14:57 -0400
 update: 2023-03-01 07:34 -0500
+reading_time: 20 minutes
 tags:
   - AWS
   - Lambda
   - Rust
 ---
 
-<small>Reading time: 20 minutes</small>
 
 **Update:** As of March 2023, the AWS SAM CLI now offers [native support](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/building-rust.html) for building Rust-based Lambda functions. The underlying mechanisms are largely the same as what is described in this post, but `BuildMethod: makefile` has been replaced with `BuildMethod: rust-cargolambda`. I haven't had a chance to try this yet. Once I do, I will update the post to reflect this new functionality. The Rust code described in the post is still accurate.
 

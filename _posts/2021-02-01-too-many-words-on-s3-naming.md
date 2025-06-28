@@ -2,12 +2,11 @@
 layout: post
 title: Too many words on S3 object naming & access
 date: 2021-02-01 18:32 -0400
+reading_time: 15 minutes
 tags:
   - AWS
   - S3
 ---
-
-<small>Reading time: 15 minutes</small>
 
 Amazon S3 is fairly old in cloud years, so it’s not without it historical quirks and dark corners. But when it comes to object naming, things are pretty straightforward: [“You can use any UTF-8 character in an object key name“](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-key-guidelines). This is true, as far as I know, without exception. There are no restricted characters, no magic sequences, and no character is treated differently than any other character.
 
