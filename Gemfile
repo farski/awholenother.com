@@ -34,7 +34,4 @@ group :jekyll_plugins do
 
   # Add metadata tags for search engines and social networks [https://github.com/jekyll/jekyll-seo-tag]
   gem "jekyll-seo-tag"
-
-  #   # [https://github.com/github/pages-gem]
-  #   gem "github-pages"
 end
