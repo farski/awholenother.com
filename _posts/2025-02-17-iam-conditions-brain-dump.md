@@ -1,6 +1,7 @@
 ---
 layout: post
 title: IAM Conditions brain dump
+description: Everything I know about AWS IAM conditions
 date: 2025-02-17 09:26 -0500
 reading_time: 40 minutes
 tags:
@@ -19,7 +20,7 @@ This post assumes you mostly understand [IAM policy evaluation logic](https://do
 This policy uses a wildcard in the resource. It allows creating buckets named like `acme-assets-images`, `acme-assets-pdfs`, etc. It doesn’t use any variables or conditions, but still offers some flexibility and dynamic behavior.
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: s3:CreateBucket
@@ -31,7 +32,7 @@ Statement:
 This policy also uses a wildcard in the resource, but adds a [policy variable](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html).
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: s3:CreateBucket
@@ -57,7 +58,7 @@ Interestingly, and perhaps not obviously, when using [_properties of the resourc
 For example, this policy allows creating a bucket in account `111122223333` called `111122223333-images`, even though that bucket doesn’t exist. You may think `ResourceAccount` would be missing or null until the resource exists, but that doesn’t seem to be the case. For create actions, the hypothetical future resource’s properties are included as part of the IAM request context, so you can use them.
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: s3:CreateBucket
@@ -84,7 +85,7 @@ These would translate to context keys like `aws:PrincipalTag/environment` or `aw
 A policy using tag-based context key variables in the resource would look like this:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: s3:CreateBucket
@@ -100,7 +101,7 @@ That’s about as complicated as things get when using IAM variables in policy r
 It’s worth noting that you can use more than one variable in a resource:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: s3:CreateBucket
@@ -126,7 +127,7 @@ The equivalent IAM policy would look more like:
 ```yaml
 Condition:
   StringEquals:
-    aws:PrincipalAccount: '111122223333'
+    aws:PrincipalAccount: "111122223333"
 ```
 
 You have to remember to mentally move the operator in between the JSON property and value, like `aws:PrincipalTag/environment StringEquals "prod"`.
@@ -144,7 +145,7 @@ Both how to structure these cases of multiples, and how they interact (logical A
 Let’s start by looking at a pretty simple policy:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -180,7 +181,7 @@ We can expand the previous example a bit to see how we could introduce more test
 Let’s say we wanted to compare two different strings as part of this policy. Within a condition block, each operator (`StringEquals`, `NumericLessThan`, `DateGreaterThanEquals`, etc) can only appear once. But we can list multiple context keys under each operator to reuse that operator. So we could augment the previous example like this:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -202,7 +203,7 @@ So in this case, the policy is saying: allow sending SQS messages when the queue
 Let’s say, instead, that you want to test only the principal’s `team` tag, but you want allow multiple teams to send these SQS messages. That would look something like this:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -225,7 +226,7 @@ Or to put it another way, the policy is checking if _any_ of the values in the s
 To continue to build a complex example, consider:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -247,7 +248,7 @@ This policy allows sending SQS messages when the queue is tagged `environment=st
 Using multiple condition operators in a policy results in more `AND` evaluations.
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -257,7 +258,7 @@ Statement:
         aws:ResourceTag/environment: stag
       # AND
       DateGreaterThanEquals:
-        aws:CurrentTime: '2020-01-01T00:00:00Z'
+        aws:CurrentTime: "2020-01-01T00:00:00Z"
       # AND
       IpAddress:
         aws:SourceIp: 10.20.0.0/16
@@ -272,7 +273,7 @@ If we were to add more conditions to any of those operators, or were to provide 
 Some operators are considered _negated matching_ operators, like `StringNotEquals`, `ArnNotLike`, etc. When using these operators with a list of multiple values, the evaluation of those values is made with logical `NOR`, rather than logical `OR`.
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -315,7 +316,7 @@ Qualifiers are added to the front of operators. So we can take an operator like 
 Here’s an example of a policy that uses `ForAnyValue:StringEquals`:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -336,7 +337,7 @@ In other words, this policy will allow the request to send an SQS message when t
 We can also include wildcards in the set of values we put in our policy, but we have to use the `StringLike` operator:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -356,7 +357,7 @@ Hopefully you can see how this pattern would apply to other operators when quali
 The `ForAllValues` qualifier works in a similar way, but checks that _every_ value in the set of values from the context (Sunny, Warm, and Windy) satisfies the operator for some value in the policy condition’s set of values.
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -387,7 +388,7 @@ There’s a major caveat to be aware of when usnig the `ForAllValues` qualifier:
 For example, if we again consider this policy:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -423,7 +424,7 @@ In other words, the presence of a `ForAllValues` condition does not guarantee th
 When this behavior would be problematic, you should pair `ForAllValues` with the [`Null` condition operator](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Null):
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -463,7 +464,7 @@ We’ll keep using this example context:
 Here’s a policy using `ForAnyValue:StringNotEquals`:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -479,7 +480,7 @@ This condition will be satisfied if there is any weather data in the request tha
 A slightly more complex example would include multiple values in the policy:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -500,7 +501,7 @@ In other words, `ForAnyValue:StringNotEquals` checks for the presence of at leas
 Now let’s look at `ForAllValues:StringNotEquals`, and start simple where the policy only has a single value in the condition:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -518,7 +519,7 @@ This policy requires that `fake:Weather` is not null, and requires that no value
 If we add more values to the condition:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -560,7 +561,7 @@ As we’ve seen, conditions allows us to write policies based on aspects of the 
 Let’s start with something pretty basic:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:SendMessage
@@ -591,11 +592,11 @@ When we talk about implementing ABAC in AWS, generally what we mean is writing p
 For example, let’s say you want a policy that allows principals with the `team=security` tag to be able to create any S3 buckets they want:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: s3:CreateBucket
-    Resource: '*'
+    Resource: "*"
     Condition:
       StringEquals:
         aws:PrincipalTag/team: security # Check if the principal making the request is tagged with `team=security`
@@ -604,11 +605,11 @@ Statement:
 If you also want to allow buckets to be deleted, but you want to ensure buckets used in production are protected from being deleted:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: s3:DeleteBucket
-    Resource: '*'
+    Resource: "*"
     Condition:
       StringNotEquals: # Note the "Not" in StringNotEquals
         aws:ResourceTag/environment: prod # Check that the bucket being targeted does **not** have an `environment` tag equal to `prod`
@@ -619,11 +620,11 @@ These two examples highlight the differences in using attributes of the principa
 The two methods will often be combined. For example, if you wanted a policy that allows a team to delete any of their own buckets:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: s3:DeleteBucket
-    Resource: '*'
+    Resource: "*"
     Condition:
       StringEquals:
         aws:ResourceTag/team: ${aws:PrincipalTag/team} # Compare the `team` tag on the requesting principal to the `team` tag on the target resource, and allow the deletion if they match
@@ -664,13 +665,13 @@ There’s a couple different reasons why it’s important to control how resourc
 One is consistency. You may have a tagging system and want to ensure that resources don’t deviate from that. Here’s an example of how you may create a policy that only allows certain values to be used for the `environment` tag on SQS queues and SNS topics.
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action:
       - sqs:TagQueue
       - sns:TagResource
-    Resource: '*'
+    Resource: "*"
     Condition:
       StringEquals:
         aws:RequestTag/environment:
@@ -682,13 +683,13 @@ Statement:
 Note, however, that this policy does **not** control who can do the tagging, or which resources they can tag. This policy only controls what that one particular tag can be. It would allow, for example, someone to change the `environment` tag of some resource from `test` to `prod`. You may not want everyone to be able to do that, so you may also add other conditions to restrict tagging, beyond just which values can be used.
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action:
       - sqs:TagQueue
       - sns:TagResource
-    Resource: '*'
+    Resource: "*"
     Condition:
       StringEquals:
         aws:RequestTag/environment:
@@ -741,11 +742,11 @@ Similar to how we can add `ForAnyValue:` and `ForAllValues:` to condition operat
 Take this example:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: ec2:*
-    Resource: '*'
+    Resource: "*"
     Condition:
       StringEqualsIfExists:
         ec2:InstanceType:
@@ -776,11 +777,11 @@ You may be thinking that combining `ForAnyValue` and `…IfExists` would let you
 Consider this policy:
 
 ```yaml
-Version: '2012-10-17'
+Version: "2012-10-17"
 Statement:
   - Effect: Allow
     Action: sqs:*
-    Resource: '*'
+    Resource: "*"
     Condition:
       ForAnyValue:StringEqualsIfExists:
         aws:TagKeys:
