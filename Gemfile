@@ -13,8 +13,6 @@ gem "logger"
 
 # Jekyll is a blog-aware static site generator in Ruby [https://jekyllrb.com/]
 gem "jekyll"
-# A beautiful, minimal theme for Jekyll [https://github.com/jekyll/minima]
-# gem "minima"
 
 # kramdown parser for the GitHub Flavored Markdown (GFM) dialect of Markdown [https://github.com/kramdown/parser-gfm]
 gem "kramdown-parser-gfm"
