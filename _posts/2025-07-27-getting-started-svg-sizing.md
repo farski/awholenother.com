@@ -146,7 +146,7 @@ In this example, we’ve conveniently created a viewBox and a pixelized image si
 
 In this example, we’re using a viewBox that selects only the region of the canvas with the lower-right quarter of the circle (which is a square). Then we’ve set a size of 40x80 pixels, which is a tall rectangle.
 
-You have options of how aspect ratio discrepencies get handled, but by defauly basically what happens is the region you _select_ with `viewBox` will always be present in the resulting rendered image, and the region that is actually _used_ to produce that rendered image will expand from that selected region to create a region that is the aspect ratio of the width and height (i.e., something akin to letterboxing, or `contain` in CSS). When the aspect ratios match, the region doesn’t expand at all. By the default, your desired region will end up centered within the expanded region.
+You have options of how aspect ratio discrepencies get handled, but by default basically what happens is the region you _select_ with `viewBox` will always be present in the resulting rendered image, and the region that is actually _used_ to produce that rendered image will expand from that selected region to create a region that is the aspect ratio of the width and height (i.e., something akin to letterboxing, or `contain` in CSS). When the aspect ratios match, the region doesn’t expand at all. By the default, your desired region will end up centered within the expanded region.
 
 ## On the page
 
