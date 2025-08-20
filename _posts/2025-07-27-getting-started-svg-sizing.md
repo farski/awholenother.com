@@ -54,7 +54,7 @@ It’s not quite right to say that the _shapes_ will leave vectorland and get tr
 
 But there is not One True Way to create a pixel twin from a vector shape. There’s going to be some sort of translation process for how unit-less sizes in vectorland should be codified into pixels in rasterworld. Remember, the circle you drew with a radius of `50` was **not** 50 pixels. You may know, for instance, that the circle should only be 8 pixels in diameter on someone’s screen, even though the artist who drew it in the SVG happened to give it a radius of 50. Someone else may draw radius 50 circle in an SVG, and display it on a website at 500 pixels wide.
 
-This is possible because we get to control how the unit-less sizes of our shapes in vectorland get translated into pixels. We can tell the browser, for instance, that a size of 50 in vectorland should equate to 4 pixels when it’s creating the raster twin of that circle. So your radiud 50 vector circle turns into a pixel circle with a radius of 4 pixels, which gives you the 8px circle on the screen that you were hoping for.
+This is possible because we get to control how the unit-less sizes of our shapes in vectorland get translated into pixels. We can tell the browser, for instance, that a size of 50 in vectorland should equate to 4 pixels when it’s creating the raster twin of that circle. So your radius 50 vector circle turns into a pixel circle with a radius of 4 pixels, which gives you the 8px circle on the screen that you were hoping for.
 
 ## Two steps, two choices
 
