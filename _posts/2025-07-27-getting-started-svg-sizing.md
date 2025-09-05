@@ -36,7 +36,7 @@ You may only care about a relatively small part of that infinite plane right nea
 
 Which is to say, the universe where your SVG shapes live has no inherent size or bounds. Whether you make a circle with a radius of 10, or a complex vector masterpiece stretching very far in all directions of the canvas, the world is the same size.
 
-So, when an SVG gets rendered on a webpage, there **must** be a choice made about which part of the infinite canvas to show. If you’re every working with an SVG and it doesn’t seem like you’re making that choice, it’s important to understand that _something_ is making the choice. The choice has to be made, because we can’t put infinitely sized images on a webpage.
+So, when an SVG gets rendered on a webpage, there **must** be a choice made about which part of the infinite canvas to show. If you’re ever working with an SVG and it doesn’t seem like you’re making that choice, it’s important to understand that _something_ is making the choice. The choice has to be made, because we can’t put infinitely sized images on a webpage.
 
 ## It’s not pixels until it is
 
