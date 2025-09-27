@@ -169,7 +169,6 @@ Most of this information probably only applies in the US or North America. Dewal
 			<td>20V MAX XR</td>
 			<td>
 				<a href="https://www.dewalt.com/product/dcb240/20v-max-4ah-battery">DCB240</a>
-				<sup>1R/21</sup>
 			</td>
 			<td>4.0 Ah</td>
 			<td>1.15 lbs</td>
