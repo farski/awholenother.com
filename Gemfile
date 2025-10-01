@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.4.4"
+ruby "3.4.6"
 
 # CSV Reading and Writing [https://ruby.github.io/csv/]
 gem "csv"
