@@ -156,7 +156,7 @@ The final installation looks like this:
 - 2 wires (12 V) spliced off that custom cable which go to the 12-to-5 V transformer.
 - 2 wires (5 V) from the transformer to the relay board.
 - 2 wires from each relay that run from the roof of the sauna, down through the wall to the control panel. I used speaker wire because it's what I had lying around.
-- Each of those wires is connected to the pins of the correct button switch assembly on the PCB
+- Each of those wires is connected to the pins of the correct button switch assembly on the PCB.
 
 _(Sorry for the low quality photos)_
 
