@@ -27,7 +27,9 @@ html {
 	}
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
 	/* Element width includes padding and border */
 	box-sizing: border-box;
 }
@@ -55,8 +57,10 @@ html {
 }
 
 body {
-	line-height: 1.5; /* Default to more breathing room for text */
-	-webkit-font-smoothing: antialiased; /* Use standard AA, rather than subpixel AA */
+	line-height: 1.5;
+	/* Default to more breathing room for text */
+	-webkit-font-smoothing: antialiased;
+	/* Use standard AA, rather than subpixel AA */
 	background-color: var(--bg-color-fallback);
 	background-color: var(--bg-color);
 	color: var(--body-copy-color-fallback);
@@ -65,26 +69,44 @@ body {
 }
 
 /* Multi-line headers are more compact */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	line-height: 1.2;
 }
-h4, h5, h6 {
+
+h4,
+h5,
+h6 {
 	line-height: 1.35;
 }
 
 /* More practical media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
 	display: block;
 	max-width: 100%;
 }
 
 /* Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
 	font: inherit;
 }
 
 /* Allow line breaks even at abnormal break points, and add hyphes */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	overflow-wrap: break-word;
 	/* hyphens: auto; */
 }
@@ -93,12 +115,18 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
 	text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	text-wrap: balance;
 }
 
 /* Page header */
-body > header {
+body>header {
 	nav {
 		max-width: var(--body-copy-column-width);
 		padding-inline: var(--body-copy-h-space);
@@ -122,8 +150,9 @@ article {
 
 	/* The header and body of an article, by default, treat children as the
 	main column of text */
-	> header > *,
-	div[itemprop="articleBody"] > * {
+	>header>*,
+	div[itemprop="articleBody"]>* {
+
 		/* So all (most) children are assumed to be block */
 		&:not(style, table) {
 			display: block;
@@ -153,13 +182,15 @@ article {
 		@media only screen and (max-width: 680px) {
 			font-size: var(--17px);
 		}
+
 		@media only screen and (max-width: 450px) {
 			font-size: var(--16px);
 		}
 	}
 
 	/* Inline code (code found in paragraphs, etc) */
-	p {
+	p,
+	li {
 		code.highlighter-rouge {
 			font-size: 85%;
 			background: var(--inline-code-bg-color);
@@ -183,7 +214,7 @@ article {
 
 	/* Code blocks are slightly wider than other main column elements, but the
 	text should still align with body copy text in the column */
-	div[itemprop="articleBody"] > div.highlighter-rouge {
+	div[itemprop="articleBody"]>div.highlighter-rouge {
 		/* Remove the padding from the main column child element. This makes
 		the element the full width of --body-copy-column-width (752px) */
 		padding-inline: 0;
@@ -191,7 +222,7 @@ article {
 		/* Make sure code blocks get some vertical spacing */
 		margin-block: 1lh;
 
-		> .highlight {
+		>.highlight {
 			/* The top level highlighted element gets corners and background */
 			border-radius: 10px;
 			background-color: var(--block-bg-color);
@@ -204,27 +235,28 @@ article {
 				code block's text aligned with the body copy */
 				/* margin-inline: var(--body-copy-h-space); */
 				padding-block: 30px;
-				overflow-x: auto; /* Allow code to scroll horizontally */
+				overflow-x: auto;
+				/* Allow code to scroll horizontally */
 			}
 		}
 
 		/* When the screen width is less than or equal to the column width,
 		remove the corners so the block appears full bleed */
 		@media only screen and (max-width: 752px) {
-			> .highlight {
+			>.highlight {
 				border-radius: 0;
 			}
 		}
 	}
 
-	div[itemprop="articleBody"] > blockquote {
+	div[itemprop="articleBody"]>blockquote {
 		padding-inline-start: 50px;
 		font-style: italic;
 	}
 }
 
 /* For index page */
-main > ol {
+main>ol {
 	list-style: none;
 	max-width: var(--body-copy-column-width);
 	padding-inline: var(--body-copy-h-space);
