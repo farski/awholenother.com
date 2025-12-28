@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Create bootable OS X 10.11 installation media from macOS 26
+title: Create bootable OS X 10.11 installation media from macOS 26
 date: 2025-12-27 16:58 -0500
 tags:
   - Apple
