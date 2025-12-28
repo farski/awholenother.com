@@ -11,25 +11,25 @@ tags:
 ---
 
 
-**Update:** As of March 2023, the AWS SAM CLI now offers [native support](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/building-rust.html) for building Rust-based Lambda functions. The underlying mechanisms are largely the same as what is described in this post, but `BuildMethod: makefile` has been replaced with `BuildMethod: rust-cargolambda`. I haven't had a chance to try this yet. Once I do, I will update the post to reflect this new functionality. The Rust code described in the post is still accurate.
+**Update:** As of March 2023, the AWS SAM CLI now offers [native support](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/building-rust.html) for building Rust-based Lambda functions. The underlying mechanisms are largely the same as what is described in this post, but `BuildMethod: makefile` has been replaced with `BuildMethod: rust-cargolambda`. I haven’t had a chance to try this yet. Once I do, I will update the post to reflect this new functionality. The Rust code described in the post is still accurate.
 
 <hr>
 
-Deploying Rust code to an AWS Lambda function is a topic that has been written about before, but nothing approached it quite the way I was looking for. I have a lot of experience with AWS, Lambdas, and deploying things to AWS and Lambdas. I have pretty limited experience with Rust. But I've read a bunch of tutorials, and sort of understand the basics and can make it do some things. That's the level of Rust exposure this post assumes you have.
+Deploying Rust code to an AWS Lambda function is a topic that has been written about before, but nothing approached it quite the way I was looking for. I have a lot of experience with AWS, Lambdas, and deploying things to AWS and Lambdas. I have pretty limited experience with Rust. But I’ve read a bunch of tutorials, and sort of understand the basics and can make it do some things. That’s the level of Rust exposure this post assumes you have.
 
-Most of what I'm programming these days are web services: building APIs, or writing software that ties various APIs together. And nearly all of what I work on runs in the cloud. The best sandbox for me for learning Rust is a similar public cloud environment, where there are lots of different things to interact with (files, databases, queues, etc) readily available. For better or worse, I learn the fastest when I can learn it in the context of AWS.
+Most of what I’m programming these days are web services: building APIs, or writing software that ties various APIs together. And nearly all of what I work on runs in the cloud. The best sandbox for me for learning Rust is a similar public cloud environment, where there are lots of different things to interact with (files, databases, queues, etc) readily available. For better or worse, I learn the fastest when I can learn it in the context of AWS.
 
 To that end, I wanted to have something that allowed me to write and deploy Rust code as easily as I could write and deploy Node.js code. When I want to prototype something in Node, all I need is an `index.js` file with some code and a `template.yml` CloudFormation template, and running `sam build && sam deploy` gets the wheels turning. As a learning or sandbox environment, that gets me access to all aspects of the AWS cloud and the freedom to start playing around with whatever new service, API, or language feature has caught my attention. Extremely low friction.
 
 The goal is to get as close to that workflow for Rust as possible, and it turns out we can get pretty close, even though the two ecosystems are quite different.
 
-> There are many differnt ways to deploy code to Lambda functions or other serverless platforms, and I suspect many could provide a similar developer experience. AWS CloudFormation and AWS SAM are the systems I'm most familiar with, which is why I'm focusing on them.
+> There are many differnt ways to deploy code to Lambda functions or other serverless platforms, and I suspect many could provide a similar developer experience. AWS CloudFormation and AWS SAM are the systems I’m most familiar with, which is why I’m focusing on them.
 
 ## Node.js
 
-Let's quickly review what happens when deploying a very simple Node.js app with AWS SAM.
+Let’s quickly review what happens when deploying a very simple Node.js app with AWS SAM.
 
-We'd start by creating a code file which, by convention, would be called `index.js`. This example doesn't do anything interesting, but it would run when invoked and return a value.
+We’d start by creating a code file which, by convention, would be called `index.js`. This example doesn’t do anything interesting, but it would run when invoked and return a value.
 
 ```javascript
 export const handler = async (event, context) => {
@@ -37,7 +37,7 @@ export const handler = async (event, context) => {
 };
 ```
 
-Next, we'd create a SAM template (generally named `template.yml`), which includes the defintion of the Lambda function we want to deploy into AWS.
+Next, we’d create a SAM template (generally named `template.yml`), which includes the defintion of the Lambda function we want to deploy into AWS.
 
 ```yaml
 AWSTemplateFormatVersion: '2010-09-09'
@@ -68,27 +68,27 @@ Resources:
 
 This template asks AWS to create a Lambda function with some basic settings (as well as a log group for the function, to follow best practices).
 
-Since this application is using one of Lambda's native runtimes (Node.js 18), really all that needs to happen to get it into the cloud is to get `index.js` and `template.yml` somewhere where they can be deployed. The AWS SAM utility does that for us. `sam build` takes this template as we've written it, with references to files relative to our local file sysmem (e.g., `CodeURI: ./index.js`), and then uploads those referenced files to S3, and then creates a new copy of the template where the local references have been replaced with references to those objects in S3.
+Since this application is using one of Lambda’s native runtimes (Node.js 18), really all that needs to happen to get it into the cloud is to get `index.js` and `template.yml` somewhere where they can be deployed. The AWS SAM utility does that for us. `sam build` takes this template as we’ve written it, with references to files relative to our local file sysmem (e.g., `CodeURI: ./index.js`), and then uploads those referenced files to S3, and then creates a new copy of the template where the local references have been replaced with references to those objects in S3.
 
 Then, when you run `sam deploy`, that newly-built template can be sent to CloudFormation, which will create the Lambda function using the code file in S3, and the log group that we asked for.
 
-> There is some initial configuration that I didn't cover, which tells `sam` where you want to deploy things. Those steps are not really relevant to deploying a Rust app.
+> There is some initial configuration that I didn’t cover, which tells `sam` where you want to deploy things. Those steps are not really relevant to deploying a Rust app.
 
 The application code could grow to multiple files, the template to grow to include many functions and other types of resources, but the process for deploying a Node.js app with any level of complexity using this system remains pretty much the same.
 
 ## Rust
 
-There are two reasons why a Rust-based workflow can't work the same way as with Node.js:
+There are two reasons why a Rust-based workflow can’t work the same way as with Node.js:
 
-The first is that Rust code must be compiled. The Node.js runtime will interpret JavaScript code just as we've written it on the fly. We could even change the Lambda from the `arm64` architecture to its `x86_64` counterpart, and that JavaScript code we wrote would continue to work. Rust code is not very useful until it's been compiled for the specific plaform that it's going to run on. So that's one additional step we're going to have to add.
+The first is that Rust code must be compiled. The Node.js runtime will interpret JavaScript code just as we’ve written it on the fly. We could even change the Lambda from the `arm64` architecture to its `x86_64` counterpart, and that JavaScript code we wrote would continue to work. Rust code is not very useful until it’s been compiled for the specific plaform that it’s going to run on. So that’s one additional step we’re going to have to add.
 
-The other reason is that AWS Lambda doesn't natively support Rust, even if it's been compiled. If you simply create a Lambda function with a binary compiled from some Rust code, the service won't know what to do with it. We need to create a Lambda function in a way where it knows how to talk to our binary, and our binary needs to be able to talk back. Again, this introduces some extra steps as compared to the Node.js example, but as you'll see, not that much extra complexity. After some one-time setup, the developer experience ends up in a very similar place to Node.js or other native runtimes.
+The other reason is that AWS Lambda doesn’t natively support Rust, even if it’s been compiled. If you simply create a Lambda function with a binary compiled from some Rust code, the service won’t know what to do with it. We need to create a Lambda function in a way where it knows how to talk to our binary, and our binary needs to be able to talk back. Again, this introduces some extra steps as compared to the Node.js example, but as you’ll see, not that much extra complexity. After some one-time setup, the developer experience ends up in a very similar place to Node.js or other native runtimes.
 
 ### The Binary
 
-There are two files we're going to need on the Rust side of things: `Cargo.toml` and `main.rs`.
+There are two files we’re going to need on the Rust side of things: `Cargo.toml` and `main.rs`.
 
-If you have started learning about Rust at all, you'll be familiar with `Cargo` files. They define settings related to how your code will build, as well as project dependencies. For getting Rust code running in a Lambda, there are a few important things that need to be present in the `Cargo.toml` file. Below is the complete TOML file, and below that the important aspects are explained in further detail.
+If you have started learning about Rust at all, you’ll be familiar with `Cargo` files. They define settings related to how your code will build, as well as project dependencies. For getting Rust code running in a Lambda, there are a few important things that need to be present in the `Cargo.toml` file. Below is the complete TOML file, and below that the important aspects are explained in further detail.
 
 ```toml
 [package]
@@ -114,17 +114,17 @@ path = "./main.rs"
 
 At the time of writing, `edition = "2021"` was the most recent Rust edition that was compatible with the other things necessary to make this all work.
 
-Setting `autobins = false` disables the automatic target discovery that happens by default when compiling binaries with Cargo. In order to create a binary that matches the Lambda service's expectations for how binaries are named, the configuration for the output binary will be explicitly defined further down the Cargo file.
+Setting `autobins = false` disables the automatic target discovery that happens by default when compiling binaries with Cargo. In order to create a binary that matches the Lambda service’s expectations for how binaries are named, the configuration for the output binary will be explicitly defined further down the Cargo file.
 
 As far as I know, `tokio` is the best option currently for an async Rust runtime on Lambda. Others may also work, but I have not tried them.
 
 The line of code in this file that does the most heavy lifting is `lambda_runtime = "^0.7.0"`. `lambda_runtime` is a Rust [project maintained by AWS](https://github.com/awslabs/aws-lambda-rust-runtime) that does pretty much all the work required for creating a binary that knows how to "talk back" to the underlying Lambda platform.
 
-If you think about our original Node.js-based Lambda function, there are three layers: the Lambda service, the Node.js runtime that's offered natively, and the JavaScript code that we provided. The Lambda service is responsible for things like provisioning resources needed in AWS data centers to run your code and ultimately controls data into and out of a function execution. The runtime knows how to interact with that service layer, and also knows how to interpret JavaScript code. The JavaScript code is our business logic that the runtime consumes.
+If you think about our original Node.js-based Lambda function, there are three layers: the Lambda service, the Node.js runtime that’s offered natively, and the JavaScript code that we provided. The Lambda service is responsible for things like provisioning resources needed in AWS data centers to run your code and ultimately controls data into and out of a function execution. The runtime knows how to interact with that service layer, and also knows how to interpret JavaScript code. The JavaScript code is our business logic that the runtime consumes.
 
-Rust is a bit different, since there is no middle layer interpretting code on the fly. Instead, we need to teach out binaries to interact with the Lambda service layer directly, at the same time as they are taking care of our business logic. You could read up on the API for building custom Lambda runtimes and implement that interface yourself, but `lambda_runtime` provides a stable, nearly first-party alternative. It provides a few primatives that we can implement in our own Rust code to ensure that inputs coming from the service layer and outputs we're sending back are handled correctly, and work in the same way that the native runtimes like Node.js and Python would.
+Rust is a bit different, since there is no middle layer interpretting code on the fly. Instead, we need to teach out binaries to interact with the Lambda service layer directly, at the same time as they are taking care of our business logic. You could read up on the API for building custom Lambda runtimes and implement that interface yourself, but `lambda_runtime` provides a stable, nearly first-party alternative. It provides a few primatives that we can implement in our own Rust code to ensure that inputs coming from the service layer and outputs we’re sending back are handled correctly, and work in the same way that the native runtimes like Node.js and Python would.
 
-To put it another way, our binary _is_ the custom runtime, it's not something we're running within a custom runtime.
+To put it another way, our binary _is_ the custom runtime, it’s not something we’re running within a custom runtime.
 
 ```toml
 serde = "^1"
@@ -139,7 +139,7 @@ tracing = "^0.1.36"
 tracing-subscriber = { version = "^0.3.15", features = ["env-filter"] }
 ```
 
-Again, these crates are here more for illustrating something fundamental to writing a good Rust-based Lambda, and not strictly required for basic functionality. These `tracing` crates are used for logging, and work in a way that aligns with Lambda's expectations, so they are a good fit. There are other logging libraries that would work.
+Again, these crates are here more for illustrating something fundamental to writing a good Rust-based Lambda, and not strictly required for basic functionality. These `tracing` crates are used for logging, and work in a way that aligns with Lambda’s expectations, so they are a good fit. There are other logging libraries that would work.
 
 ```toml
 [[bin]]
@@ -151,9 +151,9 @@ Since we disable automatic binary targets earlier (`autobins = false`), we use t
 
 ### The Code
 
-With the Cargo file in hand, we now have a few basic tools to help us create a custom Lambda runtime using Rust. We'll be able to serialize and deserialize values in a way that's compatible with the platform, using `serde`, and we can do some logging very reminiscent of how you would use `console.log` or `console.debug` with Node.js.
+With the Cargo file in hand, we now have a few basic tools to help us create a custom Lambda runtime using Rust. We’ll be able to serialize and deserialize values in a way that’s compatible with the platform, using `serde`, and we can do some logging very reminiscent of how you would use `console.log` or `console.debug` with Node.js.
 
-Below is the complete `main.rs` file with inline comments explaining what's going on. This is intended to be a basic example that primarily illustrates how to integrate the `lambda_runtime`, but as mentioned before, doesn't completely gloss over other fundamental aspects, like logging, that you'd want in a more complete app.
+Below is the complete `main.rs` file with inline comments explaining what’s going on. This is intended to be a basic example that primarily illustrates how to integrate the `lambda_runtime`, but as mentioned before, doesn’t completely gloss over other fundamental aspects, like logging, that you’d want in a more complete app.
 
 ```rust
 use lambda_runtime::{service_fn, LambdaEvent, Error};
@@ -261,7 +261,7 @@ async fn event_handler(event: LambdaEvent<EchoRequest>) -> Result<EchoResponse, 
 
 ### Deploying
 
-We're now less than 10 lines of code away from being able to `sam build && sam deploy` this app.
+We’re now less than 10 lines of code away from being able to `sam build && sam deploy` this app.
 
 We can take the CloudFormation template from the original Node.js example, and make a few small changes to tailor it to our Rust example. Those changes are commented inline below.
 
@@ -321,13 +321,13 @@ Resources:
 
 The final piece of the puzzle is the `Makefile` that our build process is now relying on, per the `BuildMethod`.
 
-> The paths in this example expect both `main.rs` and the `Makefile` to live in something like `src/echo`, and for `template.yml` to live at the root of the project. That's probably a pretty standard directory structure for most Lambda apps, and would allow for more functions to be added (e.g., `src/auth`, `src/export`, etc), each with their own `Cargo.toml`, `main.rs`, `Makefile`, and other files specific to each individual Lambda function.
+> The paths in this example expect both `main.rs` and the `Makefile` to live in something like `src/echo`, and for `template.yml` to live at the root of the project. That’s probably a pretty standard directory structure for most Lambda apps, and would allow for more functions to be added (e.g., `src/auth`, `src/export`, etc), each with their own `Cargo.toml`, `main.rs`, `Makefile`, and other files specific to each individual Lambda function.
 
 The `Makefile` is pretty simple: it compiles our Rust code to a binary using `cargo lambda`, and then copies the binary into the location that the AWS SAM CLI expects it to be at the end of the build process (which it provides as `ARTIFACTS_DIR` when it calls `make`).
 
-[Cargo Lambda](https://www.cargo-lambda.info) is a project that handles all the messy bits related to cross compiling Rust code intended for Lambda functions. Regardless of which OS or platform you're developing on, and which platform you're targeting, `cargo lambda build` should _just work_. It uses [Zig](https://ziglang.org) rather than VMs or Docker, and in my experience works much more reliably than other options I've seen for creating Lambda-ready binaries on an M1 Mac.
+[Cargo Lambda](https://www.cargo-lambda.info) is a project that handles all the messy bits related to cross compiling Rust code intended for Lambda functions. Regardless of which OS or platform you’re developing on, and which platform you’re targeting, `cargo lambda build` should _just work_. It uses [Zig](https://ziglang.org) rather than VMs or Docker, and in my experience works much more reliably than other options I’ve seen for creating Lambda-ready binaries on an M1 Mac.
 
-Follow the instructions on their website to install Cargo Lambda (using Homebrew, if you're on a Mac).
+Follow the instructions on their website to install Cargo Lambda (using Homebrew, if you’re on a Mac).
 
 ```makefile
 # NOTE: Paths are relative to the SAM template, not this Makefile.
@@ -339,7 +339,7 @@ build-EchoFunction:
 
 ## Wrap Up & Next steps
 
-Once you've configured your SAM deployment, your project should have five files:
+Once you’ve configured your SAM deployment, your project should have five files:
 
 - `template.yml`
 - `samconfig.yml`
@@ -347,14 +347,14 @@ Once you've configured your SAM deployment, your project should have five files:
 - `src/echo/main.rs`
 - `src/echo/Makefile`
 
-A simple `sam build && sam deploy` should get you a compiled, deployed Lambda function that works just like any other Lambda function. From there you can start expanding your serverless applications using the same principals you'd follow for any other Lambda-based app.
+A simple `sam build && sam deploy` should get you a compiled, deployed Lambda function that works just like any other Lambda function. From there you can start expanding your serverless applications using the same principals you’d follow for any other Lambda-based app.
 
-One of the most obviously differences between a Rust-based Lambda function and one using Node.js, is that you can't edit the code in the AWS Console. So those times where you want to quickly add some logging or hotpatch a bug will require a full recomplile and redeploy. Depending on how long it takes your project to compile, this could be fairly time consuming, so you may find that you need to be a bit more deliberate about code changes. Especially in the context of my needs that spurred this post: experimentation. When you're working with a new service or API and need to trial-and-error some configuration, with a Node.js Lambda function, you can make small code changes in just a couple seconds. With Rust, it's not so easy.
+One of the most obviously differences between a Rust-based Lambda function and one using Node.js, is that you can’t edit the code in the AWS Console. So those times where you want to quickly add some logging or hotpatch a bug will require a full recomplile and redeploy. Depending on how long it takes your project to compile, this could be fairly time consuming, so you may find that you need to be a bit more deliberate about code changes. Especially in the context of my needs that spurred this post: experimentation. When you’re working with a new service or API and need to trial-and-error some configuration, with a Node.js Lambda function, you can make small code changes in just a couple seconds. With Rust, it’s not so easy.
 
 Given that this is a much more low-level developer experience, there are countless places to look for efficiency gains, though. The Lambda runtime docs touch on using [feature flags in lambda_http](https://github.com/awslabs/aws-lambda-rust-runtime#feature-flags-in-lambda_http), which is just one way you can reduce compile times and iterate faster.
 
 I have been following the landscape of Rust-based Lambda deployments for a while, and while it seems to have solidified quite a bit, its short history has seen some instability. The runtime API has changed fairly significantly a couple times between versions. The toolchain for building binaries has seen several different Docker-based approaches now replaced with Cargo Lambda. The various pieces now seemed stable and reliable enough to write about, but I would anticipate there will be breaking changes to parts of the system over time.
 
-Because of that churn, lots of what has been written about in other blogs, on StackOverflow, etc on this topic is anywhere from slightly different to entirely outdated. Even today, there are a number of different ways to approach this problem using the most modern tools. The README for the Rust runtime itself talks about deployment options using Cargo Lambda and AWS SAM that aren't the same as how I've talked about them here. I've tried nearly every version of this that I've come across, and what I described above seems to be the easiest, and the one that matches other Lambda deployments most closely. The Makefile that SAM uses nicely encapsulates the Rust-specific bits, and other than that is very similar to building a Node.js or Python Lambda app. I would make sure to check dates on things you read, so that you don't start using already-obsolete code snippets in your brand new app.
+Because of that churn, lots of what has been written about in other blogs, on StackOverflow, etc on this topic is anywhere from slightly different to entirely outdated. Even today, there are a number of different ways to approach this problem using the most modern tools. The README for the Rust runtime itself talks about deployment options using Cargo Lambda and AWS SAM that aren’t the same as how I’ve talked about them here. I’ve tried nearly every version of this that I’ve come across, and what I described above seems to be the easiest, and the one that matches other Lambda deployments most closely. The Makefile that SAM uses nicely encapsulates the Rust-specific bits, and other than that is very similar to building a Node.js or Python Lambda app. I would make sure to check dates on things you read, so that you don’t start using already-obsolete code snippets in your brand new app.
 
 Hopefully this process allows you to get started with running Rust in Lambda without much trouble, and hopefully that gives you more opportunities to learn and practice Rust, as it did for me. Many of the concepts discussed in this post could also be extended to less experimental settings, like a real CD pipeline.

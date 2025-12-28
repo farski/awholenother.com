@@ -55,7 +55,7 @@ Resources:
       ObjectLockEnabled: !Ref BucketObjectLockEnabled
 ```
 
-It's worth noting that the `AllowedValues` in the previous example are actual YAML `bool` values. They are being coerced to strings in the context of the parameter, and then the string value is being coerced back to a `Boolean` at the resource property. This method is **not** sneakily creating a real boolean parameter. Using string literals in the parameter list behaves the same way, and probably makes what is actually happening more obvious.
+It’s worth noting that the `AllowedValues` in the previous example are actual YAML `bool` values. They are being coerced to strings in the context of the parameter, and then the string value is being coerced back to a `Boolean` at the resource property. This method is **not** sneakily creating a real boolean parameter. Using string literals in the parameter list behaves the same way, and probably makes what is actually happening more obvious.
 
 ```yaml
 # This way works, too, with one less coercion
@@ -102,7 +102,7 @@ Resources:
       ObjectLockEnabled: "off"
 ```
 
-If the idea of the YAML parser and CloudFormation messing with your value types makes you uncomfortable, there is always the option of dealing with values only in their native types. It's much more verbose, and does not appear to be necessary, but it is also a viable option.
+If the idea of the YAML parser and CloudFormation messing with your value types makes you uncomfortable, there is always the option of dealing with values only in their native types. It’s much more verbose, and does not appear to be necessary, but it is also a viable option.
 
 ```yaml
 AWSTemplateFormatVersion: "2010-09-09"

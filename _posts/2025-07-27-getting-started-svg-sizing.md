@@ -30,7 +30,7 @@ What helps me is thinking about SVGs in a slightly more practical, but hand-wave
 
 ## The infinite canvas
 
-The first thing to understand about SVGs is that in the vector world where you create shapes, and give them sizes and positions, the canvas onto which you are placing those shapes is infinite. It always extends infinitely in both directions, and there is no way to change that—there are no options or attributes that change or limit the size of an SVG‘s canvas.
+The first thing to understand about SVGs is that in the vector world where you create shapes, and give them sizes and positions, the canvas onto which you are placing those shapes is infinite. It always extends infinitely in both directions, and there is no way to change that—there are no options or attributes that change or limit the size of an SVG’s canvas.
 
 You may only care about a relatively small part of that infinite plane right near the origin, but the rest of the canvas will always be there.
 
@@ -58,7 +58,7 @@ This is possible because we get to control how the unit-less sizes of our shapes
 
 ## Two steps, two choices
 
-We’ve now talked about choices that you get to make when working with SVGs that determine what shows up on a display for some SVG. That is, besides what to actually draw on the canvas. It's helpful to think in terms of two disconnected, but related operations: decide _what_ to draw onto the infinite canvas, then decide _how_ a part of that canvas gets turned into pixels.
+We’ve now talked about choices that you get to make when working with SVGs that determine what shows up on a display for some SVG. That is, besides what to actually draw on the canvas. It’s helpful to think in terms of two disconnected, but related operations: decide _what_ to draw onto the infinite canvas, then decide _how_ a part of that canvas gets turned into pixels.
 
 This post is not about that first step (drawing).
 
@@ -82,11 +82,11 @@ We want to make that choice ourselves, so let’s look at how we control that se
 
 We’ll use the `viewBox` attribute on the `<svg>` tag.
 
-Here’s an example of that: `viewBox="10 30 100 108"`. We set four values in the attribute to define our viewBox. The first two values, `10 30`, determine the starting position within the infinite canvas, and the last two values, `100 108`, dictate the size of the viewBox from that point.
+Here’s an example of that: `viewBox="10 30 100 108"`. We set four values in the attribute to define our viewBox. The first two values, `10 30`, determine the starting position within the infinite canvas, and the last two values, `100 108`, dictate the size of the viewBox from that point.
 
 The viewBox we end up with is the specific region of the infinite canvas that we want to display.
 
-In this case, we are saying that we want the 100x108 region that’s offset from the origin by `(10, 30)`. Out of the entire infinite canvas we have to work with, that particular 100x108 region is what we care about.
+In this case, we are saying that we want the 100x108 region that’s offset from the origin by `(10, 30)`. Out of the entire infinite canvas we have to work with, that particular 100x108 region is what we care about.
 
 The important region will change from SVG to SVG, and we get to make the choice for each one by setting a viewBox.
 
@@ -98,7 +98,7 @@ Let’s go back to our simple circle, and add a `viewBox`.
 </svg>
 ```
 
-Here we’re setting a viewBox to be 100x100, and is offset from the origin by `(-50, -50)`. This is a reasonable selection, given that our circle had a diameter of 100 and was centered at the origin. This viewBox selects a region around the origin that is just big enough to contain the entire circle.
+Here we’re setting a viewBox to be 100x100, and is offset from the origin by `(-50, -50)`. This is a reasonable selection, given that our circle had a diameter of 100 and was centered at the origin. This viewBox selects a region around the origin that is just big enough to contain the entire circle.
 
 We could make other choices with the viewBox for this circle, though. If we only wanted to show the right half of the circle: `viewBox="0 -50 50 100"`. Or just a sliver of the bottom: `viewBox="-50 45 100 5"`.
 

@@ -11,11 +11,11 @@ tags:
 
 [AWS CodePipeline](https://aws.amazon.com/codepipeline/) does offer [S3 source actions](https://docs.aws.amazon.com/codepipeline/latest/userguide/action-reference-S3.html), which will trigger the pipeline when changes are made to a specific object in a bucket. At some point, I had a pipeline where there was an S3 source action, but the change detection was being handled by an [Events rule](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rules.html) watching for specific [CloudTrails](https://aws.amazon.com/cloudtrail/) [logs](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference.html).
 
-I don't recall if the native S3 source action previously didn't do change detection, or why I implemented that myself, but somehow I ended up there.
+I don’t recall if the native S3 source action previously didn’t do change detection, or why I implemented that myself, but somehow I ended up there.
 
 The only tricky bit was dealing with the fact that when the S3 source action ran as part of the pipeline execution, it would perform a `CopyObject` for the object in question. Because I was watching that object for both `PutObject` and `CopyObject` events in CloudTrail, things would get in a loop. The file would be updated (by some expected external means), the Events rule would trigger the pipeline, which would source the object and copy it, which would trigger the rule, which would trigger the pipelines, etc…
 
-To get around that, the Events rule had to filter CloudTrail events where the principal that made the `CopyObject` call was the pipeline's execution role. With that in place, all other changes would trigger the rule and the pipeline, but the `CopyObject` performed as part of the pipeline's source action would not trigger another execution.
+To get around that, the Events rule had to filter CloudTrail events where the principal that made the `CopyObject` call was the pipeline’s execution role. With that in place, all other changes would trigger the rule and the pipeline, but the `CopyObject` performed as part of the pipeline’s source action would not trigger another execution.
 
 ```yaml
 PipelineS3TriggerEventRule:

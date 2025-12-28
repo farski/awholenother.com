@@ -12,11 +12,11 @@ Below is a list of batteries that are compatible with the [Dewalt 20V MAX System
 
 These SKUs represent individual battery packs, which may not actually be sold individually. (For example, `DCB204BT` appears to only be sold as part of the `DCB204BT-2` 2-pack).
 
-Any battery-related SKUs that aren't individual packs are excluded, such as multi-packs, charging kits, and other accessories. Batteries sold with a charger (aka, starter kit) use a `…C` suffix (e.g., `DCB201C` is a `DCB201` pack with a charger). Charging kits (which usually come with a charger and a bag) use a `…CK` suffix (e.g., `DCB201CK`). Multi-packs of a single battery model use a numeric suffix (e.g., `DCB201-2` or `DCB201-6` for a 2-pack or 6-pack). A `…G` suffix indicates an oil-resistent variant of the battery. `…BT` is used for Bluetooth (TOOL CONNECT) batteries, and `…LR` means there's a hook on the battery that a lanyard can be attached to.
+Any battery-related SKUs that aren’t individual packs are excluded, such as multi-packs, charging kits, and other accessories. Batteries sold with a charger (aka, starter kit) use a `…C` suffix (e.g., `DCB201C` is a `DCB201` pack with a charger). Charging kits (which usually come with a charger and a bag) use a `…CK` suffix (e.g., `DCB201CK`). Multi-packs of a single battery model use a numeric suffix (e.g., `DCB201-2` or `DCB201-6` for a 2-pack or 6-pack). A `…G` suffix indicates an oil-resistent variant of the battery. `…BT` is used for Bluetooth (TOOL CONNECT) batteries, and `…LR` means there’s a hook on the battery that a lanyard can be attached to.
 
 FLEXVOLT SKUs begin with `DCB6…`, indicating they are 60V battery, and have a consistent scheme: `DCB6XX`, where `XX` is the capacity in Ah (`09`, `15`, etc).
 
-POWERSTACK battery SKUs begin with `DCBP…`. Even with only two items in the POWERSTACK line to date, it doesn't seem to use a consistent SKU scheme.
+POWERSTACK battery SKUs begin with `DCBP…`. Even with only two items in the POWERSTACK line to date, it doesn’t seem to use a consistent SKU scheme.
 
 20V MAX batteries _tend_ to use `DCB2XX`, where `XX` is the capacity, but there are several exceptions.
 
