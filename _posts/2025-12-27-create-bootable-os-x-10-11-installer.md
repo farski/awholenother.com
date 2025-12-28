@@ -8,7 +8,7 @@ tags:
   - OS X
 ---
 
-The following are steps that worked for me, to create a bootable USB copy of the OS X 10.11 installer while running macOS 26. This procedure was adapted from a [guide I found from 2015](https://forums.macrumors.com/threads/el-capitan-bootable-dvd.1923931/?post=22039675#post-22039675).
+The following are steps that worked for me, to create a bootable USB copy of the OS X 10.11 installer while running macOS 26. This procedure was adapted from a [guide I found posted in 2015](https://forums.macrumors.com/threads/el-capitan-bootable-dvd.1923931/?post=22039675#post-22039675).
 
 I suspect this process would be similar for other versions that are distributed as disk images (10.7 through 10.12), but I haven't tested any except 10.11.
 
