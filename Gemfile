@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.4.6"
+ruby file: ".tool-versions"
 
 # CSV Reading and Writing [https://ruby.github.io/csv/]
 gem "csv"
@@ -27,7 +27,7 @@ end
 
 group :jekyll_plugins do
   #   # Streamline your writing in Jekyll with commands [https://github.com/jekyll/jekyll-compose]
-  #   gem "jekyll-compose"
+    gem "jekyll-compose"
 
   # A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts [https://github.com/jekyll/jekyll-feed]
   gem "jekyll-feed"
