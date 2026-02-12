@@ -37,6 +37,8 @@ The [template switch platform](https://esphome.io/components/switch/template/) t
 
 In [this code example](https://devices.esphome.io/devices/ESP-01-4-Channel-Relay-LC-Technology/#configuration-with-momentary-switches-push-buttons-with-1-sek-press-time) for a very similar relay board, I saw that momentary switch functionality was being baked directly into the ESPHome configuration using the `on_turn_on` [trigger](https://esphome.io/automations/actions/#triggers). Previously I was using a Home Assistant [Script](https://www.home-assistant.io/integrations/script/) to allow these relays to mimic momentary switches, which never felt like the correct approach. Moving the behavior into the ESPHome config means that any time the switch is turned `ON` in the HA frontend, the relay will close, wait a bit, and then open again without any additonal HA scripting. For this use case, there is never a need to keep a relay closed from HA’s perspective, so this essentially hides that and makes this switch behave like a button, which is how it’s intended to behave.
 
+I took this a step further and changed the switches controlling the relays to be `internal` to the ESPHome device, and added [template buttons](https://esphome.io/components/button/template/) that are exposed to the Home Assistant frontend, to make the button-like behavior even more obvious and intuitive. The momentary relay switching it now entirely hidden by the button abstractions.
+
 Moving this sort of functionality into the ESPHome device makes a lot more sense, so I’m glad I ran across that example.
 
 Here’s the updated configuration:
@@ -58,9 +60,8 @@ uart: { tx_pin: GPIO1, rx_pin: GPIO3, baud_rate: 115200 } # speed for STC15L101E
 
 switch:
   - platform: template
-    name: "Power Control"
+    internal: true
     id: relay01
-    icon: mdi:power
     optimistic: true
     restore_mode: ALWAYS_OFF
     turn_on_action:
@@ -72,9 +73,8 @@ switch:
       - switch.turn_off: relay01
 
   - platform: template
-    name: "Heat Control"
+    internal: true
     id: relay02
-    icon: mdi:heat-wave
     optimistic: true
     restore_mode: ALWAYS_OFF
     turn_on_action:
@@ -85,6 +85,32 @@ switch:
       - delay: 100ms
       - switch.turn_off: relay02
 
+button:
+  - platform: template
+    name: "Toggle Power"
+    id: power_button
+    icon: mdi:power
+    on_press:
+      then:
+        - switch.turn_on: relay01
+
+  - platform: template
+    name: "Toggle Heat"
+    id: work_button
+    icon: mdi:heat-wave
+    on_press:
+      then:
+        - switch.turn_on: relay02
+
+  - platform: template
+    name: "Power + Heat"
+    id: start_buttom
+    icon: mdi:heat-wave
+    on_press:
+      then:
+        - button.press: power_button
+        - delay: 1000ms
+        - button.press: work_button
 ```
 
 ### Next steps
