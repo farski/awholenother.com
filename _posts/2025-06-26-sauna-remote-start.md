@@ -11,6 +11,10 @@ tags:
   - microcontroller
 ---
 
+<div class="note">
+  <p>There is a follow-up to this post from <a href="/2026/02/12/remote-esphome-sauna-controller-update.html">early 2026</a>.</p>
+</div>
+
 I have [this infrared sauna](https://dynamicsaunasdirect.com/products/santiago-2-person-low-emf-far-infrared-sauna?srsltid=AfmBOoqarQ9SfhPoRprAxfNwZg7lVcThlGRLrvkmtWAcYsGQ73lr46ub). I don’t really understand the difference between [Golden Designs Inc](https://goldendesigninc.com/collections/dynamic-saunas/products/santiago-2-person-low-emf-far-infrared-sauna) and [Dynamic Saunas Direct](https://dynamicsaunasdirect.com/products/santiago-2-person-low-emf-far-infrared-sauna?srsltid=AfmBOoqarQ9SfhPoRprAxfNwZg7lVcThlGRLrvkmtWAcYsGQ73lr46ub), but they pretty much seem to be two names for the same company. I bought the sauna through Costco, and they [list the](https://www.costco.com/dynamic-santiago-2-person-full-spectrum-infrared-sauna.product.4000348956.html) brand as “Dynamic Saunas”. Regardless of the brand, everyone seems to agree that the model number is `DYN-6209-01`.
 
 In the world of saunas, I’m sure this one is not great. But it was a affordable, and, as a renter, most other saunas were not practical. Even slightly nicer IR saunas generally require 20 A, which would have required wiring work I didn’t want to do. But this is a box that gets relatively hot, and that’s what I was looking for, so I’ve been happy with it.
@@ -163,3 +167,7 @@ _(Sorry for the low quality photos)_
 ![Sauna roof with relay installation](https://kala.farski.com/awholenother/sauna_6470.jpg)
 ![Alternate angle of relay installation](https://kala.farski.com/awholenother/sauna_6471.jpg)
 ![Control panel installation](https://kala.farski.com/awholenother/sauna_6467.jpg)
+
+<div class="note">
+  <p>There is a follow-up to this post from <a href="/2026/02/12/remote-esphome-sauna-controller-update.html">early 2026</a>.</p>
+</div>
