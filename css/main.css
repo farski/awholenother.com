@@ -65,7 +65,7 @@ body {
 	background-color: var(--bg-color);
 	color: var(--body-copy-color-fallback);
 	color: var(--body-copy-color);
-	font-family: system-ui;
+	font-family: sans-serif;
 }
 
 /* Multi-line headers are more compact */
