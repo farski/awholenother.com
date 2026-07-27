@@ -159,7 +159,7 @@ These are meant to reflect real-world data transfer speeds for various technolog
 		<tr>
 			<td>USB4 (USB4 v1.0 Gen 2×2)</td>
 			<td>1,800 MB/s (min.)</td>
-			<td>20 Gbit/s; or 2x (40 Gbit/s, USB4 v1.0 Gen 3×2) or 3x (USB4 v1.0 Gen 2×2)</td>
+			<td>20 Gbit/s; or 2x (40 Gbit/s, USB4 v1.0 Gen 3×2)</td>
 		</tr>
 		<tr>
 			<td>Thunderbolt 3</td>
