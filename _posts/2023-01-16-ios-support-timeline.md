@@ -2,7 +2,7 @@
 layout: post
 title: iOS support timeline
 date: 2023-01-15 07:21 -0400
-update: 2026-01-27 18:04 -0500
+update: 2026-07-27 17:08 -0500
 tags:
   - Apple
   - iOS
