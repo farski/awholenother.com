@@ -18,7 +18,7 @@ tags:
 	}
 </style>
 
-_All images in this article will have a gray outline, which has been added using CSS and is not part of any SVG markup._
+_All images in this post will have a gray outline, which has been added using CSS and is not part of any SVG markup._
 
 _Any circles you see that are <span style="background: indigo; border-radius: 3px; padding: 1px 4px;">indigo</span> are inline SVGs. All other colors are `img` elements referencing an SVG file._
 

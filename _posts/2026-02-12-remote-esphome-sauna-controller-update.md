@@ -6,7 +6,7 @@ reading_time: 8 minutes
 tags:
   - sauna
   - DIY
-  - smarthome
+  - smart home
   - electronics
   - microcontroller
 ---

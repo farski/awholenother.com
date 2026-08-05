@@ -4,8 +4,8 @@ title: Shimano road groupset timeline
 date: 2024-02-24 01:11 -0500
 update: 2024-02-24 01:11 -0500
 tags:
-  - Bicycles
-  - Cycling
+  - bicycles
+  - cycling
   - Shimano
 ---
 

@@ -5,7 +5,7 @@ date: 2024-02-19 14:38 -0500
 reading_time: 5 minutes
 tags:
   - Home Assistant
-  - Smart Home
+  - smart home
   - Network UPS Tools
   - NUT
 ---

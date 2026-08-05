@@ -5,8 +5,8 @@ date: 2023-02-06 09:56 -0400
 update: 2023-02-06 09:56 -0400
 tags:
   - Dewalt
-  - Battery
-  - Charger
+  - battery
+  - charger
 ---
 
 <!--

@@ -5,7 +5,7 @@ date: 2022-12-14 12:49 -0400
 update: 2024-08-01 13:53 -0400
 tags:
   - Dewalt
-  - Battery
+  - battery
 ---
 
 Below is a list of batteries that are compatible with the [Dewalt 20V MAX System](https://www.dewalt.com/systems/cordless-platforms/20v) of cordless powertools.
