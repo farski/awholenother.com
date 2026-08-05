@@ -50,7 +50,7 @@ tags:
 			<td></td>
 			<td>
 				<ul>
-					<li>Birds by default, DISP to switch to animal</li>
+					<li>Birds by default, DISP or VertFn to switch to animal</li>
 					<li>Cycle AF area with VIDEO or L-Fn</li>
 					<li>AF handoff with Fn1 or L-Fn2</li>
 				</ul>
@@ -282,7 +282,7 @@ tags:
 				<ul>
 					<li>Fn1: AF-area mode Auto-area</li>
 					<li>Fn2: Off</li>
-					<li>FnVert: Off</li>
+					<li>FnVert: Recall (hold), AF subject, animal</li>
 					<li>AF-ON: AF-ON</li>
 					<li>Release: Release mode</li>
 					<li>DISP: Recall (hold), AF subject, animal</li>
