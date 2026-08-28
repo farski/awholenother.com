@@ -12,7 +12,7 @@ tags:
 ---
 
 <div class="note">
-  <p>This is an update to [Adding remote starter to a Costco infrared sauna](/2025/06/26/sauna-remote-start.html).</p>
+  <p>This is an update to <a href="/2025/06/26/sauna-remote-start.html">Adding remote starter to a Costco infrared sauna</a>.</p>
 </div>
 
 Since I first setup up the EPSHome-based remote starter for [this sauna](https://dynamicsaunasdirect.com/products/santiago-2-person-low-emf-far-infrared-sauna?srsltid=AfmBOoqarQ9SfhPoRprAxfNwZg7lVcThlGRLrvkmtWAcYsGQ73lr46ub), my understanding of ESPHome configuration has improved a bit, and I’ve made some changes to the controller software.
