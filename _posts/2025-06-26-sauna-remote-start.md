@@ -164,9 +164,9 @@ The final installation looks like this:
 
 _(Sorry for the low quality photos)_
 
-![Sauna roof with relay installation](https://kala.farski.com/awholenother/sauna_6470.jpg)
-![Alternate angle of relay installation](https://kala.farski.com/awholenother/sauna_6471.jpg)
-![Control panel installation](https://kala.farski.com/awholenother/sauna_6467.jpg)
+![Overhead of the sauna's roof showing the added components and cables (with labels)](https://kala.farski.com/awholenother/sauna_6470.jpg)
+![Detail of the relay board and transformer](https://kala.farski.com/awholenother/sauna_6471.jpg)
+![Detail of new wiring added to the sauna's control panel](https://kala.farski.com/awholenother/sauna_6467.jpg)
 
 <div class="note">
   <p>There is a follow-up to this post from <a href="/2026/02/12/remote-esphome-sauna-controller-update.html">early 2026</a>.</p>
