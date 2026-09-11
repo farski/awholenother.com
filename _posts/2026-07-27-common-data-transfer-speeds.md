@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Common data transfer speeds
+description: A table of various protocols, connections, technologies, etc. which lists their normal, real-world transfer speeds. All speeds are listed in MB/s to make comparisons easier.
+tagline: Easy-to-compare real-world transfer speeds of common protocols.
 date: 2026-07-27 10:58 -0400
 tags:
   - USB

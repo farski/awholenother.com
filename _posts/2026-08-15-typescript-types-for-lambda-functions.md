@@ -1,6 +1,8 @@
 ---
 layout: post
 title: TypeScript types for Lambda functions
+description: A reference page to help understand which TypeScript types are available for various common AWS Lambda use cases, and where those type definitions come from.
+tagline: Growing list of useful types for writing AWS Lambda functions.
 date: 2026-08-15 14:43 -0400
 category: ref
 tags:

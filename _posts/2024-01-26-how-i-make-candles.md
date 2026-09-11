@@ -1,6 +1,8 @@
 ---
 layout: post
 title: How I make candles
+description: A brief explanation of how I approach small batch candle making, including costs.
+tagline: Small-batch candle making made easy.
 date: 2024-01-26 08:53 -0500
 reading_time: 5 minutes
 tags:

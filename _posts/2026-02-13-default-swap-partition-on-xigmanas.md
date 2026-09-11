@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Default swap partition on XigmaNAS
+description: Some basic information regarding XigmaNAS’s handling of "gptswap" partitions, and how to set them up when using various installation methods.
+tagline: Avoid this XigmaNAS swap partition gotcha.
 date: 2026-02-13 17:24 -0500
 reading_time: 3 minutes
 tags:

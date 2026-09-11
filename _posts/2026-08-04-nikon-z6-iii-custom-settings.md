@@ -1,6 +1,8 @@
 ---
 layout: ref
 title: Nikon Z6 III Custom Settings
+description: A document I maintain for my own purposes that captures how I currently have my camera configured.
+tagline: My personal camera settings.
 date: 2026-08-04 21:17 -0400
 category: ref
 tags:

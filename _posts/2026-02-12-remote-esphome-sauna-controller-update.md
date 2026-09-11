@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Remote ESPHome Sauna controller update
+description: An update to the DIY sauna controller that improves some aspects of the ESPHome configuration, and the entities within Home Assistant, with improved explanations for how various settings work.
+tagline: DIY Costco sauna controller continues to improve.
 date: 2026-02-12 11:17 -0500
 reading_time: 8 minutes
 tags:

@@ -1,7 +1,12 @@
 ---
 layout: post
 title: Electricity cost calculator
+description: A simple calculator that helps you understand the electricity cost of running something continuously over time, or the cost of filling up a battery.
+tagline: Calculate ongoing and refill electricity costs.
 date: 2026-08-26 11:15 -0400
+tags:
+  - electricity
+  - calculator
 ---
 
 <input id=rate type=number step="0.1" min=0 max=1 value="0.3556" style="width: 200px; padding: 15px; font-size: var(--24px)"> $/kWh
