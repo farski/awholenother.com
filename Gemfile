@@ -26,12 +26,9 @@ group :development do
 end
 
 group :jekyll_plugins do
-  #   # Streamline your writing in Jekyll with commands [https://github.com/jekyll/jekyll-compose]
-    gem "jekyll-compose"
+  # Streamline your writing in Jekyll with commands [https://github.com/jekyll/jekyll-compose]
+  gem "jekyll-compose"
 
   # A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts [https://github.com/jekyll/jekyll-feed]
   gem "jekyll-feed"
-
-  # Add metadata tags for search engines and social networks [https://github.com/jekyll/jekyll-seo-tag]
-  gem "jekyll-seo-tag"
 end
