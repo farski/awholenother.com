@@ -1,11 +1,38 @@
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  {% seo %}
-
-  {% feed_meta %}
+  <meta name="viewport" content="width=device-width">
+  <meta name="text-scale" content="scale">
+  <title>{% if page.title %}{{ page.title | escape | append: " | " }}{% endif %}{{ site.title | escape }}</title>
 
   <link rel="stylesheet" href="/css/code.css">
   <link rel="stylesheet" href="/css/main.css">
+
+  <meta property="og:title" content="{{ page.title }}">
+
+  {% if page.description %}<meta name="description" content="{{ page.description | escape }}">{% endif %}
+  {% if page.tagline %}<meta property="og:description" content="{{ page.tagline | escape }}">{% endif %}
+
+  <!-- <link rel="icon" type="image/svg+xml" href="https://example.com/favicon.svg"> -->
+
+  <!-- <meta property="og:image" content="https://example.com/embed-image.webp"> -->
+  <!-- <meta property="og:image:alt" content="A picture of something."> -->
+  <!-- <meta property="og:image:type" content="image/webp"> -->
+  <!-- <meta property="og:image:width" content="1200"> -->
+  <!-- <meta property="og:image:height" content="630"> -->
+
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+
+  <meta property="og:site_name" content="{{ site.title }}">
+
+  <meta name="author" content="{{ site.author }}">
+
+  <meta name="color-scheme" content="light dark">
+  <!-- <meta name="theme-color" content="red" media="(prefers-color-scheme: light)"> -->
+  <!-- <meta name="theme-color" content="green" media="(prefers-color-scheme: dark)"> -->
+
+  {% feed_meta %}
+
+  <!-- <link rel="search" type="application/opensearchdescription+xml" title="Website Search" href="https://example.com/opensearch.xml"> -->
+  <!-- <link rel="manifest" href="/app.webmanifest"> -->
 </head>
