@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Optional comma-delimited list parameters in CloudFormation
+description: How to gracefully handle list parameters in CloudFormation templates that may be empty.
 tagline: Handle list parameters in Cfn that may be empty.
 date: 2020-06-19 19:47 -0400
 tags:

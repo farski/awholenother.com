@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Create bootable OS X 10.11 installation media from macOS 26
+description: A updated guide for creating a bootable USB drive of OS X 10.11 installation media from a modern version of macOS.
+tagline: A modern process for bootable USB drives.
 date: 2025-12-27 16:58 -0500
 tags:
   - Apple

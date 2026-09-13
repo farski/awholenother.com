@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Calculating Savings Plan utilization and coverage from AWS Cost and Usage Reports
+description: Helpful information related to the data in AWS Cost and Usage Reports for Savings Plans, and how to use it to calcuate spending, savings, etc.
+tagline: Notes on Savings Plan data in CUR.
 date: 2021-11-26 16:10 -0500
 reading_time: 20 minutes
 tags:

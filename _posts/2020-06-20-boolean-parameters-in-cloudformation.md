@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Boolean parameters in CloudFormation
+description: Information about how to approach boolean parameters in CloudFormation, especially when writing templates in YAML.
+tagline: Avoid pitfalls of boolean CloudFormation parameters.
 date: 2020-06-20 00:48 -0400
 tags:
   - AWS

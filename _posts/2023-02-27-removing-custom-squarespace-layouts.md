@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Removing custom Squarespace Layouts
+description: Undocumented information about what happens in a Squarespace custom website when a layout file is removed from the site’s configuration.
+tagline: What happens when you remove custom layouts in Squarespace.
 date: 2023-02-27 12:17 -0500
 tags:
   - Squarespace

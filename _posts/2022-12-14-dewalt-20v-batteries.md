@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Dewalt 20V MAX batteries
+description: General information about the various Dewalt 20V MAX battery packs, including capacity, cell layout, etc.
+tagline: Annotated list of Dewalt 20V MAX batteries.
 date: 2022-12-14 12:49 -0400
 update: 2024-08-01 13:53 -0400
 tags:

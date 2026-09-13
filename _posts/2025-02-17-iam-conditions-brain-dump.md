@@ -1,7 +1,8 @@
 ---
 layout: post
 title: IAM Conditions brain dump
-description: Everything I know about AWS IAM conditions
+description: Everything I know about AWS IAM conditions.
+tagline: Everything I know about AWS IAM conditions.
 date: 2025-02-17 09:26 -0500
 reading_time: 40 minutes
 tags:

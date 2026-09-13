@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Dash cam fuse tap in BMW i3
+description: There are several different options for wiring a dash cam into the power system of a BMW i3, depending on the desired behvaior..
+tagline: Notes on BMW i3 fuses for dash cams.
 date: 2023-08-01 09:12 -0400
 tags:
   - BMW

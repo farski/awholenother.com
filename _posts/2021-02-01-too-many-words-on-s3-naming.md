@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Too many words on S3 object naming & access
+description: The rules for naming object in Amazon S3 are simple, but the reality of dealing with object names in the real world get much more complicated.
+tagline: More than you wanted to know about object names in S3.
 date: 2021-02-01 18:32 -0400
 reading_time: 15 minutes
 tags:

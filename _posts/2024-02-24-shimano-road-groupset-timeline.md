@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Shimano road groupset timeline
+description: A regularly-updated chart showing the timeline and high-level features of Shimano road groupsets.
+tagline: A chart of every Shimano road bike groupset.
 date: 2024-02-24 01:11 -0500
 update: 2024-02-24 01:11 -0500
 tags:

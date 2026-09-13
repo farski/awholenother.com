@@ -1,6 +1,8 @@
 ---
 layout: post
 title: AssumeRole vs. AssumeRole vs. PassRole
+description: Understanding how roles move around various parts of AWS authorization systems is fundamental to a strong security posture.
+tagline: Don’t mix up these very similar sounding concepts in AWS security.
 date: 2024-04-06 19:03 -0500
 reading_time: 20 minutes
 tags:

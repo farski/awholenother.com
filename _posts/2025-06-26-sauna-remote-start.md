@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Adding remote starter to a Costco infrared sauna
+description: A detailed explanation for adding smart home functionality to an inexpensive infrared sauna, allowing for remote start functionality via Home Assistant.
+tagline: Make this dumb sauna smart for less than $25.
 date: 2025-06-26 11:46 -0400
 reading_time: 12 minutes
 tags:

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: AWS Lambda functions in Rust the easy way
+description: An introduction to easily creating Rust projects that bring their own runtime to AWS Lambda functions.
+tagline: How to run Rust code in AWS Lambda functions.
 date: 2022-11-27 14:57 -0400
 update: 2023-03-01 07:34 -0500
 reading_time: 20 minutes

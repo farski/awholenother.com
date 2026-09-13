@@ -1,6 +1,8 @@
 ---
 layout: post
 title: S3 CloudTrail trigger for CodePipeline to avoid infinite loops
+description: When triggering a CodePipeline from S3 CloudTrail events, configure the rule to ensure things don’t get stuck in an infite loop.
+tagline: Avoid unexpected loops in CodePipelines.
 date: 2024-02-07 09:04 -0500
 tags:
   - AWS

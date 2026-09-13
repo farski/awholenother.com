@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Dewalt 20V MAX battery chargers
+description: A list of Dewalt 20V MAX charger models, with information about compatibility with other battery systems.
+tagline: Annotated list of Dewalt 20V chargers.
 date: 2023-02-06 09:56 -0400
 update: 2023-02-06 09:56 -0400
 tags:

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Basic Network UPS Tools (NUT) and Home Assistant
+description: A few basic notes on my first experience with NUT reporting UPS information to Home Assistant.
+tagline: Getting started with NUT and Home Assistant.
 date: 2024-02-19 14:38 -0500
 reading_time: 5 minutes
 tags:

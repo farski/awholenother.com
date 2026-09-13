@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Wrapping CloudFormation parameter list items with additional data
+description: An approach to wrapping each elemenent in a CloudFormation parameter list with additional data before using the value in a template resource.
+tagline: Useful CloudFormation snippet for wrapping list elements
 date: 2023-07-28 09:36 -0400
 tags:
   - AWS
