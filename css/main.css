@@ -144,7 +144,9 @@ body>header {
 article {
 	margin-block-end: 100px;
 
-	p {
+	h2,
+	p,
+	ul {
 		margin-block: 1lh;
 	}
 
