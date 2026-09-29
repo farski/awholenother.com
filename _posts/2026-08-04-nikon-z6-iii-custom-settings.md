@@ -83,7 +83,7 @@ tags:
 			<td></td>
 			<td></td>
 			<td>On, 64000, 1/320</td>
-			<td>On, 64000, 1/250</td>
+			<td>On, 64000, 1/1000</td>
 		</tr>
 		<tr>
 			<td>PSM Release mode</td>
@@ -298,7 +298,7 @@ tags:
 					<li>Illum: LCD illum</li>
 					<li>ISO: ISO</li>
 					<li>Dials</li>
-					<li>L-Fn: Cycle AF-area (single, W-S, W-L, 3D, Auto)</li>
+					<li>L-Fn: Cycle AF-area (single, W-S, W-L, W-C1, 3D, Auto)</li>
 					<li>L-Fn2: AF-area mode Auto-area</li>
 					<li>Lens Fn Ring: Off</li>
 					<li>Lens mem: Save focus position</li>
