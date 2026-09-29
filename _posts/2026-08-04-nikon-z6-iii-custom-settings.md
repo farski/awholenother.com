@@ -298,7 +298,7 @@ tags:
 					<li>Illum: LCD illum</li>
 					<li>ISO: ISO</li>
 					<li>Dials</li>
-					<li>L-Fn: Cycle AF-area (single, W-S, W-L, W-C1, 3D, Auto)</li>
+					<li>L-Fn: Cycle AF-area (single, W-S, W-L, 3D, Auto)</li>
 					<li>L-Fn2: AF-area mode Auto-area</li>
 					<li>Lens Fn Ring: Off</li>
 					<li>Lens mem: Save focus position</li>
@@ -323,7 +323,7 @@ tags:
 					<li>Illum: LCD illum</li>
 					<li>ISO: ISO</li>
 					<li>Dials</li>
-					<li>L-Fn: Cycle AF-area (single, W-S, W-L, 3D, Auto)</li>
+					<li>L-Fn: Cycle AF-area (single, W-S, W-L, W-C1, 3D, Auto)</li>
 					<li>L-Fn2: AF-area mode Auto-area</li>
 					<li>Lens Fn Ring:</li>
 					<li>Lens mem: Save focus position</li>
